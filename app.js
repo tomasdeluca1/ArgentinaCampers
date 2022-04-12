@@ -11,7 +11,7 @@ app.listen(5000, ()=>{
 });
 
 app.get('/home', function(req, res){
-    res.sendFile(path.join(__dirname, './views/index.html'));
+    res.sendFile(path.join(__dirname, './views/home.html'));
 });
 
 app.get('/product-detail', function(req, res){
