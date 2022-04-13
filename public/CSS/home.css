@@ -37,9 +37,9 @@ header nav{
 
 
 .iniciar-sesion{
-    border: 3px solid #BEA088;
-    padding: 5px;
-    border-radius: 20px;
+    border: 2px solid #BEA088;
+    padding: 5px 10px;
+    border-radius: 10px;
 }
 
 /*Cuerpo*/

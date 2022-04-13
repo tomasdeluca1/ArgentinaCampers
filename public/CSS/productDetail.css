@@ -1,10 +1,16 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
 /*Header*/
 
 header nav{
     color: #BDA48A;
     background-color: #FFEED2;
-    font-size: 17px;
-    font-weight: bolder;
+    font-size: 14px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -19,7 +25,9 @@ header nav{
     height: 50px;
 }
 
+
 .links-header{
+    font-weight:lighter;
     text-decoration: none;
     color: #BDA48A;
 }
@@ -30,9 +38,136 @@ header nav{
 
 
 .iniciar-sesion{
-    border: 3px solid #BEA088;
-    padding: 5px;
-    border-radius: 20px;
+    border: 2px solid #BEA088;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-weight: bolder;
 }
 
 /*Cuerpo*/
+
+body{
+background-color: #FFEED2;
+}
+
+.nav-vehiculos{
+    background-color: #957f65;
+    color: #FFEED2;
+    padding: 10px;
+    padding-left: 70px;
+    font-size: 14px;
+}
+
+.nav-vehiculos a {
+    text-decoration: none;
+    color: lightblue;
+    font-weight: lighter;
+}
+
+.nav-vehiculos a:hover {
+    text-decoration: none;
+    color: lightskyblue;
+    box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.1);
+}
+
+.contenedor{
+    position:relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+.imagenCentrada{
+    width: 100%;
+    height: 440px;
+}
+
+.textoCentrado{
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: 150px 0px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.descripcion{
+   position: relative;
+   bottom: 40px;
+    background-color: #FFEED2;
+    padding: 20px 40px 40px 30px;
+    margin: 0px 15%;
+    box-shadow: 0px 1px 5px 3px rgba(149, 127, 101, 0.9);
+    color: #080d4d;
+}
+.descTitular{
+font-size: 20px;
+font-weight: bold;
+margin-bottom: 10px;
+}
+
+.productos{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px 90px 20px 90px;
+    align-items: center;
+}
+
+.descProductos{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.descProductos h4{
+    color: #080d4d;
+    font-size: 20px;
+    align-self: flex-start;
+    padding-left: 5px;
+}
+
+.descProductos p{
+    text-align: justify;
+    color: #080d4d;
+}
+
+.productoImg{
+width: 90%;
+padding: 20px 0px;
+}
+.masDetalles{
+    text-align: center;
+    background-color: #FFEED2;
+    color: #957f65;
+    border: #ab650f 2px solid;
+    width: 70%;
+    border-radius: 40px;
+    padding: 5px;
+    margin-top: 20px;
+}
+
+.masDetalles a{
+    text-decoration: none;
+    color: #ab650f;
+    font-size: 18px;
+}
+
+.cierre{
+    margin: 60px 45px 100px 70px;
+}
+
+.cierre h4{
+    color: #080d4d;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.cierre p{
+    text-align: justify;
+    color: #080d4d;
+    padding: 5px;
+}
