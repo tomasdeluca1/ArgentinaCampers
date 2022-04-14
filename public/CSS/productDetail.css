@@ -143,16 +143,26 @@ padding: 20px 0px;
     text-align: center;
     background-color: #FFEED2;
     color: #957f65;
-    border: #ab650f 2px solid;
+    border: #957f65 2px solid;
     width: 70%;
     border-radius: 40px;
     padding: 5px;
     margin-top: 20px;
 }
 
+.masDetalles:hover{
+    color: #FFEED2;
+    background-color: #957f65;
+}
+
+.masDetalles:hover a{
+    color: #FFEED2;
+    
+}
+
 .masDetalles a{
     text-decoration: none;
-    color: #ab650f;
+    color: #957F65;
     font-size: 18px;
 }
 
