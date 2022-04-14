@@ -1,0 +1,120 @@
+/*etiquetassssssssssssssssssssss*/
+body{
+    background-color: bisque;
+}li{
+    padding:0 3vw 0 3vw;
+    display:inline-block;
+    font-size: 1rem;
+}
+label{
+    width:70vw;
+    
+    display: block;
+    text-align: center;
+    margin-bottom: 5px;
+    margin-right: auto;
+    margin-left: auto;
+    
+}
+
+
+/*clasesssssssssssssssssssssssss*/
+
+.articulo{
+    display:  inline-block;
+    width: 60vw;
+    height: 100vh;
+
+}.formularioInicio{
+    display: inline-block;
+    width: 30vw;
+    height: 100vh;
+    align-items: center;
+}
+
+.navegacionG{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.liNavLogin{
+    margin:0 5px 0 5px;
+    height: 5vh;
+    width: 8vw;
+    background-color: grey;
+   
+}
+.inputInicio{
+    width: 70vw;
+    height:4vh;
+}
+.divBoton_input{
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5vh;
+    width: 80%;
+    align-items: center;
+
+    
+}
+.boton{
+    
+    margin-right: auto;
+    margin-left:auto;
+    text-decoration: none;
+    width: 70vw;
+    height:4vh;
+    align-items: center;
+    
+}a{
+    text-decoration: none;
+    font-family: sant-serif;
+    font-size: 1rem;
+}
+
+
+
+/*medias queris------------------------------------------------*/
+
+@media (max-width: 768px){
+    
+
+    .navegacionG{
+        
+        display: none;
+        
+        
+    }
+    label{
+        font-size: 1.5rem;
+    }.navegacionS{
+        
+        width: 10vw;
+        height: 4vh;
+        margin-right: 45vw;
+        margin-left: 45vw;
+    
+    }#sliderMenu{
+        height: 100vh;
+        width: 100vw;
+    }.articulo{
+        display:none;
+    }
+}@media(min-width: 769px){
+    #sliderMenu{
+       display:none;
+       
+    }.articulo{
+        display:none;
+    }
+    .boton{
+        height: 30px;
+        width:80%;
+        
+    }.inputInicio{
+        height: 30px;
+        width:80%
+    }
+    
+}
