@@ -89,3 +89,8 @@ font-weight: bold;
 padding: 10px;
 margin: 10px 10px 20px 10px;
 }
+
+.formulario button:hover{
+    background-color: white;
+    color: rgba(23, 62, 202, 0.8);
+}

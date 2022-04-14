@@ -78,9 +78,13 @@ header nav{
 }
 
 .parte-central{
-    background-color: #D0BBAB;
+    background-color: #FFEED2;
     border: 1px solid rgba(75, 72, 81, 0.2);
     width: 60vw;
+    border-radius: 1rem;
+    padding: 20px;
+    box-shadow: 0px 1px 5px 3px rgba(149, 127, 101, 1);
+    color: #080d4d;
 }
 
 .titulo-uno{
@@ -101,18 +105,34 @@ hr{
 .texto{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    padding: 10px 20px 5px 20px;
+    padding: 25px 20px 5px 20px;
+    width: 100%;
 }
 
-.texto div{
-    flex-grow: 0.15;
-    padding: 0 10px 0 10px;
+.texto input::placeholder {
+    padding-left: 5px;
 }
 
-.este-lleva-linea{
-    border-left: 1px solid rgba(75, 72, 81, 0.2);
+.textoDiv .casillasHome{
+    width:250px;
+}
+
+.fechaYHoraDevolucion{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 25px 20px 5px 20px;
+    width: 100%;
+}
+
+.fechaYHoraDevolucion input{
+    width: 150px;
+}
+.casillasHome{
+    height: 40px;
 }
 
 .texto div input{
@@ -122,6 +142,7 @@ hr{
 
 
 .nuestros-vehiculos{
+    margin-top: 50px;
     padding: 50px 0 20px 0;
     color: #000000;
 }
@@ -138,8 +159,6 @@ hr{
     margin: 10px;
     padding: 10px;
     text-align: center;
-    background-color: rgba(208, 187, 171, 0.39);
-    border: 1px solid #8492A6;
 }
 
 .imagen-van{
@@ -155,6 +174,7 @@ hr{
 }
 
 .nuestras-ubicaciones-populares{
+    margin-top: 50px;
     padding: 50px 0 20px 0;
     color: #000000;
 }
@@ -276,6 +296,13 @@ color: #3f729b;
     100%{
         color: #080d4d;
     }
+}
+
+.msjPosisionAbsoluta{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 40px;
 }
 
 .footerList li:hover a{
