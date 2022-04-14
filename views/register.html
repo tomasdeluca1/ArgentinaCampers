@@ -1,9 +1,3 @@
-
-
-Historias de usuario (requisitos):
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +5,10 @@ Historias de usuario (requisitos):
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/register.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet"> 
+    <script src="https://kit.fontawesome.com/d70d29ff66.js" crossorigin="anonymous"></script>
     <title>Register</title>
 </head>
 <body>
@@ -33,17 +31,32 @@ Historias de usuario (requisitos):
     </nav>
     </header>
 
-    <section></section>
+    <section class="register">
+        <form action="/app.js" method="post" class="formulario">
+            <div class="cajaRegistro">
+            <div>
+                <input type="text" name="txtNombreUsuario" placeholder="Nombre" class="casillaRegistro">
+            </div>
+            <div>
+                <input type="text" name="txtApellidoUsuario" placeholder="Apellido" class="casillaRegistro">
+            </div>
+            <div>
+                <input type="email" name="txtEmailUsuario" placeholder="Correo Electrónico" class="casillaRegistro">
+            </div>
+            <div>
+                <input type="tel" name="numTelefonoUsuario" placeholder="Número telefónico" class="casillaRegistro">
+            </div>
+            <div class="date">
+                <label name="dateNacimientoUsuario">Fecha de nacimiento</label>
+                <input type="date" name="dateNacimientoUsuario" class="fechaRegistro">
+            </div>
+            <button type="submit">Registrarme</button>
+        </div>
+        </form>
+    </section>
 
-    <h1>Página donde el cliente puede registrarse como usuario del sitio.</h1>
-   
-    <h2>Historias de usuario (requisitos):</h2>
-   
- <ul>
-        
-         <li>★ Como cliente quiero poder registrarme para estar en su base de datos y acceder a
-mi perfil e historial de compras de una manera más sencilla y, además, facilitar el
-proceso de futuras compras.</li>
- </ul>
+    <footer>
+
+    </footer>
 </body>
 </html>
