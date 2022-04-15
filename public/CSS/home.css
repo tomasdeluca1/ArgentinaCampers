@@ -88,6 +88,8 @@ margin-right: 5px;
 
 /*Cuerpo*/
 
+
+
 .nav-vehiculos{
     background-color: #957f65;
     color: #FFEED2;
@@ -116,9 +118,29 @@ margin-right: 5px;
     align-items: center;
 }
 
-.home{
+
+.contenedor{
+    position:relative;
+    display: inline-block;
     text-align: center;
-    padding: 100px;
+    width: 100vw;
+  
+}
+
+.imagenCentrada{
+    width: 100%;
+    height: auto;
+}
+
+.textoCentrado{
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: 150px 0px;
+    font-size: 3vw;
+    font-weight: bold;
 }
 
 .parte-central{
@@ -129,6 +151,8 @@ margin-right: 5px;
     padding: 20px;
     box-shadow: 0px 1px 5px 3px rgba(149, 127, 101, 1);
     color: #080d4d;
+    position: relative;
+    bottom: 60px;
 }
 
 .titulo-uno{
@@ -186,8 +210,7 @@ hr{
 
 
 .nuestros-vehiculos{
-    margin-top: 50px;
-    padding: 50px 0 20px 0;
+    padding: 0px 0 50px 0;
     color: #000000;
 }
 

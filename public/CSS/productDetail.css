@@ -8,7 +8,8 @@ background-color: #FFEED2;
     position:relative;
     display: inline-block;
     text-align: center;
-    width: 100%;
+    width: 100vw;
+  
 }
 
 .imagenCentrada{
@@ -23,18 +24,17 @@ background-color: #FFEED2;
     transform: translate(-50%, -50%);
     color: white;
     padding: 150px 0px;
-    font-size: 40px;
+    font-size: 20%;
     font-weight: bold;
 }
 
 .descripcion{
-   position: relative;
-   bottom: 40px;
-    background-color: #FFEED2;
-    padding: 20px 40px 40px 30px;
-    margin: 0px 15%;
-    box-shadow: 0px 1px 5px 3px rgba(149, 127, 101, 0.9);
-    color: #080d4d;
+   
+    border-bottom:groove #FFEED2 2px ;
+    background-color: #957f65;
+    text-align: justify;
+    padding: 30px;
+    color: #FFEED2;
 }
 .descTitular{
 font-size: 20px;
@@ -44,21 +44,22 @@ margin-bottom: 10px;
 
 .productos{
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    margin: 20px 90px 20px 90px;
+    margin: 10px;
+    padding: 30px;
     align-items: center;
 }
 
 .descProductos{
-    width: 30%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .descProductos h4{
-    color: #080d4d;
+    color: #77634c;
     font-size: 20px;
     align-self: flex-start;
     padding-left: 5px;
@@ -66,7 +67,7 @@ margin-bottom: 10px;
 
 .descProductos p{
     text-align: justify;
-    color: #080d4d;
+    color: #77634c;
 }
 
 .productoImg{
@@ -81,7 +82,8 @@ padding: 20px 0px;
     width: 70%;
     border-radius: 40px;
     padding: 5px;
-    margin-top: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .masDetalles:hover{
@@ -101,25 +103,23 @@ padding: 20px 0px;
 }
 
 .cierre{
-    margin: 60px 45px 100px 70px;
+    padding: 0 40px 50px 40px;
+    
 }
 
 .cierre h4{
-    color: #080d4d;
+    color: #77634c;
     font-size: 20px;
-    padding: 5px;
+    margin-bottom: 10px;
 }
 
 .cierre p{
     text-align: justify;
-    color: #080d4d;
-    padding: 5px;
+    color: #77634c;
 }
 
-
-
-@media (min-width: 1200px) {
-    body{
+@media (min-width: 736px) {
+body{
     background-color: #FFEED2;
     }
 
@@ -135,16 +135,7 @@ padding: 20px 0px;
         height: 440px;
     }
     
-    .textoCentrado{
-        position: absolute;
-        top: 48%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-        padding: 150px 0px;
-        font-size: 40px;
-        font-weight: bold;
-    }
+    
     
     .descripcion{
        position: relative;
@@ -153,7 +144,7 @@ padding: 20px 0px;
         padding: 20px 40px 40px 30px;
         margin: 0px 15%;
         box-shadow: 0px 1px 5px 3px rgba(149, 127, 101, 0.9);
-        color: #080d4d;
+        color: #77634c;
     }
     .descTitular{
     font-size: 20px;
@@ -177,7 +168,7 @@ padding: 20px 0px;
     }
     
     .descProductos h4{
-        color: #080d4d;
+        color: #77634c;
         font-size: 20px;
         align-self: flex-start;
         padding-left: 5px;
@@ -185,7 +176,7 @@ padding: 20px 0px;
     
     .descProductos p{
         text-align: justify;
-        color: #080d4d;
+        color: #77634c;
     }
     
     .productoImg{
@@ -224,15 +215,14 @@ padding: 20px 0px;
     }
     
     .cierre h4{
-        color: #080d4d;
+        color: #77634c;
         font-size: 20px;
         padding: 5px;
     }
     
     .cierre p{
         text-align: justify;
-        color: #080d4d;
+        color: #77634c;
         padding: 5px;
     }    
 }
-  
