@@ -7,11 +7,11 @@ background-color:#FFEED2;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
+    font-size: 2vh;
 }
 
 .cajaRegistro{
-    width: 400px;
+    width: 50%;
     padding: 20px 30px;
     margin: 90px;
     border: 2.5px solid #BEA088;;
@@ -26,9 +26,9 @@ background-color:#FFEED2;
 
 
 .casillaRegistro{
-    border: rgba(23, 62, 202, 0.6)  2px solid;
-    width: 320px;
-    height: 60px;
+    border: #BDA48A  2px solid;
+    width: 40vw;
+    height: 6vh;
     border-radius: 2rem;
 padding: 5px;
 margin: 10px;
@@ -36,28 +36,30 @@ margin: 10px;
 
 .casillaRegistro::placeholder{
     padding-left: 15px;
-    font-size: 18px;
-    color: #080d4d;
+    font-size: 1.7vw;
+    color: #957F65;
     }
 
     input[type=date] {
-    height: 50px;
+    height: 6vh;
     margin: 10px  auto;
-    width: 100%;
+    width:35vw;
     font-family: arial, sans-serif;
-    font-size: 16px;
+    font-size: 100%;
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
+    font-size: 1.5vw;
     outline: none;
     border-radius: 3px;
     padding: 0 3px;
-    color: rgba(23, 62, 202, 0.6);
+    color: #957F65;
   }
 
 .date{
 padding: 5px;
 margin: 10px 10px 10px 10px;
+text-align: center;
 
 }
 
@@ -72,7 +74,7 @@ height: 50px;
 padding: 5px;
 margin: 10px;
 border-radius: 2%;
-border: #080d4d 1px solid;
+border: #957F65 2px solid;
 }
 
 .fechaRegistro::placeholder{
@@ -80,11 +82,11 @@ border: #080d4d 1px solid;
     }
 
 .formulario button{
-    width: 280px;
-background-color: rgba(23, 62, 202, 0.8);
+    width: 20vw;
+background-color: #b19675;
 border-radius: 2rem;
 color: white;
-font-size: 22px;
+font-size: 2vw;
 font-weight: bold;
 padding: 10px;
 margin: 10px 10px 20px 10px;
@@ -92,5 +94,5 @@ margin: 10px 10px 20px 10px;
 
 .formulario button:hover{
     background-color: white;
-    color: rgba(23, 62, 202, 0.8);
+    color: #b19675
 }
