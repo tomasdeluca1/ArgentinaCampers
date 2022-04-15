@@ -1,123 +1,93 @@
-/*etiquetassssssssssssssssssssss*/
-body{
-    background-color: bisque;
-}
-label{
-    width:70%;
-    
-    display: block;
-    
-    margin-bottom: 5px;
-    margin-right: auto;
-    margin-left: auto;
-    
-}a{
+/*headerrrrrr*/
+a{
     text-decoration:none;
-    
+    font-family: lato; 
 }a:visited{
-    color:black;
+    color:#BDA48A; 
+}a:hover{
+    color:grey;
 }
-
-
-/*clasesssssssssssssssssssssssss*/
-.logo{
-    width:15vw;
+.lista{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;  
+   
+    width: 80vw;
     height: 10vh;
+    margin-right: 10vw;
+    margin-left: 10vw;
     
-}.divLogo{
-    text-align: center;
-    
+}header{
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 0;
+    margin-left: 0;
+}nav{
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 0;
+    margin-left: 0;
 }
-.articulo{
-    display:  inline-block;
-    width: 60vw;
-    height: 100vh;
-    padding: 0%;
-    margin: 0;
-}.formularioInicio{
-    padding: 0%;
-    margin: 0;
-    width: 30vw;
-    height: 100vh;
-    text-align: center;
+/*body*/
+body{
+    font-family: lato;
+    background: #FFEED2;;
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 0;
+    margin-left: 0;
+    font-size: 1.5 rem;
+    color:#BDA48A;
+}hr{
+    border-color:#BDA48A;
+}
+/*bodyyyyy*/
+.containerTotal{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;
+}.container{
     
+    width: 60%;
+}
+.padreForm{
     position: relative;
-    right:0;
-    top: 10;
-}
-
-
-.inputInicio{
-    width: 70vw;
-    height:4vh;
-}
-.divBoton_input{
-    
-    margin-top: 5px;
-    margin-bottom: 5vh;
-    width: 80%;
-    margin-right: 10%;
-    margin-left: 35%;
-    
-
+    left: 55px;
+    width: 40%;
     
 }
-.boton{
+.formulario{
     
-    margin-right: auto;
-    margin-left:auto;
-    text-decoration: none;
-    width: 70%;
-    height:40%;
+    width: 30vw;
+    height: 60vh;
+    box-shadow: 0px 1px 5px 3px rgba(149, 127, 101, 1);
+    border: 1px solid rgba(75, 72, 81, 0.2);
+    border-radius: 1rem;
+    padding: 20px;
+    color: #BDA48A;
+}.divMenu{
+   
+    text-align: center;
+    padding-bottom:10px;
     
+}label{
     
-}
-
-
-
-/*medias queris chico------------------------------------------------*/
-
-
-@media (max-width: 768px){
+    height: 20px;
+    font-size: 1.5rem;
+}input{
     
-
-    .navGrande{
-        
-        display: none;
-        
-        
-    }.formularioInicio{
-        display: inline-block;
-        text-align: center;
-        align-items: center;
-        
-    }
-    label{
-        font-size: 1.5rem;
-    }.navegacionS{
-        
-        width: 10vw;
-        height: 4vh;
-        margin-right: 45vw;
-        margin-left: 45vw;
-    
-    }.articulo{
-        display:none;
-    }
-}
-/*medias queris grande------------------------------------------------*/
-@media(min-width: 769px){
-    #sliderMenu{
-       display:none;
-       
-    }
-    .boton{
-        height: 30px;
-        width:80%;
-        
-    }.inputInicio{
-        height: 30px;
-        width:80%
-    }
-    
+    height: 1.8rem;
+    width:80%;
+    border-radius: 1rem;
+}button{
+    color: #BDA48A;
+     width: 80%;
+    height: 2rem;
+    border-radius: 1rem;
+    font-family:lato;
+    font-size: 1.2rem;
+}button:hover{
+    color:grey;
 }
