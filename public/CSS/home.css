@@ -54,10 +54,6 @@ header nav{
     color: #FFEED2;
 }
 
-.logoHeader{
-    width: 10px;
-}
-
 .links-header{
     text-decoration: none;
     color: #BDA48A;
@@ -400,6 +396,14 @@ color: #3f729b;
 .footerList li a:hover{
 color: #080d4d;
 }
+
+.footerList2 li a:hover{
+    color: #080d4d;
+    }
+
+    .footerList3 li a:hover{
+        color: #080d4d;
+        }
 
 .footerList li{
     list-style: none;
