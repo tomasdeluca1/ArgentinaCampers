@@ -89,10 +89,24 @@ body{
     border-radius: 1rem;
     font-family:lato;
     font-size: 1.2rem;
+    
 }button:hover{
     color:grey;
 }.usuario{
-    display: none;;
+    display: none;
 }.lore{
     text-align: justify;
+}@media(max-width:769px){
+    .container{
+        display:none;
+    }.formulario{
+        width: 80%;
+        height: 60%;
+    }.padreForm{
+        width:100%;
+        left:10%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        
+    }
 }
