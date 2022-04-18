@@ -15,10 +15,15 @@ header nav{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 20px 20px;
     border: solid 1px #BEA088;
+}
+
+.logoAC{
+    width: 10%;
+    display: none;
 }
 
 .navegadorLinks{
@@ -41,12 +46,26 @@ header nav{
     color: #957F65;
 }
 
-.menu{
-    padding: 10px 13px;
+.carro-header{
+    padding: 10px 10px;
     font-size: 16px;
-    border: #957F65 2px solid;
-    color: #957f65;
-    border-radius: 50%;
+    background-color: #BDA48A;
+    border-radius: 1rem;
+}
+
+.carro-header .links-header{
+    color: #FFEED2;
+}
+
+.menu{
+    padding: 10px 12px;
+    font-size: 17px;
+    background-color: #BDA48A;
+    border-radius: 1rem;
+}
+
+.menu p{
+    color: #FFEED2;
 }
 
 .menu:hover{
@@ -248,6 +267,7 @@ hr{
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
+    margin-bottom: 30px;
 }
 
 .ubicacion{
@@ -430,6 +450,10 @@ color: #080d4d;
         flex-direction: column;
         justify-content: center;
     }
+    
+.logoAC{
+    display: block;
+}
 
     .parte-de-arriba{
         display: flex;
@@ -469,7 +493,7 @@ color: #080d4d;
     }
 }
 
-@media (min-width:752px) {
+@media (min-width:782px) {
    /* Header */
     header nav{
         font-size: 10px;
@@ -479,6 +503,11 @@ color: #080d4d;
    .menu{
        display: none;
    }
+
+   .logoAC{
+    width: 7%;
+}
+
 
     .logo{
         width: 50px;
