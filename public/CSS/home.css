@@ -404,7 +404,7 @@ color: #3f729b;
     border-radius: 50%;
 }
 
-.msjPosisionAbsoluta a{
+.msjPosisionAbsoluta div a{
     list-style: none;
     color: white;
 }
