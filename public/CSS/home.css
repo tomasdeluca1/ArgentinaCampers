@@ -202,6 +202,14 @@ hr{
     width:100%;
 }
 
+.este-lleva-linea{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 .fechaYHoraDevolucion{
     display: flex;
     flex-wrap: wrap;
