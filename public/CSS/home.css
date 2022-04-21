@@ -225,7 +225,7 @@ hr{
 }
 
 .texto div label{
-    margin: 0;
+    margin-bottom: 3px;
 }
 
 .fechaYHoraDevolucion{
