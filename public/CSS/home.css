@@ -198,6 +198,15 @@ hr{
     padding-left: 5px;
 }
 
+.textoDiv{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+        align-items: center;
+    text-align: center;
+}
+
 .textoDiv .casillasHome{
     width:100%;
 }
