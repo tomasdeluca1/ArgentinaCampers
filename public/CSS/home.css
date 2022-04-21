@@ -224,10 +224,6 @@ hr{
     margin-bottom: 5px;
 }
 
-.texto div label{
-    margin-bottom: 5px;
-}
-
 .fechaYHoraDevolucion{
     display: flex;
     flex-wrap: wrap;
