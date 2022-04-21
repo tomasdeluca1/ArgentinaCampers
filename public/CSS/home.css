@@ -213,6 +213,11 @@ hr{
 
 .fechaYHoraDevolucion input{
     width: 150px;
+    border-radius: 5px;
+    border: 1px solid #957f65;
+    background-color: #957f65;
+    color: #ffeed2;
+    text-align: center;
 }
 .casillasHome{
     height: 40px;
