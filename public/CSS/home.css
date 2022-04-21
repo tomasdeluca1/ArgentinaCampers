@@ -402,11 +402,23 @@ color: #3f729b;
     font-size: 35px;
     background-color: #3b5998;
     border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+
+.msj{
+    height: 100%;
+    width: 100%;
 }
 
 .msjPosisionAbsoluta div a i{
     list-style: none;
     color: white;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 40px;
+    padding: 1px;
 }
 
 .footerList li:hover a{
