@@ -220,6 +220,14 @@ hr{
     margin-top: 10px;
 }
 
+.este-lleva-linea label{
+    margin-bottom: 5px;
+}
+
+.texto div label{
+    margin: 0;
+}
+
 .fechaYHoraDevolucion{
     display: flex;
     flex-wrap: wrap;
