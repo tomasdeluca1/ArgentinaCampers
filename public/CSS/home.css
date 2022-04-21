@@ -295,12 +295,15 @@ hr{
     margin-bottom: 30px;
 }
 
+.div-img{
+    margin: 30px;
+}
+
 .ubicacion{
     background-color: rgba(208, 187, 171, 0.39);
     border-radius: 100%;
     width: 266px;
     height: 256px;
-    margin: 30px;
     padding: 30px;
     text-align: center;
 }
