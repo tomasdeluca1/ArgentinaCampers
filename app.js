@@ -3,10 +3,8 @@ const app = express();
 
 app.set('view engine', 'ejs')
 
-const path = require ('path');
-const publicPath = path.resolve(__dirname, "../public");
 
-app.use(express.static(publicPath));
+app.use(express.static('public'));
 
 app.listen(5000, ()=>{
     console.log("Server 5000 running");
