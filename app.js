@@ -6,29 +6,24 @@ app.set('view engine', 'ejs')
 
 app.use(express.static('public'));
 
-app.listen(5000, ()=>{
-    console.log("Server 5000 running");
-});
+
 
 //Rutas
 const main = require ('./routes/main')
 const productDetail = require ('./routes/productDetail')
+const productCart = require ('./routes/productCart')
+const login = require ('./routes/login')
+const register = require ('./routes/register')
 
 app.use('/', main)
 app.use('/', productDetail)
+app.use('/', productCart)
+app.use('/', login)
+app.use('/', register)
 
 
 
 
-app.get('/rental-cart', function(req, res){
-    res.sendFile(path.join(__dirname, './views/productCart.html'));
+app.listen(5000, ()=>{
+    console.log("Server 5000 running");
 });
-
-app.get('/register', function(req, res){
-    res.sendFile(path.join(__dirname, './views/register.html'));
-});
-
-app.get('/login', function(req, res){
-    res.sendFile(path.join(__dirname, './views/login.html'));
-});
-
