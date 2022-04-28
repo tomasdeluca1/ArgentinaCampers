@@ -563,10 +563,15 @@ footer{
 
     .texto{
         padding: 0;
+        margin:0;
     }
 
     .texto div input{
         margin: 0;
+    }
+
+    .este-lleva-linea{
+        margin-bottom: 0;
     }
 
 
