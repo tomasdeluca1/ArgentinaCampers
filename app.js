@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 
+app.set('view engine', 'ejs')
+
 const path = require ('path');
 const publicPath = path.resolve(__dirname, "../public");
 
@@ -10,9 +12,11 @@ app.listen(5000, ()=>{
     console.log("Server 5000 running");
 });
 
-app.get('/home', function(req, res){
-    res.sendFile(path.join(__dirname, './views/index.html'));
-});
+//Rutas
+const main = require ('./routes/main')
+
+app.use('/', main)
+
 
 app.get('/product-detail', function(req, res){
     res.sendFile(path.join(__dirname, './views/productDetail.html'));
