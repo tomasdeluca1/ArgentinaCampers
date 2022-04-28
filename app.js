@@ -12,13 +12,13 @@ app.listen(5000, ()=>{
 
 //Rutas
 const main = require ('./routes/main')
+const productDetail = require ('./routes/productDetail')
 
 app.use('/', main)
+app.use('/', productDetail)
 
 
-app.get('/product-detail', function(req, res){
-    res.sendFile(path.join(__dirname, './views/productDetail.html'));
-});
+
 
 app.get('/rental-cart', function(req, res){
     res.sendFile(path.join(__dirname, './views/productCart.html'));
