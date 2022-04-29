@@ -114,6 +114,14 @@ margin-right: 5px;
     border-color: #957F65;
 }
 
+
+.usuario div{
+    transform: all 200ms;
+}
+
+.usuario div:hover{
+    color: #957F65;
+}
 /*Cuerpo*/
 
 
