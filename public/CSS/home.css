@@ -648,6 +648,10 @@ footer{
 
 @media (min-width: 481px) and (max-width: 768px){
 
+    .iniciar-sesion{
+        width: 29%;
+    }
+
     /* Body */
 
     .parte-central{
@@ -787,6 +791,7 @@ footer{
     .iniciar-sesion{
         display: flex;
         flex-direction: column;
+        width: 10%;
     }
 
     .usuario{
