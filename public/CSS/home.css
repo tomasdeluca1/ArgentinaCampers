@@ -870,6 +870,7 @@ footer{
     .iniciar-sesion{
         display: flex;
         flex-direction: column;
+        width: 10%;
     }
 
     .usuario{
