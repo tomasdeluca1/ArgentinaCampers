@@ -834,7 +834,7 @@ footer{
  
     .links-header:hover{
         color: #957F65;
-        font-size: 24px;
+        /* font-size: 24px; */
     }
  
     .iniciar-sesion{
