@@ -102,11 +102,15 @@ margin-right: 5px;
 }
 
 .iniciar-sesion{
-    width: 8%;
+    width: 8%;  
+}
+
+.usuario{
     transition: all 200ms;
 }
 
-.iniciar-sesion:hover{
+.usuario:hover{
+    color: #957F65;
     border-color: #957F65;
 }
 
