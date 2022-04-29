@@ -86,7 +86,7 @@ header nav{
 .usuario{
     border: 2px solid #BEA088;
     padding: 5px 5px ;
-    margin: 4px 0 4px 5px;
+    
     margin-bottom: 4px;
     border-radius: 1rem;
     width: 100%;
@@ -844,7 +844,7 @@ footer{
 
     .usuario{
         border: 2px solid #BEA088;
-        padding: 2% ;
+        padding: 5px ;
         margin-bottom: 2%;
         border-radius: 1rem;
     }
