@@ -10,9 +10,15 @@ app.use(express.static('public'));
 
 //Rutas
 const main = require ('./routes/main')
+const productCart = require ('./routes/productCart')
+const products= require ('./routes/products')
+const users = require ('./routes/users')
 
 
 app.use('/', main)
+app.use('/', productCart)
+app.use('/', products)
+app.use('/', users)
 
 
 
