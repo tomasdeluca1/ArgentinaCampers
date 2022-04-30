@@ -30,8 +30,8 @@ background-color:#FFEED2;
     width: 40vw;
     height: 6vh;
     border-radius: 2rem;
-padding: 5px;
-margin: 10px;
+    padding: 20px 15px;
+    margin: 10px;
 }
 
 .casillaRegistro::placeholder{
@@ -98,7 +98,7 @@ margin: 10px 10px 20px 10px;
 }
 
 .link-inicio-sesion{
-    margin: 10px 0;
+    margin: 15px 0;
 }
 
 .link-inicio-sesion a{
@@ -113,6 +113,44 @@ margin: 10px 10px 20px 10px;
 }
 
 @media (min-width: 0px) and (max-width: 400px){
+    .register{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center
+    }
+    .formulario{
+        margin: 20px;
+        
+    }
+    .cajaRegistro{
+        width: 100%;
+        margin: 0;
+    }
+    .inputs-registro{
+        width: 100%;
+    }
+    .casillaRegistro{
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .date{
+        margin: 5px 0 0 0;
+        padding: 5px 5px 0 5px;
+    }
+
+    .date input{
+        width: 100%;
+        margin: 10px 0 0 0;
+    }
+
+    .inputs-registro button{
+        width: 100%;
+        margin: 0;
+    }
+
+
     .link-inicio-sesion a{
         font-size: 10px;
     }
