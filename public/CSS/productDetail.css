@@ -207,8 +207,8 @@ body{
     }
 
     .productoImg{
-    width: 90%;
-    padding: 20px 0px;
+        width: 90%;
+        padding: 20px 0px;
     }
     .masDetalles{
         text-align: center;
@@ -254,3 +254,11 @@ body{
     }    
 
 }
+
+@media (min-width: 1200px){
+    .productoImg{
+        height: 215px;
+    }
+}
+
+
