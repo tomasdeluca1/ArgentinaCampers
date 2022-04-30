@@ -96,3 +96,26 @@ margin: 10px 10px 20px 10px;
     background-color: white;
     color: #b19675
 }
+
+.link-inicio-sesion{
+    margin: 10px 0;
+}
+
+.link-inicio-sesion a{
+    text-decoration: none;
+    color: #BDA48A;
+    font-size: 20px;
+    transition: all 200ms;
+}
+
+.link-inicio-sesion a:hover{
+    color: #957f65;
+}
+
+@media (min-width: 0px) and (max-width: 400px){
+    .link-inicio-sesion a{
+        font-size: 10px;
+    }
+}
+
+
