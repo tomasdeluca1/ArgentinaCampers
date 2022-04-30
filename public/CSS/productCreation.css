@@ -46,6 +46,22 @@
 }
 
 
+.cambiar-a-creacion-de-producto{
+    width: auto;
+}
+
+.cambiar-a-creacion-de-producto a{
+    color: #957f65;
+    text-decoration: none;
+    transition: all 100ms;
+}
+
+.cambiar-a-creacion-de-producto a:hover{
+    cursor: pointer;
+    color: #4d3319;
+}
+
+
 .botones-submit-delete button{
     width: 80%;
     text-align: center;
