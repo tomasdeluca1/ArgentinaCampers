@@ -54,6 +54,7 @@ margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 20px 0 40px 0;
 }
 
 .descProductos h4{
@@ -80,8 +81,7 @@ padding: 20px 0px;
     width: 70%;
     border-radius: 40px;
     padding: 5px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 20px;
 }
 
 .masDetalles:hover{
