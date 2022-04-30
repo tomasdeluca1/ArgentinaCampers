@@ -1,0 +1,43 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+
+
+
+.formulario-de-creacion-de-producto{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #957f65;
+    border-radius: 10px;
+    margin: 50px 0;
+    padding: 20px;
+    width: 30%;
+}
+
+.formulario-para-el-producto{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    width: 90%;
+    text-align: center;
+}
+
+.formulario-para-el-producto label{
+    margin: 15px 0;
+}
+
+.formulario-para-el-producto input{
+    width: 80%;
+    text-align: center;
+}
+

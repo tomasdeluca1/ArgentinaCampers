@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %> 
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/productCreation.css">
+    <title>Crear producto</title>
+</head>
+<body>
+    <!-- Header -->
+    <%- include('./partials/header') %> 
+
+    <section class="nav-vehiculos">
+        <article>
+            <h3><a href="home">Home</a> / <a href="rental-cart">Creacion del producto</a></h3>
+        </article>
+    </section>
+
+    <!-- Cuerpo -->
+    <section class="cuerpo">
+        <form action="" method="get" class="formulario-de-creacion-de-producto">
+            <div class="formulario-para-el-producto nombre-del-producto-a-crear">
+                <label for="nombre-del-producto">Nombre del producto</label>
+                <input type="text" name="nombre-del-producto" id="nombre-del-producto">
+            </div>
+            <div class="formulario-para-el-producto imagen-del-producto-a-crear">
+                <label for="imagen-del-producto">Inserte la imagen que quiera usar</label>
+                <input type="file" name="imagen-del-producto" id="imagen-del-producto-a-crear">
+            </div>
+            <div class="formulario-para-el-producto descripcion-del-producto-a-crear">
+                <label for="descripcion-del-producto">Descripcion del producto</label>
+                <textarea name="descripcion-del-producto" id="descripcion-del-producto" cols="30" rows="10"></textarea>
+            </div>
+            <div class="formulario-para-el-producto precio-del-producto-a-crear">
+                <label for="precio-del-producto">Precio del producto</label>
+                <input type="number" name="precio-del-producto" id="precio-del-producto">
+            </div>
+        </form>
+    </section>
+
+
+    <!-- Footer -->
+
+    <%- include('./partials/footer') %>
+</body>
+</html>
