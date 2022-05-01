@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/productCreation.css">
+    <title>Editar producto</title>
+</head>
+<body>
+    <!-- Header -->
+    <%- include('./partials/header') %>
+
+    <section class="nav-vehiculos">
+        <article>
+            <h3><a href="home">Home</a> / <a href="productEditation">Edicion del producto</a></h3>
+        </article>
+    </section>
+
+    <!-- Cuerpo -->
+    <section class="cuerpo">
+        <form action="" method="get" class="formulario-de-creacion-de-producto">
+            <div class="formulario-para-el-producto nombre-del-producto-a-editar">
+                <label for="nombre-del-producto">Nombre del producto que desea editar</label>
+                <input type="text" name="nombre-del-producto" id="nombre-del-producto" required>
+            </div>
+            <div class="formulario-para-el-producto nuevo-nombre-del-producto-a-crear">
+                <label for="nuevo-nombre-del-producto">Cambiar nombre del producto</label>
+                <input type="text" name="nuevo-nombre-del-producto" id="nuevo-nombre-del-producto" required>
+            </div>
+            <div class="formulario-para-el-producto imagen-del-producto-a-crear">
+                <label for="imagen-del-producto">Cambiar la imagen del producto</label>
+                <input type="file" name="imagen-del-producto" id="imagen-del-producto-a-crear" accept=".jpg, .png">
+            </div>
+            <div class="formulario-para-el-producto descripcion-del-producto-a-crear">
+                <label for="descripcion-del-producto">Cambiar la descripcion del producto</label>
+                <textarea class="text-area" name="descripcion-del-producto" id="descripcion-del-producto" cols="30" rows="10" required></textarea>
+            </div>
+            <div class="formulario-para-el-producto precio-del-producto-a-crear">
+                <label for="precio-del-producto">Cambiar el precio del producto</label>
+                <input type="number" name="precio-del-producto" id="precio-del-producto" min="0" required>
+            </div>
+            <div class="formulario-para-el-producto cambiar-a-creacion-de-producto">
+                <a href="productCreation">Quieres crear un producto? Click aqui</a>
+            </div>
+            <div class="formulario-para-el-producto botones-submit-delete">
+                <button type="submit">Enviar</button>
+                <button type="delete">Borrar todo</button>
+            </div>
+        </form>
+    </section>
+
+
+    <!-- Footer -->
+
+    <%- include('./partials/footer') %>
+</body>
+</html>

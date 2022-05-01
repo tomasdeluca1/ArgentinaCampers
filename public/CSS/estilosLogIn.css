@@ -46,10 +46,14 @@ body{
     width: 50%;
 }
 .padreForm{
-    position: relative;
+    /* position: relative; */
     left: 55px;
     width: 40%;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .formulario{
     display: flex;
@@ -105,9 +109,7 @@ body{
     background-color: #FFEED2;
 }
 
-.usuario{
-    display: none;
-}.lore{
+.lore{
     text-align: center;
     padding: 10px;
     margin:50px;
