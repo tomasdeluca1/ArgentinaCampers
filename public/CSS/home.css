@@ -86,7 +86,7 @@ header nav{
 .usuario{
     border: 2px solid #BEA088;
     padding: 5px 5px ;
-    margin: 4px 0 4px 5px;
+    
     margin-bottom: 4px;
     border-radius: 1rem;
     width: 100%;
@@ -101,6 +101,27 @@ header nav{
 margin-right: 5px;
 }
 
+.iniciar-sesion{
+    width: 8%;  
+}
+
+.usuario{
+    transition: all 200ms;
+}
+
+.usuario:hover{
+    color: #957F65;
+    border-color: #957F65;
+}
+
+
+.usuario div{
+    transform: all 200ms;
+}
+
+.usuario div:hover{
+    color: #957F65;
+}
 /*Cuerpo*/
 
 
@@ -308,126 +329,12 @@ hr{
     text-align: center;
 }
 
-/* Footer */
-
-.footerGroup{
-
-background-color: #957f65;
-font-size: 18px;
-}
-
-.footerContent{
-display:flex;
-flex-direction: row;
-justify-content: space-around;
-align-items:flex-start;
-padding: 30px 30px 30px 30px;
-
-}
-
-.contactUs{
-    padding: 25px 5px;
-    position:relative;
-}
-
-.footerList{
-    display: none;
-padding-top: 50px;
-    height: 200px;
-}
-
-.footerList2{
-    display: none;
-    padding-top: 50px;
-        height: auto;
-    }
-
-    .footerList3{
-        display: none;
-        padding-top: 50px;
-            height: auto;
-        }
-
-.iconosFooter{
-    font-size: 35px;
-    margin-right: 10px;
-}
-
-.logoFooter{
-    position: absolute;
-    top:0;
-    left: 10px;
-    width: 80px;
-}
-
-.footerMail{
-display: flex;
-padding: 5px;
-justify-content: flex-start;
-color: #FFEED2;
-margin-top: 80px;
-margin-bottom: 10px;
-}
-.footerTel{
-    display: flex;
-    padding: 5px;
-    justify-content: flex-start;
-    color: #FFEED2;
-    margin-bottom: 10px;
-}
-.footerRedes{
-display: flex;
-flex-direction: column;
-padding: 5px;
-justify-content: flex-start;
-color: #FFEED2;
-margin-bottom: 10px;
-}
-
-.nuestrasRedes a{
-   color: #FFEED2;
-   font-size: 34px;
-   margin-right: 5px;
-}
-
-.fb:hover a{
-color: #3b5998 ;
-}
-
-.ig:hover a{
-color: #3f729b;
-}
-.yt:hover a{
-    color: #c4302b;
-}
-
-.footerList h4{
-    margin-bottom: 50px;
-    font-weight: bold;
-    color: #FFEED2;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.footerList li a{
-    text-decoration: none;
-    color: #FFEED2;
-}
-
-@keyframes color{
-    0%{
-        color: #FFEED2;
-    }
-    100%{
-        color: #080d4d;
-    }
-}
-
 .msjPosisionAbsoluta{
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 10px;
+    right: 10px;
+    font-size: 40px;
     padding: 20px;
-    font-size: 35px;
     background-color: #3b5998;
     border-radius: 50%;
     width: 80px;
@@ -451,38 +358,189 @@ color: #3f729b;
     padding: 1px;
 }
 
-.footerList li:hover a{
-  animation: color 100ms 1 ;
+
+/* Footer */
+
+
+footer{
+    background-color: #957f65;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
 }
 
-.footerList li a:hover{
-color: #080d4d;
+.footerContent {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items:flex-start;
+    padding: 30px 30px 30px 30px;
 }
 
-.footerList2 li a:hover{
-    color: #080d4d;
-    }
+.contactUs{
+    padding: 25px 5px;
+    position:relative;
+}
 
-    .footerList3 li a:hover{
-        color: #080d4d;
-        }
+.logoFooter{
+    position: relative;
+    width: 80px;
+}
+
+
+.footerMailTel{
+    display: flex;
+    justify-content: flex-start;
+    color: #FFEED2;
+    margin: 15px 0;     
+    padding: 5px;
+}
+
+
+.iconosFooter{
+    font-size: 35px;
+    margin-right: 10px;
+}
+
+.ContenidoContacto{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+
+.footerRedes{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    color: #FFEED2;
+    margin: 25px 0;     
+    padding: 5px;
+}
+
+.seguinos{
+    width: 100%;
+}
+
+
+.nuestrasRedes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin: 5px 0;
+}
+
+.nuestrasRedes div a i{
+    color: #FFEED2;
+    font-size: 34px;
+}
+
+.fb{
+    margin-right: 5px;
+};
+
+.ig{
+    margin: 0px 5px;
+}
+
+.yt{
+    margin-left: 5px;
+}
+
+.fb i{
+    transition: all 200ms;
+}
+
+.ig i{
+    transition: all 200ms;
+}
+
+.yt i{
+    transition: all 200ms;
+}
+ 
+.fb:hover i{
+    color: #3b5998 ;
+}
+ 
+.ig:hover i{
+    color: #3f729b;
+}
+
+.yt:hover i{
+    color: #c4302b;
+}
+
+
+.footerList1{
+    padding: 25px 5px;
+    position: relative;
+}
+
+
+.footerList2{
+    padding: 25px 5px;
+    position: relative;
+}
+
+
+.footerList3{
+    padding: 25px 5px;
+    position: relative;
+}
+
+.footerList h4{
+    margin-bottom: 50px;
+    font-weight: bold;
+    color: #FFEED2;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 
 .footerList li{
     list-style: none;
     line-height: 32px;
+}
 
+.footerList li a{
+    text-decoration: none;
+    color: #FFEED2;
 }
 
 
+.footerList li a{
+    transition: all 200ms;
+}
+
+.footerList li a:hover{
+    color: #080d4d;
+}
 
 
+@keyframes color{
+    0%{
+        color: #FFEED2;
+    }
+    100%{
+        color: #080d4d;
+    }
+}
 
 
-@media (min-width: 546px) {
-    .footerList{
-        display: block;
-    padding-top: 50px;
-        height: 200px;
+@media (min-width: 0) and (max-width: 480px){
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+
+    }
+
+    .iniciar-sesion{
+        width: 35%;
     }
 
     /* Body */
@@ -493,9 +551,118 @@ color: #080d4d;
         justify-content: center;
     }
     
-.logoAC{
-    display: block;
+    .logoAC{
+        display: block;
+    }
+
+    .parte-de-arriba{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .titulo-uno{
+        text-align: center;
+        padding: 0;
+    }
+
+    .titulo-dos{
+        text-align: center;
+        padding: 0;
+    }
+
+    .parte-de-abajo{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    
+
+    .texto{
+        padding: 0;
+    }
+
+    .texto div input{
+        margin: 0;
+    }
+
+
+
+    .vehiculo{
+        width: 90vw;
+    }
+
+    .imagen-van{
+        width: 100%;
+        height: 50%;
+    }
+
+    .nuestras-ubicaciones-populares h2 {
+        text-align: center;
+    }
+
+    .footerContent{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+    }
+    .contactUs{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+        font-size: 16px;
+    }
+    .footerList{
+        display: none;
+    }
+    .iconosFooter {
+        font-size: 30px;
+    }
+
+    .nuestrasRedes div{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .nuestrasRedes div a i{
+        font-size: 30px;
+    }
 }
+
+
+
+
+
+
+@media (min-width: 481px) and (max-width: 768px){
+
+    .iniciar-sesion{
+        width: 29%;
+    }
+
+    /* Body */
+
+    .parte-central{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .logoAC{
+        display: block;
+    }
 
     .parte-de-arriba{
         display: flex;
@@ -533,262 +700,212 @@ color: #080d4d;
     .texto div input{
         margin: 0;
     }
-}
 
-@media (min-width:782px) {
-   /* Header */
-    header nav{
-        font-size: 10px;
-    }
+    /* Footer */
 
-
-   .menu{
-       display: none;
-   }
-
-   .logoAC{
-    width: 4rem;
-}
-
-
-    .logo{
-        width: 50px;
-        height: 50px;
-    }
-    .links-header-nav{
-        display: block
-    }
-    .links-header{
-        text-decoration: none;
-        color: #BDA48A;
-    }
-
-    .links-header:hover{
-        color: #957F65;
-    }
-
-
-    .iniciar-sesion{
-        display: flex;
-        flex-direction: column;
-    }
-    .usuario{
-        border: 2px solid #BEA088;
-        padding: 2% ;
-        margin-bottom: 2%;
-        border-radius: 1rem;
-    }
-
-    
-
-/* Footer */
-
-.footerGroup{
-
-    background-color: #957f65;
-    font-size: 18px;
-    }
-
-    .footerContent{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items:flex-start;
-    padding: 30px 30px 30px 30px;
-
+    .footerList{
+        display: none;
     }
 
     .contactUs{
-        padding: 25px 5px;
-        position:relative;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
-
-
-
-    .footerMail{
-    display: flex;
-    padding: 5px;
-    justify-content: flex-start;
-    color: #FFEED2;
-    margin-top: 80px;
-    margin-bottom: 10px;
+    .contactUs div{
+        text-align: center;
     }
-    .footerTel{
+
+    .footerMailTel{
         display: flex;
-        padding: 5px;
-        justify-content: flex-start;
-        color: #FFEED2;
-        margin-bottom: 10px;
-    }
-    .footerRedes{
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-    justify-content: flex-start;
-    color: #FFEED2;
-    margin-bottom: 10px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }  
+
+    .iconosFooter{
+        margin: 0;
+        padding: 0;
     }
 
-    .nuestrasRedes a{
-       color: #FFEED2;
-       font-size: 34px;
-       margin-right: 5px;
+    .ContenidoContacto{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
     }
 
-    .fb:hover a{
-    color: #3b5998 ;
+    .nuestrasRedes{
+        width: auto;
     }
 
-    .ig:hover a{
-    color: #3f729b;
-    }
-    .yt:hover a{
-        color: #c4302b;
-    }
-
-    .footerList2 h4{
-        margin-bottom: 50px;
-        font-weight: bold;
-        color: #FFEED2;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
-    .footerList3 h4{
-        margin-bottom: 50px;
-        font-weight: bold;
-        color: #FFEED2;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    .nuestrasRedes div{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
     }
 
-    .footerList2 li{
-        list-style: none;
-        line-height: 32px;
-
-    }
-
-    .footerList3 li{
-        list-style: none;
-        line-height: 32px;
-
-    }
-
-    .footerList2 li a{
-        text-decoration: none;
-        color: #FFEED2;
-    }
-
-    .footerList3 li a{
-        text-decoration: none;
-        color: #FFEED2;
-    }
-
-
-        .footerList3{
-            display: block;
-            padding-top: 50px;
-                height: auto;
-            }
-
-    @keyframes color{
-        0%{
-            color: #FFEED2;
-        }
-        100%{
-            color: #080d4d;
-        }
-    }
-
-    .msjPosisionAbsoluta{
-        position: fixed;
-        bottom: 10px;
-        right: 10px;
-        font-size: 40px;
-    }
-
-    .footerList li:hover a{
-      animation: color 100ms 1 ;
-    }
-
-    .footerList li a:hover{
-    color: #080d4d;
-    }
-
-    .footerList li{
-        list-style: none;
-        line-height: 32px;
-
-    }
-/* End footer */
 }
 
 
-@media (min-width:946px) {
+
+
+@media (min-width:769px) and (max-width:1279px) {
+    /* Header */
     header nav{
         font-size: 12px;
     }
 
-    header nav a h2{
-        display: block;
+    .menu{
+        display: none;
     }
-
-
+ 
+    .logoAC{
+        display: block;
+        width: 4rem;
+    }
+ 
     .logo{
         width: 50px;
         height: 50px;
     }
-
+     
     .links-header-nav{
-     font-size: 12px;
+        display: block
     }
-
-
+    
+    .links-header{
+        text-decoration: none;
+        color: #BDA48A;
+    }
+ 
+    .links-header:hover{
+        color: #957F65;
+    }
+ 
     .iniciar-sesion{
         display: flex;
         flex-direction: column;
+        width: 10%;
     }
+
     .usuario{
         border: 2px solid #BEA088;
         padding: 2% ;
         margin-bottom: 2%;
         border-radius: 1rem;
     }
+ 
+     
 
+ /* Footer */
 
+    .footerContent{
+        padding: 15px 30px;
+    }   
+
+    .footerList2{
+        display: none;
+    }
+
+    .nuestrasRedes div {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footerList{
+        padding: 50px 5px;
+    }
+
+    
+   
+ /* End footer */
 }
-
-
-@media (min-width:1200px) {
+ 
+ 
+ 
+ 
+@media (min-width: 1280px){
     header nav{
-
         font-size: 14px;
-
     }
 
-    header nav h2{
+    .menu{
+        display: none;
+    }
+ 
+    .logoAC{
         display: block;
+        width: 4rem;
     }
-
+ 
     .logo{
         width: 50px;
         height: 50px;
     }
-
-    .links-header-nav{font-size: 14px;
+     
+    .links-header-nav{
+        display: block;
+        font-size: 14px;
     }
-
+    
+    .links-header{
+        text-decoration: none;
+        color: #BDA48A;
+    }
+ 
     .links-header:hover{
         color: #957F65;
+        /* font-size: 24px; */
     }
-
-
+ 
     .iniciar-sesion{
-        padding: 5px 10px;
-        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 10%;
     }
 
-    .footerList2{
-        display: block;
-        padding-top: 50px;
-            height: auto;
-        }
+    .usuario{
+        border: 2px solid #BEA088;
+        padding: 5px ;
+        margin-bottom: 2%;
+        border-radius: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+   
+
+
+    /* Footer */
+
+    .footerContent{
+        padding: 15px 30px;
+    }
+
+    .nuestrasRedes div {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footerList{
+        padding: 50px 5px;
+    }
+
+
 }
+
+ 
+ 

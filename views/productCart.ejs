@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <%- include('./partials/head') %> 
+    <title>Carrito</title>
+    <link rel="stylesheet" href="./css/productCart.css">
+    <link rel="stylesheet" href="./css/home.css">
+
+</head>
+<body>
+    <!-- Header -->
+
+
+    <%- include('./partials/header') %> 
+
+
+    <section class="nav-vehiculos">
+        <article>
+            <h3><a href="home">Home</a> / <a href="rental-cart">Carrito</a></h3>
+        </article>
+    </section>
+
+
+    <section class="container">
+        <div class="text-carrito">
+            <h1>Carrito</h1>
+        </div>
+        <div class="carrito">
+            <div class="container-vans">
+                <div class="van">
+                    <div class="imagenes">
+                        <a href=""><img src="./images/kangoo.png" alt="Kangoo" class="imagen"></a>
+                    </div>
+                    <div class="detalles">
+                        <p class="numero-de-van">CamperVan n°1</p>
+                        <p class="tiempo-de-alquiler">Alquiler por 5 dias</p>
+                    </div>
+                    <div class="precios">
+                        <p class="precio">$15000</p>
+                    </div>
+                </div>
+            </div>
+            <div class="resumen-de-la-compra">
+                <div class="total">
+                    <p>Total</p>
+                </div>
+                <div class="precio-del-resumen">
+                    <p>$15000</p>
+                </div>
+                <div class="buttons-resumen">
+                    <div class="boton-seguir-comprando">
+                        <a href="product-detail"><button>Seguir comprando</button></a>
+                    </div>
+                    <div class="boton-resumen">
+                        <button type="submit">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+        <!-- Mensaje Posicion absoluta -->
+
+        <%- include('./partials/msjPosicionAbsoluta') %> 
+        
+    </section>
+
+
+
+    <!-- Footer -->
+    <%- include('./partials/footer') %> 
+</body>
+</html>

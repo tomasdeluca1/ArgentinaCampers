@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <%- include('./partials/head') %> 
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="./css/estilosLogIn.css">
+    <link rel="stylesheet" href="./css/home.css">
+
+</head>
+<body>
+    <!--Header-->
+    <%- include('./partials/header') %> 
+
+    <section class="nav-vehiculos">
+        <article>
+            <h3><a href="home">Home</a> / <a href="login">Iniciar sesión</a></h3>
+        </article>
+    </section>
+
+
+    <!--CUERPO DEL CODIGO-->
+<div class="containerTotal">
+    <div class="container">
+
+            <p class="lore">Somos una empresa que distintos opciones de vehículos para viajar por la Argentina y redescubrirse, permitiendo explorar distintos lugares sin la necesidad de buscar hoteles y formas de viajar. Esto abarataría tanto costos como formas de viaje, fusionándolos para darle a nuestros clientes una experiencia única de poder tener su alojamiento en donde quiera.
+            </p>
+
+    </div>
+
+
+    <div class="padreForm">
+        <form class="formulario" action="" method="post">
+
+        <!--FALTA AGREGAR
+        ***LINK A OLVIDO CONTRASEÑA
+        ***-->
+
+            <div class="divMenu">
+                <label for="nombreUsuario">Nombre de usuario</label><br>
+                <input type="text" name="nombreUsuario"placeholder="  Ingrese nombre de usuario:">
+            </div><br>
+            <div class="divMenu">
+                <label for="contrasena">Contraseña</label><br>
+                <input type="password" name="contrasena"placeholder="  Ingrese contraseña:">
+            </div><br>
+            <div class="divMenu">
+                <button type="submit" name="inicioSesion">Iniciar sesión</button>
+            </div><br>
+            <div class="divMenu">
+                <a href="" class="olvidaste">Olvidaste la contraseña</a>
+            </div><br>
+            <div class="divMenu">
+                <button type="button" ><a href="login.html">Crear cuenta</a></button>
+            </div>
+
+
+
+
+
+        </form>
+    </div>
+</div>
+
+    <!--FOOTER-->
+    <%- include('./partials/footer') %> 
+</body>
+</html>

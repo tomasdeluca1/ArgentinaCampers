@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <%- include('./partials/head') %> 
+    <title>Register</title>
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/register.css">
+    
+</head>
+<body>
+    <!-- Header -->
+
+    <%- include('./partials/header') %> 
+
+    <section class="nav-vehiculos">
+        <article>
+            <h3><a href="home">Home</a> / <a href="/register">Register</a></h3>
+        </article>
+    </section>
+    <section class="register">
+        <form action="/app.js" method="post" class="formulario">
+            <div class="cajaRegistro">
+            <div>
+                <input type="text" name="txtNombreUsuario" placeholder="Nombre" class="casillaRegistro">
+            </div>
+            <div>
+                <input type="text" name="txtApellidoUsuario" placeholder="Apellido" class="casillaRegistro">
+            </div>
+            <div>
+                <input type="email" name="txtEmailUsuario" placeholder="Correo Electrónico" class="casillaRegistro">
+            </div>
+            <div>
+                <input type="tel" name="numTelefonoUsuario" placeholder="Número telefónico" class="casillaRegistro">
+            </div>
+            <div class="date">
+                <label name="dateNacimientoUsuario">Fecha de nacimiento</label>
+                <input type="date" name="dateNacimientoUsuario" class="fechaRegistro">
+            </div>
+            <button type="submit">Registrarme</button>
+        </div>
+        </form>
+    </section>
+
+   
+    <!-- Footer -->
+    
+    <%- include('./partials/footer') %> 
+</body>
+</html>
