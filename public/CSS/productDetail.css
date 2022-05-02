@@ -129,7 +129,7 @@ padding: 20px 0px;
 
 
 
-@media (min-width: 0px) and (max-width: 751px){
+@media (min-width: 345px) and (max-width: 749px){
     .productos{
         margin: 0;
     }
@@ -147,6 +147,7 @@ padding: 20px 0px;
     }
 
 }
+
 
 @media (min-width: 750px) and (max-width: 1350px){ 
     .productos{
