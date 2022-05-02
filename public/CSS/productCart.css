@@ -5,11 +5,11 @@ body{
 
 .container{
     width: 100%;
-padding-right: 15px;
-padding-left: 15px;
-margin-right: auto;
-margin-left: auto;
-background-color: #FFEED2;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #FFEED2;
 }
 .nav-vehiculos{
     background-color: #957f65;
@@ -206,7 +206,6 @@ background-color: #FFEED2;
 
 
 .boton-resumen button{
-    box-shadow: 0px 1px 5px 3px rgba(149, 127, 101, 0.2);
     border: 2px solid #957f65;
     border-radius: 1.5rem;
     background-color: #FFEED2;
@@ -222,8 +221,94 @@ background-color: #FFEED2;
 
 
 
-@media (min-width: 530px){
 
+
+@media (min-width: 0px) and (max-width: 480px){
+
+    .carrito{
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+   .container-vans{
+        width: 80%;
+        margin: 30px 0;
+    }
+
+   .van{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+   .detalles{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: static;
+        margin: 10px 0;
+    }
+
+    .resumen-de-la-compra{
+        width: 80%;
+        margin: 30px 0;
+    }
+
+
+
+    .imagenes{
+        margin-bottom: 10px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .flexCart{
+        margin-bottom: 15px;
+        text-align: center;
+        width: 95%;
+    }
+
+    .flexCart label{
+        width: 100%;
+    }
+
+    .flexCart select{
+        width: 100%;
+    }
+
+    
+
+
+
+
+
+
+    .total{
+        margin: 30px 10px;
+    }
+
+    .total p{
+        font-size: 35px;
+        margin: 0;
+    }
+
+    .precio-del-resumen{
+        margin: 30px 10px;
+    }
+
+    .precio-del-resumen p{
+        font-size: 25px;
+        margin: 0;
+    }
+    
+}
+
+@media (min-width: 481px) and (max-width: 768px){
     .carrito{
         flex-direction: column;
         flex-wrap: wrap;
@@ -247,7 +332,7 @@ background-color: #FFEED2;
 
    .detalles{
         display: flex;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         justify-content: flex-start;
         font-size:16px;
         margin: 10px 0;
@@ -257,9 +342,19 @@ background-color: #FFEED2;
         width: 80%;
         margin: 30px 0;
     }
+    .flexCart{
+        margin-bottom: 15px;
+    }
+
+    .imagenes{
+        margin-bottom: 10px;
+    }
+
 }
 
-@media (min-width: 768px){
+
+
+@media (min-width:769px) and (max-width:1279px){
     .carrito{
         margin: 30px 0;
         justify-content: space-between;
@@ -292,9 +387,46 @@ background-color: #FFEED2;
         position: static;
         margin: 10px 0;
     }
+
+    .container-vans{
+        margin-left: 20px;
+    }
+
+    .resumen-de-la-compra{
+        margin-right: 20px;
+    }
+
+    .imagenes{
+        margin-bottom: 10px;
+    }
+    .flexCart{
+        margin-bottom: 10px;
+    }
+
+
+    .total{
+        text-align: center;
+        margin: 30px 0;
+    }
+
+    .total p{
+        margin: 0;
+    }
+
+    .precio-del-resumen{
+        text-align: center;
+        margin: 50px 0;
+    }
+
+    .precio-del-resumen p{
+        margin: 0;
+    }
 }
 
-@media (min-width:1200px){
+
+
+
+@media (min-width: 1280px){
     .carrito{
         margin: 40px 0 90px 0px;
         display: flex;
@@ -313,7 +445,7 @@ background-color: #FFEED2;
         margin: 0;
     }
 
-    .van{
+    .van-parte-seleccionar{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -323,64 +455,26 @@ background-color: #FFEED2;
       
     }
 
-
-
-
-
-
+    .van-parte-compra{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+    }
     .imagenes{
         margin: 0;
         padding: 0;
-    }
-}
-/* 
-
-@media (min-width: 1280px){
-    .carrito{
-        margin: 30px 0;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-        padding: 0 50px;
     }
 
     .container-vans{
-        width: 60%;
-        margin: 0;
+        margin-left: 20px;
     }
 
     .resumen-de-la-compra{
-        width: 30%;
-        margin: 0;
+        margin-right: 20px;
     }
+}
 
-    .van{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: center;
-    }
 
-    .detalles{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: static;
-        margin: 10px 0;
-    }
-
-    .imagenes{
-        margin: 0;
-        padding: 0;
-    }
-    .detalles{
-        margin: 0;
-    }
-
-    .precios{
-        margin: 0;
-    }
-} */
