@@ -128,6 +128,27 @@ padding: 20px 0px;
 
 
 
+@media (min-width: 0px) and (max-width: 344px){
+
+    .productos{
+        margin: 0;
+        padding: 0;
+    }
+    .descProductos{
+        padding: 10px;
+        width: 75%;
+    }
+    .componentes-del-producto{
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .componentes-del-producto h4{
+        padding: 0;
+    }
+}
+
+
 
 @media (min-width: 345px) and (max-width: 749px){
     .productos{
@@ -141,7 +162,7 @@ padding: 20px 0px;
 
     .componentes-del-producto{
         text-align: center;
-        font-size: 13px;
+        font-size: 15px;
         line-height: 20px;
     
     }
