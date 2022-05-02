@@ -11,10 +11,11 @@ Continuar haciendo:
     -Resolver las dudas que tiene cada compañero y ayudarlo. 
 
 Hacer menos:
-    ---
+    - Trabajar sin el trello
 
 Dejar de hacer:
     -Comenzar el trabajo tarde. 
+    - No contestar en Whatsapp
 
 
 https://trello.com/b/7F7QBzPf/integrador

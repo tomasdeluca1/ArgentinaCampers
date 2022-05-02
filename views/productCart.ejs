@@ -5,8 +5,6 @@
     <%- include('./partials/head') %> 
     <title>Carrito</title>
     <link rel="stylesheet" href="./css/productCart.css">
-    <link rel="stylesheet" href="./css/home.css">
-
 </head>
 <body>
     <!-- Header -->
@@ -27,20 +25,28 @@
             <h1>Carrito</h1>
         </div>
         <div class="carrito">
-            <div class="container-vans">
-                <div class="van">
+            <div class="container-vans"> 
+                    <form action="productDetail.ejs" method="get" class="van">
+
                     <div class="imagenes">
+                        <!-- Cóom se hace para que la imagen vaya cambiando dependiendo de lo que se elija en el select? -->
                         <a href=""><img src="./images/kangoo.png" alt="Kangoo" class="imagen"></a>
                     </div>
-                    <div class="detalles">
-                        <p class="numero-de-van">CamperVan n°1</p>
-                        <p class="tiempo-de-alquiler">Alquiler por 5 dias</p>
-                    </div>
-                    <div class="precios">
-                        <p class="precio">$15000</p>
-                    </div>
+                    
+                    <div class="flexCart">
+                    <label class="eleccionCarrito">Elegí la CamperVan que quieras</label><br>
+                    <select name="camperVan" class="inputCarrito">
+                        <option value="1">Renault Kangoo (2 pax)</option>
+                        <option value="2">Citröen Jumpy (3 pax)</option>
+                        <option value="3">Toyota Hiace (4 pax)</option>
+                    </select>
                 </div>
-            </div>
+                <div class="flexCart">
+                    <label>Elegí la CamperVan que quieras</label><br>
+                    <input type="date" name="date" class="inputCarrito">
+                </div>
+            </form>
+        </div>
             <div class="resumen-de-la-compra">
                 <div class="total">
                     <p>Total</p>
@@ -49,7 +55,7 @@
                     <p>$15000</p>
                 </div>
                 <div class="buttons-resumen">
-                    <div class="boton-seguir-comprando">
+                    <div class="boton-resumen">
                         <a href="product-detail"><button>Seguir comprando</button></a>
                     </div>
                     <div class="boton-resumen">
@@ -57,6 +63,7 @@
                     </div>
                 </div>
             </div>
+            
         </div> 
 
         <!-- Mensaje Posicion absoluta -->

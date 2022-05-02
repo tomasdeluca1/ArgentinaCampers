@@ -1,92 +1,3 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Lato', sans-serif;
-}
-
-/*Header*/
-
-header nav{
-    color: #BDA48A;
-    background-color: #FFEED2;
-    font-size: 14px;
-    font-weight: bolder;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 20px;
-    border: solid 1px #BEA088;
-}
-
-.navegadorLinks{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.links-header-nav{
-    font-size: 9px;
-    display: none;
-    text-decoration: none;
-    color: #BDA48A;
-    padding: 15px;
-
-}
-
-.links-header-nav:hover{
-    color: #957F65;
-}
-
-.menu{
-    padding: 10px 13px;
-    font-size: 16px;
-    border: #957F65 2px solid;
-    color: #957f65;
-    border-radius: 50%;
-}
-
-.menu:hover{
-    background-color:#957F65 ;
-    color: #FFEED2;
-}
-
-.logoHeader{
-    width: 10px;
-}
-
-.links-header{
-    text-decoration: none;
-    color: #BDA48A;
-}
-
-.links-header:hover{
-    color: #957F65;
-}
-
-
-.usuario{
-    border: 2px solid #BEA088;
-    padding: 5px 5px ;
-    margin: 4px 0 4px 5px;
-    margin-bottom: 4px;
-    border-radius: 1rem;
-    width: 100%;
-    text-align: center;
-}
-
-.usuario h4{
-    font-size: 16px;
-}
-
-.usuario h4 i{
-margin-right: 5px;
-}
-
-/* Cuerpo */
 
 body{
     background-color: #FFEED2;
@@ -144,6 +55,7 @@ background-color: #FFEED2;
     align-items: flex-start;
     justify-content: flex-start;
     width: 100%;
+    margin-bottom: 40px;
 }
 
 .container-vans{
@@ -151,10 +63,11 @@ background-color: #FFEED2;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    background-color: #BEA088;
+    background-color: #FFEED2;
+    box-shadow: 0px 1px 5px 3px rgba(149, 127, 101, 0.9);
     width: 60%;
     margin: 60px 0 60px 60px;
-    border-radius: 5px;
+    border-radius: 1rem;
 }
 
 .van{
@@ -165,6 +78,24 @@ background-color: #FFEED2;
     width: 100%;
     padding: 10px;
 }
+.flexCart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.inputCarrito{
+   width: 100%;
+   margin-top: 5px;
+   padding: 2px;
+   text-align: center;
+   border-radius: 1rem;
+   background-color: #FFEED2;
+   color: black;
+   box-shadow: 0px 1px 5px 3px rgba(149, 127, 101, 0.2);
+   border: 2px solid #957f65;
+}
+
 
 .imagenes{
     margin: 0 20px;
@@ -193,34 +124,45 @@ background-color: #FFEED2;
     margin: 0 60px;
 }
 
+.precio{
+    font-family: sans-serif;
+        font-weight: bolder;
+        font-size: 20px;
+}
+
 
 .resumen-de-la-compra{
-    width: 20%;
-    background-color: #bea088;
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 60px 0 60px 90px;
-    border-radius: 5px;
+    background-color: #FFEED2;
+    box-shadow: 0px 1px 5px 3px rgba(149, 127, 101, 0.9);
+    width: 30%;
+    margin: 60px 0 60px 60px;
+    border-radius: 1rem;
 }
+
 
 .total{
     margin: 20px;
 }
 
 .total p {
-    font-size: 30px;
+    margin-top: 20px;
+    font-size: 50px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: bold;
-    text-decoration: underline;
     text-transform: uppercase;
 }
 
-.precio-del-resumen{
+.precio-del-resumen p{
+    color: #926f34;
     font-size: 30px;
-    font-weight: bold;
-    margin-top: 90px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bolder;
+    margin-top: 50px;
 }
 
 .buttons-resumen{
@@ -230,7 +172,7 @@ background-color: #FFEED2;
     align-items: center;
     width: 100%;
     padding: 20px;
-    margin-top: 90px;
+    margin-top: 50px;
 }
 
 .boton-seguir-comprando{
@@ -264,8 +206,9 @@ background-color: #FFEED2;
 
 
 .boton-resumen button{
-    border: 1px solid #FFEED2;
-    border-radius: 20px;
+    box-shadow: 0px 1px 5px 3px rgba(149, 127, 101, 0.2);
+    border: 2px solid #957f65;
+    border-radius: 1.5rem;
     background-color: #FFEED2;
     width: 80%;
     height: 100%;
@@ -279,13 +222,14 @@ background-color: #FFEED2;
 
 
 
-@media (min-width: 0px) and (max-width: 480px){
+@media (min-width: 530px){
 
     .carrito{
         flex-direction: column;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
+        margin-bottom: 40px;
     }
 
    .container-vans{
@@ -303,10 +247,9 @@ background-color: #FFEED2;
 
    .detalles{
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: static;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        justify-content: flex-start;
+        font-size:16px;
         margin: 10px 0;
     }
 
@@ -316,10 +259,11 @@ background-color: #FFEED2;
     }
 }
 
-@media (min-width: 481px) and (max-width: 768px){
+@media (min-width: 768px){
     .carrito{
         margin: 30px 0;
         justify-content: space-between;
+       
     }
 
     .container-vans{
@@ -350,9 +294,9 @@ background-color: #FFEED2;
     }
 }
 
-@media (min-width:769px) and (max-width:1279px){
+@media (min-width:1200px){
     .carrito{
-        margin: 30px 0;
+        margin: 40px 0 90px 0px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -373,32 +317,23 @@ background-color: #FFEED2;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
+        padding: 20px 40px;
+      
     }
 
-    .detalles{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: static;
-        margin: 10px 0;
-    }
+
+
+
+
 
     .imagenes{
         margin: 0;
         padding: 0;
     }
-    .detalles{
-        margin: 0;
-    }
-
-    .precios{
-        margin: 0;
-    }
 }
-
+/* 
 
 @media (min-width: 1280px){
     .carrito{
@@ -448,4 +383,4 @@ background-color: #FFEED2;
     .precios{
         margin: 0;
     }
-}
+} */
