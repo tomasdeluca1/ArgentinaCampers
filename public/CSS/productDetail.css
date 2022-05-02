@@ -106,6 +106,8 @@ padding: 20px 0px;
     text-decoration: none;
     color: #957F65;
     font-size: 18px;
+    width: 100%;
+    display: block;
 }
 
 .cierre{
