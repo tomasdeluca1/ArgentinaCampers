@@ -106,6 +106,8 @@ padding: 20px 0px;
     text-decoration: none;
     color: #957F65;
     font-size: 18px;
+    width: 100%;
+    display: block;
 }
 
 .cierre{
@@ -124,38 +126,31 @@ padding: 20px 0px;
     color: #77634c;
 }
 
-.msjPosisionAbsoluta{
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 20px;
-    font-size: 35px;
-    background-color: #3b5998;
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-}
 
-.msj{
-    height: 100%;
-    width: 100%;
-    position: relative;
-    bottom: 4px;
-}
 
-.msjPosisionAbsoluta div a i{
-    list-style: none;
-    color: white;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    font-size: 40px;
-    padding: 1px;
+@media (min-width: 0px) and (max-width: 344px){
+
+    .productos{
+        margin: 0;
+        padding: 0;
+    }
+    .descProductos{
+        padding: 10px;
+        width: 75%;
+    }
+    .componentes-del-producto{
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .componentes-del-producto h4{
+        padding: 0;
+    }
 }
 
 
 
-@media (min-width: 0px) and (max-width: 751px){
+@media (min-width: 345px) and (max-width: 749px){
     .productos{
         margin: 0;
     }
@@ -167,12 +162,13 @@ padding: 20px 0px;
 
     .componentes-del-producto{
         text-align: center;
-        font-size: 13px;
+        font-size: 15px;
         line-height: 20px;
     
     }
 
 }
+
 
 @media (min-width: 750px) and (max-width: 1350px){ 
     .productos{
@@ -224,9 +220,9 @@ body{
         color: #77634c;
     }
     .descTitular{
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
     }
     
     .productos{
@@ -243,12 +239,16 @@ body{
         flex-direction: column;
         align-items: center;
     }
+
+    .componentes-del-producto{
+        text-align: center;
+    }
     
     .descProductos h4{
         color: #77634c;
         font-size: 20px;
         align-self: flex-start;
-        padding-left: 5px;
+        padding: 0;
     }
     
     .descProductos p{
