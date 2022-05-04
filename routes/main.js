@@ -4,7 +4,7 @@ const mainController = require ('../controllers/mainController')
 
 router.get('/home', mainController.index)
 router.get('/productCreation', mainController.productCreation)
-router.get('/productEditation', mainController.productEditation)
+router.get('/productEdit', mainController.productEdit)
 
 
 

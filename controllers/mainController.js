@@ -5,8 +5,8 @@ const controller = {
     productCreation: function(req, res){     
         res.render('productCreation')
     },
-    productEditation: function(req, res){
-        res.render('productEditation')
+    productEdit: function(req, res){
+        res.render('productEdit')
     }
 }
 
