@@ -6,10 +6,10 @@ const controller = {
         res.render('productCreation')
     },
     productEdit: function(req, res){
-        res.render('productEdit')
+        res.render('productEdit',{infoProducts:productos})
     }
 }
 
-
+const productos = require("../database/productosDetalle.json")
 
 module.exports = controller;
