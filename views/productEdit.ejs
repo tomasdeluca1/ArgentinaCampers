@@ -22,7 +22,6 @@
                 <label for="nombre-del-producto">Nuevo nombre del producto</label>
                 <input type="text" name="nombre-del-producto" id="nombre-del-producto" class= "inputForms" required>
             </div>
-            <%- include("./partials/editarProducto") %> 
             <div class="formulario-para-el-producto imagen-del-producto-a-crear">
                 <label for="imagen-del-producto">Cambiar la imagen del producto</label>
                 <input type="file" name="imagen-del-producto" id="imagen-del-producto-a-crear" accept=".jpg, .png">
@@ -31,11 +30,10 @@
                 <label for="descripcion-del-producto">Cambiar la descripcion del producto</label>
                 <textarea class="text-area" name="descripcion-del-producto" id="descripcion-del-producto" cols="30" rows="10" required></textarea>
             </div>
-            <%- include("./partials/nuevoPrecio") %> 
-            <!-- <div class="formulario-para-el-producto precio-del-producto-a-crear">
+            <div class="formulario-para-el-producto precio-del-producto-a-crear">
                 <label for="precio-del-producto">Cambiar el precio del producto</label>
                 <input type="number" name="precio-del-producto" id="precio-del-producto" min="0" class= "inputForms" required>
-            </div> -->
+            </div>
             <div class="formulario-para-el-producto cambiar-a-creacion-de-producto">
                 <a href="productCreation">Quieres crear un producto? Click aqui</a>
             </div>
