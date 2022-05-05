@@ -1,6 +1,6 @@
 const controller = {
-    index: function(req, res){
-        res.render('index')
+    productDetail: function(req, res){
+        res.render('productDetail', {infoProductos : productos})
     },
     productCreation: function(req, res){     
         res.render('productCreation')
@@ -8,8 +8,9 @@ const controller = {
     productEdit: function(req, res){
         res.render('productEdit',{infoProducts:productos})
     }
-}
+}  
+    
 
-const productos = require("../database/productosDetalle.json")
+const productos = require("../../database/productosDetalle.json")
 
 module.exports = controller;
