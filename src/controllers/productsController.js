@@ -11,6 +11,6 @@ const controller = {
 }  
     
 
-const productos = require("../database/productosDetalle.json")
+const productos = require("../../database/productosDetalle.json")
 
 module.exports = controller;

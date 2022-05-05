@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <%- include('./partials/head') %>
-    <link rel="stylesheet" href="./css/productCreation.css">
-    <title>Crear producto</title>
+    <link rel="stylesheet" href="../css/productCreation.css">
+    <title>Editar producto</title>
 </head>
 <body>
     <!-- Header -->
@@ -11,31 +11,31 @@
 
     <section class="nav-vehiculos">
         <article>
-            <h3><a href="home">Home</a> / <a href="productCreation">Creacion del producto</a></h3>
+            <h3><a href="home">Home</a> / <a href="productEditation">Edicion del producto</a></h3>
         </article>
     </section>
 
     <!-- Cuerpo -->
     <section class="cuerpo">
         <form action="" method="get" class="formulario-de-creacion-de-producto">
-            <div class="formulario-para-el-producto nombre-del-producto-a-crear">
-                <label for="nombre-del-producto">Nombre del producto</label>
+            <div class="formulario-para-el-producto nombre-del-producto-a-editar">
+                <label for="nombre-del-producto">Nuevo nombre del producto</label>
                 <input type="text" name="nombre-del-producto" id="nombre-del-producto" class= "inputForms" required>
             </div>
             <div class="formulario-para-el-producto imagen-del-producto-a-crear">
-                <label for="imagen-del-producto">Inserte la imagen que quiera usar</label>
+                <label for="imagen-del-producto">Cambiar la imagen del producto</label>
                 <input type="file" name="imagen-del-producto" id="imagen-del-producto-a-crear" accept=".jpg, .png">
             </div>
             <div class="formulario-para-el-producto descripcion-del-producto-a-crear">
-                <label for="descripcion-del-producto">Descripcion del producto</label>
+                <label for="descripcion-del-producto">Cambiar la descripcion del producto</label>
                 <textarea class="text-area" name="descripcion-del-producto" id="descripcion-del-producto" cols="30" rows="10" required></textarea>
             </div>
             <div class="formulario-para-el-producto precio-del-producto-a-crear">
-                <label for="precio-del-producto">Precio del producto</label>
-                <input type="number" name="precio-del-producto" id="precio-del-producto" min="0" class= "inputForms"  required>
+                <label for="precio-del-producto">Cambiar el precio del producto</label>
+                <input type="number" name="precio-del-producto" id="precio-del-producto" min="0" class= "inputForms" required>
             </div>
             <div class="formulario-para-el-producto cambiar-a-creacion-de-producto">
-                <a href="productEditation">Quieres editar un producto? Click aqui</a>
+                <a href="create">Quieres crear un producto? Click aqui</a>
             </div>
             <div class="formulario-para-el-producto botones-submit-delete">
                 <button type="submit">Enviar</button>
