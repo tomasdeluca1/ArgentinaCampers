@@ -1,0 +1,2 @@
+En este trabajo no tuvimos complicaciones con el tema de escribir codigo, ni con el tiempo, ya que lo pudimos resolver todo en un periodo corto. Sin embargo, nos seguimos dando cuenta de que aún tenemos problemas de organizacion y de comunicación. Aunque si pudimos coordinar para ayudarnos entre nosotros, siempre estuvimos cuado uno necesitaba ayuda, o alguna eplicacion. Tambien tendriamos que utilizar mas el trello que es una herramienta muy importante. 
+
