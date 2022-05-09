@@ -2,40 +2,79 @@
 <html lang="en">
 <head>
     <%- include('./partials/head') %>
-    <link rel="stylesheet" href="../css/productCreation.css">
+    <link rel="stylesheet" href="../../css/home.css">
+    <link rel="stylesheet" href="../../css/productCreation.css">
     <title>Editar producto</title>
 </head>
 <body>
     <!-- Header -->
-    <%- include('./partials/header') %>
+    <header>
+        <nav>
+            <img src="../../images/logo.png" alt="Logo Argentina campers" class="logoAC">
+    
+       
+    
+            <a href="../../home" class="links-header-nav"><h2>Home</h2></a>
+            <a href="../../products" class="links-header-nav"><h2>Nuestras CamperVans</h2></a>
+            <a href="" class="links-header-nav"><h2>Sobre nosotros</h2></a>
+            <!-- <a href="" class="links-header-nav"><h2>Experiencias</h2></a> -->
+            <div class="menu"> 
+                <p><i class="fa-solid fa-bars"></i></p>
+            </div>
+            <div class="carro-header">
+                <a href="../../rental-cart" class="links-header"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+            <div class="iniciar-sesion">
+                <div class="usuario">
+                    <div>
+                        <a href="../../login" class="links-header"><i class="fa-solid fa-right-to-bracket"></i>Iniciar sesion</a>
+                    </div>
+                </div>
+    
+                <div class="usuario">
+                    <div>
+                        <a href="../../register" class="links-header"><i class="fa-solid fa-address-card"></i>Registrarse</a>
+                    </div>
+                </div>
+            </div>
+    </nav>
+    </header>
 
     <section class="nav-vehiculos">
         <article>
-            <h3><a href="home">Home</a> / <a href="productEditation">Edicion del producto</a></h3>
+            <h3><a href="../../home">Home</a> / <a href="edit">Edicion del producto</a></h3>
         </article>
     </section>
 
     <!-- Cuerpo -->
     <section class="cuerpo">
-        <form action="" method="get" class="formulario-de-creacion-de-producto">
-            <div class="formulario-para-el-producto nombre-del-producto-a-editar">
-                <label for="nombre-del-producto">Nuevo nombre del producto</label>
-                <input type="text" name="nombre-del-producto" id="nombre-del-producto" class= "inputForms" required>
+        <form  method="post" action="/products/<%= producto.id %>/edit?_method=put" class="formulario-de-creacion-de-producto">
+            <div class="formulario-para-el-producto nombre-del-producto-a-crear">
+                <label for="marca-del-producto">Marca del producto</label>
+                <input type="text" name="marcaDelProducto" id="marca-del-producto" class= "inputForms" value="<%= producto.marca %>" required>
+            </div>
+            <div class="formulario-para-el-producto nombre-del-producto-a-crear">
+                <label for="modelo-del-producto">Modelo del producto</label>
+                <input type="text" name="modeloDelProducto" id="modelo-del-producto" class= "inputForms"  value="<%= producto.modelo %>" required>
             </div>
             <div class="formulario-para-el-producto imagen-del-producto-a-crear">
-                <label for="imagen-del-producto">Cambiar la imagen del producto</label>
-                <input type="file" name="imagen-del-producto" id="imagen-del-producto-a-crear" accept=".jpg, .png">
+                <label for="imagen-del-producto">Inserte la imagen que quiera usar</label>
+                <input type="file" name="imagenDelProducto" id="imagen-del-producto-a-crear" accept=".jpg, .png">
             </div>
             <div class="formulario-para-el-producto descripcion-del-producto-a-crear">
-                <label for="descripcion-del-producto">Cambiar la descripcion del producto</label>
-                <textarea class="text-area" name="descripcion-del-producto" id="descripcion-del-producto" cols="30" rows="10" required></textarea>
+                <label for="descripcion-del-producto">Descripcion del producto</label>
+                <textarea class="text-area" name="descripcionDelProducto" id="descripcion-del-producto" cols="30" rows="10" required><%= producto.detalle %></textarea>
+            </div>
+            <div class="formulario-para-el-producto nombre-del-producto-a-crear">
+                <label for="capacidad-del-producto">Capacidad del producto</label>
+                <input type="number" name="capacidadDelProducto" id="capacidad-del-producto" class= "inputForms" value="<%= producto.capacidad %>" required>
             </div>
             <div class="formulario-para-el-producto precio-del-producto-a-crear">
-                <label for="precio-del-producto">Cambiar el precio del producto</label>
-                <input type="number" name="precio-del-producto" id="precio-del-producto" min="0" class= "inputForms" required>
+                <label for="precio-del-producto">Precio del producto</label>
+                <input type="number" name="precioDelProducto" id="precio-del-producto" min="0" class= "inputForms">
             </div>
             <div class="formulario-para-el-producto cambiar-a-creacion-de-producto">
-                <a href="create">Quieres crear un producto? Click aqui</a>
+                <a href="edit">Quieres editar un producto? Click aqui</a>
             </div>
             <div class="formulario-para-el-producto botones-submit-delete">
                 <button type="submit">Enviar</button>
@@ -45,8 +84,7 @@
     </section>
 
 
-    <!-- Footer -->
-
+    <!-- Footer --> 
     <%- include('./partials/footer') %>
 </body>
 </html>
