@@ -1,4 +1,4 @@
-const todosLosUsers = require("../data/usersDetalle.json")
+const todosLosUsers = require("../../usersDetalle.json")
 const fs = require('fs')
 const multer = require('multer')
 const req = require("express/lib/request")
@@ -71,5 +71,5 @@ const controller = {
         }
 
     },}
-    
+
 module.exports = controller;
