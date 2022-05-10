@@ -1,4 +1,4 @@
-const todosLosProductos = require("../../productosDetalle.json")
+const todosLosProductos = require("../data/productosDetalle.json")
 const fs = require('fs')
 const req = require("express/lib/request")
 const { Console } = require("console")
