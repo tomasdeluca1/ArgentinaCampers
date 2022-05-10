@@ -1,5 +1,6 @@
 const todosLosProductos = require("../../productosDetalle.json")
 const fs = require('fs')
+const multer = require('multer')
 const req = require("express/lib/request")
 const { Console } = require("console")
 
@@ -10,24 +11,31 @@ const controller = {
     productCreation: function(req, res){
         res.render('productCreation')
     },
-    create: function (req ,res){   
+    create: function (req ,res, next){   
         let archivoProductosParaElId = fs.readFileSync('productosDetalle.json', {encoding: 'utf-8'});
         let archivoProductosParaElIdJSON = JSON.parse(archivoProductosParaElId);
         let id = 0;
         if(archivoProductosParaElIdJSON.length > 0){
             id = archivoProductosParaElIdJSON.length + 1;
         }
-        let producto = {
+        
+        if(req.file){
+            let image = req.file.filename
+
+            var producto = {
             id,
             marca: req.body.marcaDelProducto,
             modelo: req.body.modeloDelProducto,
-            img: "../images/" + req.body.imagenDelProducto,
+            img: image,
             detalle: req.body.descripcionDelProducto,
             capacidad: req.body.capacidadDelProducto,
         }
+        } else if (!req.file){
+            const error = new Error('Por favor seleccione un archivo')
+            error.httpStatusCode = 400
+            return next(error)
+        }
 
-
-        
         //Guardar la info 
         //Primero: leer que cosas ya habia!
 
@@ -89,22 +97,23 @@ const controller = {
         };
 
         for (let i = 0; i < productos.length; i++){
-            if(idProducto == null || idProducto == 0 || idProducto == undefined){
-                res.render('error404')
-            } else if (idProducto == productos[i].id){
-
+            if (idProducto == productos[i].id && req.file){
+                let image = req.file.filename;
+                console.log(image)
                 var productoModificado = {
                     id: productos[i].id,
                     marca: req.body.marcaDelProducto,
                     modelo: req.body.modeloDelProducto,
-                    img: "../images/" + req.body.imagenDelProducto,
+                    img: image,
                     detalle: req.body.descripcionDelProducto,
                     capacidad: req.body.capacidadDelProducto,
-                }
-                
-                
+                }                
+            }
+            else if(idProducto == null || idProducto == 0 || idProducto == undefined && !req.file){
+                res.render('error404')
             }
         } 
+
         for (let i = 0; i < productos.length; i++){
             if (idProducto == productos[i].id){
                 productos[i] = productoModificado;
@@ -133,7 +142,7 @@ const controller = {
         fs.writeFileSync('productosDetalle.json', productosJSON);
         res.redirect('/products');
     },
-}  
+}
 
 
 
