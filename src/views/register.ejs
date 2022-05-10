@@ -18,30 +18,43 @@
         </article>
     </section>
     <section class="register">
-        <form action="/app.js" method="post" class="formulario">
+        <form action="/home" method="post" class="formulario" enctype="multipart/form-data">
             <div class="cajaRegistro">
             <div class="inputs-registro">
-                <input type="text" name="txtNombreUsuario" placeholder="Nombre" class="casillaRegistro">
+                <label for="firstName">Nombre</label>
+                <input type="text" name="firstName" placeholder="Argentina" class="casillaRegistro">
             </div>
             <div class="inputs-registro">
-                <input type="text" name="txtApellidoUsuario" placeholder="Apellido" class="casillaRegistro">
+                <label for="lastName">Apellido</label>
+                <input type="text" name="lastName" placeholder="Campers" class="casillaRegistro">
             </div>
             <div class="inputs-registro">
-                <input type="email" name="txtEmailUsuario" placeholder="Correo Electrónico" class="casillaRegistro">
+                <label for="email">Correo electrónico</label>
+                <input type="email" name="email" placeholder="argentinacampers@gmail.com" class="casillaRegistro">
             </div>
             <div class="inputs-registro">
-                <input type="tel" name="numTelefonoUsuario" placeholder="Número telefónico" class="casillaRegistro">
-            </div class="inputs-registro">
+                <label for="password">Contraseña</label>
+                <input type="password" name="password" class="casillaRegistro">
+            </div>
+            <div class="inputs-registro">
+                <label for="password2">Confirmar Contraseña</label>
+                <input type="password" name="password2" class="casillaRegistro">
+            </div>
             <div class="date">
-                <label name="dateNacimientoUsuario">Fecha de nacimiento</label>
-                <input type="date" name="dateNacimientoUsuario" class="fechaRegistro">
+                <input type="file" name="imagenDelUsuario" placeholder="Inserte su imágen" accept=".png, .jpg, .jpeg">
             </div>
+            <div class="date">
+                <label for="phoneNumber">Número de teléfono (Agregar código de área)</label>
+                <input type="number" name="phoneNumber" placeholder="11-5418-7697" class="fechaRegistro">
+            </div>
+            
             <div class="link-inicio-sesion">
                 <a href="login">Ya tienes una cuenta? Inicia sesion aqui</a>
             </div>
-            <div class="inputs-registro">
-                <button type="submit">Registrarme</button>
-            </div>
+          
+                <button type="submit" >Registrarme</button>
+           
+        
             
         </div>
         </form>

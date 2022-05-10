@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const methodOverride = require ('method-override')
+const multer = require ('multer')
 
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')

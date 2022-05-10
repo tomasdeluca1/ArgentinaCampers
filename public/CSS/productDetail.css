@@ -14,7 +14,7 @@ background-color: #FFEED2;
 
 .imagenCentrada{
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 .textoCentrado{
@@ -24,7 +24,7 @@ background-color: #FFEED2;
     transform: translate(-50%, -50%);
     color: white;
     padding: 150px 0px;
-    font-size: 20%;
+    font-size: 3vw;
     font-weight: bold;
 }
 
