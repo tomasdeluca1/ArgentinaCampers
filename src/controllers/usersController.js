@@ -1,8 +1,3 @@
-const todosLosUsers = require("../../usersDetalle.json")
-const fs = require('fs')
-
-
-
 const controller = {
     login: function(req, res){
         res.render('login')
