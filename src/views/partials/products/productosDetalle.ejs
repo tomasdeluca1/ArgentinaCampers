@@ -9,8 +9,13 @@
         <div class="componentes-del-producto">
             <p><%= info.detalle %></p>
             </div>
-            <div class="masDetalles">
+            <div class="opcionesProducto">
+            <span class="masDetalles">
                 <a href="products/<%= info.id %> ">Más Detalles</a>
-            </div>
+            </span>
+        <span class="editarProducto">
+            <a href="products/<%= info.id %>/edit"><i class="fa-solid fa-pencil"></i></a>
+        </span>
+    </div>
         </article>
     <% } %> 
