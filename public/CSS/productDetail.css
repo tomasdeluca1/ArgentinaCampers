@@ -140,7 +140,7 @@ background-color: #FFEED2;
     border-radius: 40px;
     padding: 5px;
     margin-top: 20px;
-    transition: all 250ms;
+    transition: all 350ms;
 }
 
 .masDetalles:hover{
@@ -169,7 +169,7 @@ background-color: #FFEED2;
     border: 2px #957f65 solid;
     border-radius:3rem ;
     margin-top: 20px;
-    transition: all 250ms;
+    transition: all 350ms;
 }
 
 .editarProducto a{ color: #FFEED2;
