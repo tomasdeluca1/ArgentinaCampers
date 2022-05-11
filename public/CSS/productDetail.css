@@ -35,9 +35,9 @@ background-color: #FFEED2;
     color: #FFEED2;
 }
 .descTitular{
-font-size: 20px;
-font-weight: bold;
-margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .productos{
@@ -53,7 +53,7 @@ margin-bottom: 10px;
 
 .agregarProducto{
     display: flex;
-   justify-content: center;
+    justify-content: center;
     text-align: center;
 }
 
@@ -61,15 +61,15 @@ margin-bottom: 10px;
     justify-content: center;
     width: 20%;
     padding: 15px;
-    border: #957f65 1px solid;
+    border: #957f65 2px solid;
     background-color: #957f65;
     border-radius: 2rem;
+    transition: all 350ms;
 }
 
 .agregarProducto article:hover{
-background-color: #FFEED2;
-border: #957f65 2px solid;
-transition: all 350ms;
+    background-color: #FFEED2;
+    border: #957f65 2px solid;
 }
 
 .agregarProducto article:hover span{
@@ -78,14 +78,14 @@ transition: all 350ms;
 
 .agregarProducto a{
     text-decoration: none;
+    display: block;
+    width: 100%;
 }
 .agregarProducto span{
     color: #FFEED2;
     text-decoration: none;
     text-align: center;
-
     font-size: 1rem;
-
 }
 
 
@@ -98,6 +98,7 @@ transition: all 350ms;
     padding: 25px;
     border-radius: 1rem;
     border: #FFEED2 3px double;
+    transition: all 200ms;
 }
 
 .descProductos:hover{
@@ -118,8 +119,8 @@ transition: all 350ms;
 }
 
 .productoImg{
-width: 90%;
-padding: 20px 0px;
+    width: 90%;
+    padding: 20px 0px;
 }
 
 .opcionesProducto{
@@ -139,30 +140,8 @@ padding: 20px 0px;
     border-radius: 40px;
     padding: 5px;
     margin-top: 20px;
+    transition: all 250ms;
 }
-
-.editarProducto{
-    text-align: center;
-    width: 40px;
-    height: 40px;
- padding:8px;
- background-color: #957f65;
- border: 2px #957f65 solid;
- border-radius:3rem ;
-}
-
-.editarProducto a{ color: #FFEED2;
-    text-decoration: none;
-}
-
-.editarProducto:hover{
- background-color: #FFEED2;
- border: #957f65 2px solid;
-}
-
-.editarProducto:hover a{
-   color: #77634c;
-   }
 
 .masDetalles:hover{
     color: #FFEED2;
@@ -170,8 +149,7 @@ padding: 20px 0px;
 }
 
 .masDetalles:hover a{
-    color: #FFEED2;
-    
+    color: #FFEED2; 
 }
 
 .masDetalles a{
@@ -182,9 +160,35 @@ padding: 20px 0px;
     display: block;
 }
 
+.editarProducto{
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    padding:8px;
+    background-color: #957f65;
+    border: 2px #957f65 solid;
+    border-radius:3rem ;
+    margin-top: 20px;
+    transition: all 250ms;
+}
+
+.editarProducto a{ color: #FFEED2;
+    text-decoration: none;
+}
+
+.editarProducto:hover{
+    background-color: #FFEED2;
+    border: #957f65 2px solid;
+}
+
+.editarProducto:hover a{
+    color: #77634c;
+}
+
+
+
 .cierre{
     padding: 0 40px 50px 40px;
-    
 }
 
 .cierre h4{
@@ -218,6 +222,10 @@ padding: 20px 0px;
     .componentes-del-producto h4{
         padding: 0;
     }
+    .agregarProducto article{
+        width: 80%;
+        margin-bottom: 50px;
+    }
 }
 
 
@@ -238,7 +246,10 @@ padding: 20px 0px;
         line-height: 20px;
     
     }
-
+    .agregarProducto article{
+        width: 50%;
+        margin-bottom: 50px;
+    }
 }
 
 
@@ -260,12 +271,17 @@ padding: 20px 0px;
         text-align: center;
     }
 
+    .agregarProducto article{
+        width: 25%;
+        margin-bottom: 50px;
+    }
+    
 }
 
 
 @media (min-width: 1350px) {
-body{
-    background-color: #FFEED2;
+    body{
+        background-color: #FFEED2;
     }
 
     .contenedor{
@@ -341,6 +357,7 @@ body{
         border-radius: 40px;
         padding: 5px;
         margin-top: 20px;
+        transition: all 250ms;
     }
     
     .masDetalles:hover{
