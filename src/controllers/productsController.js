@@ -6,10 +6,10 @@ const { Console } = require("console")
 
 const controller = {
     productDetail: function(req, res){
-        res.render('productDetail', {infoProductos : todosLosProductos})
+        res.render('./products/productDetail', {infoProductos : todosLosProductos})
     },
     productCreation: function(req, res){
-        res.render('productCreation')
+        res.render('./products/productCreation')
     },
     create: function (req ,res, next){   
         let archivoProductosParaElId = fs.readFileSync('productosDetalle.json', {encoding: 'utf-8'});
@@ -68,7 +68,7 @@ const controller = {
             if(idProducto == null || idProducto == 0 || idProducto == undefined){
                 res.render('error404')
             } else if (idProducto == todosLosProductos[i].id){
-                res.render('productDescription', {mostrarProducto: mostrarProducto})
+                res.render('./products/productDescription', {mostrarProducto: mostrarProducto})
             }
         }
 
@@ -81,7 +81,7 @@ const controller = {
                 res.render('error404')
             } else if (idProducto == todosLosProductos[i].id){
                 let producto = todosLosProductos[i]
-                res.render('productEdit', {producto: producto})
+                res.render('./products/productEdit', {producto: producto})
             }
         }             
     },
@@ -107,18 +107,18 @@ const controller = {
                     img: image,
                     detalle: req.body.descripcionDelProducto,
                     capacidad: req.body.capacidadDelProducto,
-                }                
+                }          
             }
             else if(idProducto == null || idProducto == 0 || idProducto == undefined && !req.file){
                 res.render('error404')
             }
-        } 
+        };
 
         for (let i = 0; i < productos.length; i++){
             if (idProducto == productos[i].id){
                 productos[i] = productoModificado;
             }
-        }
+        };
         productosJSON = JSON.stringify(productos) 
         fs.writeFileSync('productosDetalle.json', productosJSON)
         res.redirect('/products')
