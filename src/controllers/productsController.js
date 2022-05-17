@@ -9,7 +9,7 @@ const controller = {
         res.render('./products/productDetail', {infoProductos : todosLosProductos})
     },
     productCreation: function(req, res){
-        res.render('./products/productCreation')
+        res.render('./products/productCreation', {infoProductos : todosLosProductos})
     },
     create: function (req ,res, next){   
         let archivoProductosParaElId = fs.readFileSync('productosDetalle.json', {encoding: 'utf-8'});
