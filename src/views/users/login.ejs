@@ -4,7 +4,7 @@
 
     <%- include('../partials/head') %> 
     <title>Iniciar sesión</title>
-    <link rel="stylesheet" href="./css/estilosLogIn.css">
+    <link rel="stylesheet" href="./css/users/estilosLogIn.css">
 
 
 </head>
@@ -26,7 +26,7 @@
     </div>
 
     <div class="padreForm">
-        <form class="formulario" action="" method="post">
+        <form class="formulario" action="login" method="post">
 
         <!--FALTA AGREGAR
         ***LINK A OLVIDO CONTRASEÑA
@@ -38,7 +38,7 @@
             </div><br>
             <div class="divMenu">
                 <label for="contrasena">Contraseña</label><br>
-                <input type="password" name="contrasena" >
+                <input type="password" name="password">
             </div><br>
             <div class="divMenu">
                 <button type="submit" name="inicioSesion">Iniciar sesión</button>

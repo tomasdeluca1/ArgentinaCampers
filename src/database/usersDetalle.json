@@ -1,3 +1,1 @@
-[
-    
-]
+[{"id":1,"name":"Francisco","lastName":"Isola","email":"frandelqueran@gmail.com","password":"12345","password2":"12345","avatar":"","phoneNumber":"1136610049"},{"id":2,"name":"","lastName":"","email":"tomi@gmail.com","password":"1234","password2":"1234","avatar":"","phoneNumber":""},{"id":3,"name":"Maxi","lastName":"Mendez","email":"maximendez@gmail.com","password":"hola123","password2":"hola123","avatar":"","phoneNumber":""}]
