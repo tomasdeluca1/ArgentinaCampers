@@ -21,13 +21,13 @@ const main = require ('./routes/main')
 const productCart = require ('./routes/productCart')
 const products= require ('./routes/products')
 const users = require ('./routes/users')
-
+const aboutUs= require("./routes/aboutUs")
 
 app.use('/', main)
 app.use('/', productCart)
 app.use('/products', products)
 app.use('/', users)
-
+app.use("/aboutUs", aboutUs)
 
 
 app.listen(5000, ()=>{
