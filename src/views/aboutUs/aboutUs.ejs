@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+    
+    <!--CSS-->
+    <link rel="stylesheet" href="../CSS/aboutUs/styles.css">
+
     <!--HEAD INCLUDE-->
     <%- include("../partials/head") %> 
- 
-    <title>Document</title>
+    
+    <title>Sobre Nosotros</title>
 </head>
 <body>
 
@@ -16,11 +19,36 @@
     
     <%- include("../partials/header") %>    
 
-    <!--Mensaje positioon Absolute-->
+   
+    <!--SOBRE NOSOTROS-->
 
-    <%-include("../partials/msjPosicionAbsoluta")%>
+    <h2 class="owo"> Sobre Nosotros</h2>
+    <div class="contenedorSN">
+        <div class="container" >
 
+            <p class="txtSobreNosotros"> 
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit cupiditate quo in distinctio, debitis exercitationem facilis. Reiciendis saepe rerum quasi dolorum ipsum, eaque optio aliquid quaerat maxime. Sunt, quas quia? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore nam repudiandae maxime alias. Ipsam quam atque magnam error, perspiciatis nostrum corrupti in nobis quas modi, repudiandae officia harum ex eius. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae sint eius eos rem possimus, cumque repudiandae! Sit possimus ipsam laudantium nisi nihil alias. Rem sint illo possimus expedita obcaecati architecto! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quam doloremque aliquam voluptates placeat magni iure ipsa totam, eos, fuga qui! Dolore deserunt vel aspernatur quasi. Explicabo sunt consequatur natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta velit voluptate commodi iure minima architecto animi asperiores, suscipit, dolores hic fugit aspernatur repellendus cupiditate cumque id, laboriosam voluptates ad recusandae? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse voluptas modi saepe consequatur ad voluptates enim, perspiciatis nisi repellat hic sed quisquam dolor ex reprehenderit aperiam in aspernatur deleniti vitae! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam modi sapiente velit autem veniam delectus ipsa culpa animi, ea, eligendi quos expedita saepe excepturi assumenda provident veritatis nostrum, numquam id!
+            </p>
+        </div>
+        <div class="container">
 
+                <img src="../images/imagenesVariadas/playa.jpg" alt="imagenDePlaya" class="imgSN">
+        </div>
+        <div class="container">
+
+                <img class="imgSN" src="../images/imagenesVariadas/ubicacion2.jpg" alt="">
+        </div>
+    </div>
+
+    <!--COMENTARIOS-->
+
+    <h2>Dejenos su comentario</h2>
+
+    <div>
+        <form action="post">
+            <input type="text-area">
+        </form>
+    </div>
     <!--FOOTER-->
 
     <%- include("../partials/footer") %> 
