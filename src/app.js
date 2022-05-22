@@ -14,8 +14,6 @@ app.use(express.json())
 
 
 
-
-
 //Rutas
 const main = require ('./routes/main')
 const productCart = require ('./routes/productCart')
