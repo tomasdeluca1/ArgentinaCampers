@@ -126,9 +126,10 @@ const controller = {
     },
     delete: function (req, res) {
         let id = req.params.idProducto;
+        let idINT = parseInt(id)
 
-        let archivoProductos = fs.readFileSync('productosDetalle.json', {encoding: 'utf-8'});
-                
+        let archivoProductos = fs.readFileSync(json, {encoding: 'utf-8'});
+
         if (archivoProductos == ""){
             productos = []
         } else {
@@ -136,10 +137,18 @@ const controller = {
         };
 
         archivoProductos = productos.filter(numero => numero.id != id);
-        console.log(archivoProductos)
+        
+        function restarIdParaMostrar (){
+            for (let i = 0; i < archivoProductos.length; i++) {
+                if (archivoProductos[i].id > idINT){
+                    console.log(archivoProductos[i].id = i + 1)
+                }               
+            }
+        }
+        restarIdParaMostrar()
 
         productosJSON = JSON.stringify(archivoProductos);
-        fs.writeFileSync('productosDetalle.json', productosJSON);
+        fs.writeFileSync(json, productosJSON);
         res.redirect('/products');
     },
 }
