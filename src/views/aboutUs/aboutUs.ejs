@@ -21,29 +21,49 @@
 
    
     <!--SOBRE NOSOTROS-->
-    <div class="contenedorSN">
+  
         <div class="contenedor">
-            <img src="/images/imagenesVariadas/nuestrosVehiculos.png" alt="Banner principal" class="imagenCentrada">
+            <img src="/images/imagenesVariadas/aboutUs1.png" alt="1er parte del banner" class="bannerConjunto">
+            <img src="/images/imagenesVariadas/aboutUs2.png" alt="2da parte del banner" class="bannerConjunto">
+            <img src="/images/imagenesVariadas/aboutUs3.png" alt="3era parte del banner" class="bannerConjunto">
           </div>
-       
-        <div class="container" >
+        <div class="contenedorSN"> 
+        <div class="contenedorText" >
             <h2> Sobre nosotros</h2>
             <h4> 
                 Detrás de Argentina Campers hay un equipo de viajeros expertos que te brindarán el mejor servicio y el apoyo necesario para que tu viaje sea inolvidable. Somos amantes de la naturaleza, la libertad, el disfrute y los buenos momentos con la familia y los amigos.
             </h4>
             <h4> 
-                Cada rincón de Argentina vale la pena. Amamos nuestra tierra y sus diversos paisajes. Su cultura y gente; siempre dispuesto a darte una mano o compartir un mate donde quieras parar; donde la noche te encuentra en el camino o el sol te da la bienvenida al amanecer para continuar tu viaje. Bienvenidos a este club de viajeros, dueños del tiempo y creadores de sus propias experiencias. Ponte en marcha, la naturaleza te espera.
+                Cada rincón de Argentina vale la pena para recorrer. Amamos nuestra tierra y sus diversos paisajes. Su cultura y gente; siempre dispuesta a dar una mano o compartir un mate donde quieras parar; donde la noche te encuentra en el camino o el sol te da la bienvenida al amanecer para continuar con la travesía. Bienvenidos a este club de viajeros, dueños del tiempo y creadores de sus propias aventuras.
+                Ponte en marcha, la naturaleza te espera.
             </h4>
         </div>
     
+<!-- Agregar testimonios de clientes de Argentina Campers -->
 
-    <!--COMENTARIOS-->
 
-    <h2>Dejenos su comentario</h2>
+    <!--Agregar COMENTARIOS-->
+
+    <form>
+        <p class="clasificacion">
+            <label for="radio1">★</label>
+          <input id="radio1" type="radio" name="estrellas" value="1"><!--
+          --><label for="radio2">★</label><!--
+          --><input id="radio2" type="radio" name="estrellas" value="2"><!--
+          --><label for="radio3">★</label><!--
+          --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+          --><label for="radio4">★</label><!--
+          --><input id="radio4" type="radio" name="estrellas" value="4"><!--
+          --><label for="radio5">★</label><!--
+          --><input id="radio5" type="radio" name="estrellas" value="5"><!--
+          -->
+        </p>
+      </form>
+    <h2>Dejanos tu comentario</h2>
 
     <div>
-        <form action="post">
-            <input type="text-area">
+        <form action="/Documentos de txt/comentarios.md" method="post">
+            <input type="text-area" class="">
         </form>
     </div>
 </div>

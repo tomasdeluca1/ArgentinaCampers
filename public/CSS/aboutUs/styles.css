@@ -17,23 +17,38 @@ body{
     text-align: left
 
 
-}.container{
-    padding: 5%;
+}.contenedor{
     width: 100%;
-    display: inline-block;
-    margin: 0;
+    display:flex;
+    margin: 0;  
+}
 
-    
-}.imgSN{
+.contenedorText{
+   justify-content: center;
+    width: 100%;
+    text-align: justify;
+}
+
+.bannerConjunto{
     margin:0;
     padding: 0;
-    width: 30%;    
+    width: 33%;    
 }
 .contenedorSN{
-    
     display: flex;
     flex-direction: column;
-    margin: 0 10% ;
+    margin: 2%;
+    justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 96%;
+}
+
+.contenedorSN h2{
+    font-size: 1.5rem;
+    padding: 10px;
+}
+.contenedorSN h4{
+    font-size: 1rem;
+    padding: 10px;
+    
 }
