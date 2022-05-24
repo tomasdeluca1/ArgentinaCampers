@@ -47,9 +47,10 @@
     border: #957f65 1px solid;
     text-align: center;
     background-color: white;
+    padding: 5px;
 }
 
-.formulario-para-el-producto textarea{
+.text-area{
     border-radius: 1rem;
     border: 2px solid #957f65;
     width: 80%;
@@ -94,6 +95,18 @@
     border: 1px solid #ffeed2;
 }
 
+.errors{
+    margin-top: 15px;
+}
+
+.errors p{
+    color: red;
+}
+
+.is-invalid{
+    border: 1px solid red;
+}
+
 
 @media (min-width: 0) and (max-width: 480px){
     .formulario-de-creacion-de-producto{
@@ -119,3 +132,10 @@
     }
 }
 
+@media (min-width:1280px){
+    .formulario-para-el-producto label{
+        font-size: 20px;
+        color: #957f65;
+        opacity: 1;
+    }
+}
