@@ -1,0 +1,5 @@
+<div class="review"><% for (let user of review) { %>
+<h3>Reseñas de nuestros viajeros</h3>
+<img src="../../../public/images/imagenesUsuarios/<%= user.avatar %>" class="imagenUsuarioReview"> <span class="nombreViajero"><%= user.name + user.lastName%></span>
+<% } %> 
+</div>

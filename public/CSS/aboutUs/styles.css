@@ -17,7 +17,8 @@ body{
     text-align: left
 
 
-}.contenedor{
+}
+.bannerAboutUs{
     width: 100%;
     display:flex;
     margin: 0;  
@@ -32,23 +33,68 @@ body{
 .bannerConjunto{
     margin:0;
     padding: 0;
-    width: 33%;    
+    width: 25%;    
 }
 .contenedorSN{
     display: flex;
     flex-direction: column;
-    margin: 2%;
+    margin: 2% 5%;
     justify-content: center;
     align-items: center;
-    width: 96%;
+    width: 90%;
 }
 
 .contenedorSN h2{
     font-size: 1.5rem;
-    padding: 10px;
+    color: #957F65;
+    padding: 15px;
 }
 .contenedorSN h4{
     font-size: 1rem;
-    padding: 10px;
+    padding: 15px;
     
 }
+
+.nuestrosViajeros{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+border: 2px #957F65 solid;
+border-radius: 2rem;
+width: 70%;
+padding: 20px;
+}
+
+.imagenUsuarioReview{
+    width: 3%;
+    border-radius: 2rem;
+    border: #957F65 1px solid;
+}
+
+.nombreViajero{
+    font-size: 1.5rem;
+
+}
+
+.nuevaResenia{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.clasificacion label{ 
+    color:grey;
+    font-size: 1.5rem;
+}
+
+.clasificacion{
+    direction: rtl;/* right to left */
+    unicode-bidi: bidi-override;/* bidi de bidireccional */
+}
+
+input[type = "radio"]{ display:none;}
+label:hover{color:gold;}
+label:hover ~ label{color:gold;}
+input[type = "radio"]:checked ~ label{color:gold;}
+
