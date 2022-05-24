@@ -3,6 +3,9 @@ const fs = require('fs')
 const multer = require('multer')
 const req = require("express/lib/request")
 const { Console } = require("console")
+const { validationResult } = require ('express-validator')
+
+const json = __dirname + '/../database/productosDetalle.json'
 
 const controller = {
     productDetail: function(req, res){
@@ -11,58 +14,64 @@ const controller = {
     productCreation: function(req, res){
         res.render('./products/productCreation', {infoProductos : todosLosProductos})
     },
-    create: function (req ,res, next){   
-        let archivoProductosParaElId = fs.readFileSync('productosDetalle.json', {encoding: 'utf-8'});
-        let archivoProductosParaElIdJSON = JSON.parse(archivoProductosParaElId);
-        let id = 0;
-        if(archivoProductosParaElIdJSON.length > 0){
-            id = archivoProductosParaElIdJSON.length + 1;
-        }
-        
-        if(req.file){
-            let image = req.file.filename
+    create: function (req ,res, next){
+        let errors = validationResult(req)
 
-            var producto = {
-            id,
-            marca: req.body.marcaDelProducto,
-            modelo: req.body.modeloDelProducto,
-            img: image,
-            detalle: req.body.descripcionDelProducto,
-            capacidad: req.body.capacidadDelProducto,
-        }
-        } else if (!req.file){
-            const error = new Error('Por favor seleccione un archivo')
-            error.httpStatusCode = 400
-            return next(error)
+        if(errors.isEmpty()){
+            let archivoProductosParaElId = fs.readFileSync(json, {encoding: 'utf-8'});
+            let archivoProductosParaElIdJSON = JSON.parse(archivoProductosParaElId);
+            let id = 0;
+            if(archivoProductosParaElIdJSON.length > 0){
+                id = archivoProductosParaElIdJSON.length + 1;
+            }
+
+            if(req.file){
+                let image = req.file.filename
+                var producto = {
+                id,
+                marca: req.body.marcaDelProducto,
+                modelo: req.body.modeloDelProducto,
+                img: image,
+                detalle: req.body.descripcionDelProducto,
+                capacidad: req.body.capacidadDelProducto,
+            }
+            }
+            //Guardar la info
+            //Primero: leer que cosas ya habia!
+
+            let archivoProductos = fs.readFileSync(json, {encoding: 'utf-8'});
+            if (archivoProductos == ""){
+                productos = []
+            } else {
+                productos = JSON.parse(archivoProductos)
+            };
+            productos.push(producto);
+            productosJSON = JSON.stringify(productos)
+            fs.writeFileSync(json, productosJSON);
+            res.redirect('/products')
+        } else {
+            res.render('./products/productCreation', {errors: errors.mapped(), oldData: req.body})
         }
 
-        //Guardar la info 
-        //Primero: leer que cosas ya habia!
+    },
+    getProductById: function (req, res){
+        let idProducto = req.params.idProducto;
 
-        let archivoProductos = fs.readFileSync('productosDetalle.json', {encoding: 'utf-8'});
+        let archivoProductos = fs.readFileSync(json, {encoding: 'utf-8'});
+
         if (archivoProductos == ""){
             productos = []
         } else {
             productos = JSON.parse(archivoProductos)
         };
 
-        productos.push(producto);
+        let mostrarProducto;
 
-        productosJSON = JSON.stringify(productos)  
-        
-              
-        
-        fs.writeFileSync('productosDetalle.json', productosJSON);
-
-
-        res.redirect('/products')
-    },
-    getProductById: function (req, res){
-        let idProducto = req.params.idProducto 
-
-        let idParaMostrarProducto = req.params.idProducto - 1;
-
-        let mostrarProducto = todosLosProductos[idParaMostrarProducto]
+        for (let i = 0; i < productos.length; i++) {
+            if(productos[i].id == idProducto){
+                mostrarProducto = productos[i];
+            }
+        };
 
         for (let i = 0; i < todosLosProductos.length; i++){
             if(idProducto == null || idProducto == 0 || idProducto == undefined){
@@ -71,65 +80,93 @@ const controller = {
                 res.render('./products/productDescription', {mostrarProducto: mostrarProducto})
             }
         }
-
     },
     edit: function(req, res){
         let idProducto = req.params.idProducto;
+        let productoEdit;
 
         for (let i = 0; i < todosLosProductos.length; i++){
             if(idProducto == null || idProducto == 0 || idProducto == undefined){
                 res.render('error404')
             } else if (idProducto == todosLosProductos[i].id){
-                let producto = todosLosProductos[i]
-                res.render('./products/productEdit', {producto: producto})
+                productoEdit = todosLosProductos[i]
+                res.render('./products/productEdit', {producto: productoEdit})
             }
-        }             
+        }
     },
     edition: function(req, res){
-        let idProducto = req.params.idProducto;
+        let errors = validationResult(req)
 
-        let archivoProductos = fs.readFileSync('productosDetalle.json', {encoding: 'utf-8'});
-                
-        if (archivoProductos == ""){
-            productos = []
+        if(errors.isEmpty()){
+            let idProducto = req.params.idProducto;
+
+            let archivoProductos = fs.readFileSync(json, {encoding: 'utf-8'});
+
+            if (archivoProductos == ""){
+                productos = []
+            } else {
+                productos = JSON.parse(archivoProductos)
+            };
+
+
+            let imageOriginal;
+
+            for (let i = 0; i < productos.length; i++) {
+                if(productos[i].id == idProducto){
+                    imageOriginal = productos[i].img;
+                };
+            };
+
+            var productoModificado;
+
+            for (let i = 0; i < productos.length; i++){
+                if (idProducto == productos[i].id){
+                    if(req.file){
+                        let image = req.file.filename;
+                        productoModificado = {
+                            id: productos[i].id,
+                            marca: req.body.marcaDelProducto,
+                            modelo: req.body.modeloDelProducto,
+                            img: image,
+                            detalle: req.body.descripcionDelProducto,
+                            capacidad: req.body.capacidadDelProducto,
+                        }
+                    } else if(req.file == undefined){
+                        productoModificado = {
+                            id: productos[i].id,
+                            marca: req.body.marcaDelProducto,
+                            modelo: req.body.modeloDelProducto,
+                            img: imageOriginal,
+                            detalle: req.body.descripcionDelProducto,
+                            capacidad: req.body.capacidadDelProducto,
+                        }
+                    }
+                }
+            };
+            for (let i = 0; i < productos.length; i++){
+                if (idProducto == productos[i].id){
+                    productos[i] = productoModificado;
+                }
+            };
+            productosJSON = JSON.stringify(productos)
+            fs.writeFileSync(json, productosJSON)
+            res.redirect('/products');
         } else {
-            productos = JSON.parse(archivoProductos)
-        };
-
-        for (let i = 0; i < productos.length; i++){
-            if (idProducto == productos[i].id && req.file){
-                let image = req.file.filename;
-                console.log(image)
-                var productoModificado = {
-                    id: productos[i].id,
-                    marca: req.body.marcaDelProducto,
-                    modelo: req.body.modeloDelProducto,
-                    img: image,
-                    detalle: req.body.descripcionDelProducto,
-                    capacidad: req.body.capacidadDelProducto,
-                }          
+            let idProducto = req.params.idProducto;
+            let productoEdit;
+            for (let i = 0; i < todosLosProductos.length; i++){
+                if(idProducto == todosLosProductos[i].id){
+                    productoEdit = todosLosProductos[i]
+                }
             }
-            else if(idProducto == null || idProducto == 0 || idProducto == undefined && !req.file){
-                res.render('error404')
-            }
+            res.render('./products/productEdit', {errors: errors.mapped(), oldData: req.body, producto: productoEdit})
         };
-
-        for (let i = 0; i < productos.length; i++){
-            if (idProducto == productos[i].id){
-                productos[i] = productoModificado;
-            }
-        };
-        productosJSON = JSON.stringify(productos) 
-        fs.writeFileSync('productosDetalle.json', productosJSON)
-        res.redirect('/products')
-        
     },
     delete: function (req, res) {
         let id = req.params.idProducto;
-        let idINT = parseInt(id)
 
         let archivoProductos = fs.readFileSync(json, {encoding: 'utf-8'});
-
+                
         if (archivoProductos == ""){
             productos = []
         } else {
@@ -137,21 +174,14 @@ const controller = {
         };
 
         archivoProductos = productos.filter(numero => numero.id != id);
-        
-        function restarIdParaMostrar (){
-            for (let i = 0; i < archivoProductos.length; i++) {
-                if (archivoProductos[i].id > idINT){
-                    console.log(archivoProductos[i].id = i + 1)
-                }               
-            }
-        }
-        restarIdParaMostrar()
+        console.log(archivoProductos)
 
         productosJSON = JSON.stringify(archivoProductos);
         fs.writeFileSync(json, productosJSON);
         res.redirect('/products');
     },
 }
+
 
 
 
