@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--CSS-->
+    <link rel="stylesheet" href="../CSS/aboutUs/styles.css">
+
+    <!--HEAD INCLUDE-->
+    <%- include("../partials/head") %> 
+    
+    <title>Sobre Nosotros</title>
+</head>
+<body>
+
+    <!--HEADER--> 
+    
+    <%- include("../partials/header") %>    
+
+   
+    <!--SOBRE NOSOTROS-->
+    <div class="contenedorSN">
+        <div class="contenedor">
+            <img src="/images/imagenesVariadas/nuestrosVehiculos.png" alt="Banner principal" class="imagenCentrada">
+          </div>
+       
+        <div class="container" >
+            <h2> Sobre nosotros</h2>
+            <h4> 
+                Detrás de Argentina Campers hay un equipo de viajeros expertos que te brindarán el mejor servicio y el apoyo necesario para que tu viaje sea inolvidable. Somos amantes de la naturaleza, la libertad, el disfrute y los buenos momentos con la familia y los amigos.
+            </h4>
+            <h4> 
+                Cada rincón de Argentina vale la pena. Amamos nuestra tierra y sus diversos paisajes. Su cultura y gente; siempre dispuesto a darte una mano o compartir un mate donde quieras parar; donde la noche te encuentra en el camino o el sol te da la bienvenida al amanecer para continuar tu viaje. Bienvenidos a este club de viajeros, dueños del tiempo y creadores de sus propias experiencias. Ponte en marcha, la naturaleza te espera.
+            </h4>
+        </div>
+    
+
+    <!--COMENTARIOS-->
+
+    <h2>Dejenos su comentario</h2>
+
+    <div>
+        <form action="post">
+            <input type="text-area">
+        </form>
+    </div>
+</div>
+    <!--FOOTER-->
+
+    <%- include("../partials/footer") %> 
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+body{
+    background-color:#FFEED2 ;
+    color: #BDA48A;
+}
+
+
+/* SOBRE NOSOTROS 
+.
+.
+.
+.
+.
+.
+*/
+.txtSobreNosotros{
+
+    text-align: left
+
+
+}.container{
+    padding: 5%;
+    width: 100%;
+    display: inline-block;
+    margin: 0;
+
+    
+}.imgSN{
+    margin:0;
+    padding: 0;
+    width: 30%;    
+}
+.contenedorSN{
+    
+    display: flex;
+    flex-direction: column;
+    margin: 0 10% ;
+    align-items: center;
+    width: 80%;
+}

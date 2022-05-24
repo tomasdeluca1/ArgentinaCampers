@@ -4,7 +4,7 @@
 
     <%- include('../partials/head') %> 
     <title>Iniciar sesión</title>
-    <link rel="stylesheet" href="./css/estilosLogIn.css">
+    <link rel="stylesheet" href="./css/users/login.css">
 
 
 </head>
@@ -20,44 +20,29 @@
 
 
     <!--CUERPO DEL CODIGO-->
-<div class="containerTotal">
-    <div class="container">
-        <p class="lore">Somos una empresa que distintos opciones de vehículos para viajar por la Argentina y redescubrirse, permitiendo explorar distintos lugares sin la necesidad de buscar hoteles y formas de viajar. Esto abarataría tanto costos como formas de viaje, fusionándolos para darle a nuestros clientes una experiencia única de poder tener su alojamiento en donde quiera.</p>
-    </div>
-
-    <div class="padreForm">
-        <form class="formulario" action="" method="post">
-
-        <!--FALTA AGREGAR
-        ***LINK A OLVIDO CONTRASEÑA
-        ***-->
-
-            <div class="divMenu">
-                <label for="email">Mail</label><br>
-                <input type="email" name="email">
-            </div><br>
-            <div class="divMenu">
-                <label for="contrasena">Contraseña</label><br>
-                <input type="password" name="contrasena" >
-            </div><br>
-            <div class="divMenu">
-                <button type="submit" name="inicioSesion">Iniciar sesión</button>
-            </div><br>
-            <div class="divMenu">
-                <a href="" class="olvidaste">Olvidaste la contraseña</a>
-            </div><br>
-            <div class="divMenu">
-                <button type="button" ><a href="register">Crear cuenta</a></button>
+    <main class="body">
+        <div class="container-texto">
+            <p class="texto-explicativo">Somos una empresa que distintos opciones de vehículos para viajar por la Argentina y redescubrirse, permitiendo explorar distintos lugares sin la necesidad de buscar hoteles y formas de viajar. Esto abarataría tanto costos como formas de viaje, fusionándolos para darle a nuestros clientes una experiencia única de poder tener su alojamiento en donde quiera.</p>
+        </div>
+        <form class="formulario-login" action="login" method="post">
+            <div class="input-label-form">
+                <input type="email" name="email" id="email" placeholder="Ingrese su email">
             </div>
-
-
-
-
-
+            <div class="input-label-form">
+                <input type="password" name="password" id="password" placeholder="Contraseña">
+            </div>
+            <div class="input-label-form button-iniciar-sesion">
+                <button>Iniciar sesion</button>
+            </div>
+            <div class="input-label-form password-forgotten">
+                <a href="">¿Olvidaste tu contraseña?</a>
+            </div>
+            <div class="linea"></div>
+            <div class="input-label-form link-registrarse">
+                <a href="register">¿No tienes cuenta? Crea tu cuenta aqui</a>
+            </div>
         </form>
-    </div>
-</div>
-
+    </main>
     <!--FOOTER-->
     <%- include('../partials/footer') %> 
 </body>
