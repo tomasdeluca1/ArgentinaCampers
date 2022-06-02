@@ -1,9 +1,11 @@
 const express = require ('express');
 const router = express.Router();
-const productCartController = require ('../controllers/productCartController')
+const productCartController = require ('../controllers/productCartController');
+const authMiddleware = require('../middlewares/authMiddleware');
 
 
-router.get('/rental-cart', productCartController.productCart)
+
+router.get('/rental-cart', authMiddleware, productCartController.productCart)
 
 
 module.exports = router; 

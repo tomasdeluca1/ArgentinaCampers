@@ -9,13 +9,15 @@
         <div class="componentes-del-producto">
             <p><%= info.detalle %></p>
         </div>
-        <div class="opcionesProducto">
+        <div class="opcionesProducto <%= !locals.admin ? 'centrar-div' : null %>">
             <div class="masDetalles">
-                <a href="products/<%= info.id %> ">Más Detalles</a>
+                <a href="products/<%= info.id %>">Más Detalles</a>
             </div>
-            <div class="editarProducto">
-                <a href="products/<%= info.id %>/edit"><i class="fa-solid fa-pencil"></i></a>
-            </div>
+            <% if (locals.admin) { %>
+                <div class="editarProducto">
+                    <a href="products/<%= info.id %>/edit"><i class="fa-solid fa-pencil"></i></a>
+                </div>
+            <% } %> 
         </div>
     </article>
 <% } %> 

@@ -46,7 +46,7 @@ const controller = {
                 productos = JSON.parse(archivoProductos)
             };
             productos.push(producto);
-            productosJSON = JSON.stringify(productos)
+            productosJSON = JSON.stringify(productos, null, ' ')
             fs.writeFileSync(json, productosJSON);
             res.redirect('/products')
         } else {
@@ -148,7 +148,7 @@ const controller = {
                     productos[i] = productoModificado;
                 }
             };
-            productosJSON = JSON.stringify(productos)
+            productosJSON = JSON.stringify(productos, null, ' ')
             fs.writeFileSync(json, productosJSON)
             res.redirect('/products');
         } else {
@@ -176,7 +176,7 @@ const controller = {
         archivoProductos = productos.filter(numero => numero.id != id);
         console.log(archivoProductos)
 
-        productosJSON = JSON.stringify(archivoProductos);
+        productosJSON = JSON.stringify(archivoProductos, null, ' ');
         fs.writeFileSync(json, productosJSON);
         res.redirect('/products');
     },

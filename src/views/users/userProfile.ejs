@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %> 
+    <title>Perfil de usuario</title>
+</head>
+<body>
+    <!--Header-->
+    <%- include('../partials/header') %> 
+
+    <section class="nav-vehiculos">
+        <article>
+            <h3><a href="home">Home</a> / <a href="profile">Mi perfil</a></h3>
+        </article>
+    </section>
+    <main class="body">
+        <div>
+            <p>Hola<%= ' ' + user.firstName + ' ' + user.lastName %> </p>
+            <img src="../../../images/avatarPerfil/<%= user.avatar %> " alt="">
+            <p><%= user.email %> </p>
+        </div>
+    </main>
+    <!--FOOTER-->
+    <%- include('../partials/footer') %> 
+</body>
+</html>
