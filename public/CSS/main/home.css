@@ -100,7 +100,7 @@ header{
     list-style: none;
     position: absolute;
     background-color: white;
-    width: 100%;
+    width: 90%;
     visibility: hidden;
     opacity: 0;
     transition: all 200ms;
@@ -155,6 +155,14 @@ header{
     position: relative;
     width: 9.3%;
     padding: 5px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ajutar-todo{
+    width: 80%;
 }
 
 .link-menu-horizontal{
@@ -1070,6 +1078,11 @@ footer{
         position: relative;
         width: 12.8%;
         padding: 5px 0;
+    }
+
+    .carro-header{
+        position: relative;
+        left: 20px;
     }
 
 
