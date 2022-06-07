@@ -24,13 +24,15 @@
                     <button type="submit">Agregar al carrito</button>
                 </div>
             </form>
-            <div class="buttons-admin">
-                <div class="link-editar">
-                    <a href="<%= mostrarProducto.id %>/edit">Editar</a>
-                </div>
-                <form action="/products/<%= mostrarProducto.id %>/delete?_method=delete" method="post" class="link-editar">
-                    <button type="submit">Delete</button>
-                </form>
-            </div> 
+            <% if(locals.admin) { %> 
+                <div class="buttons-admin">
+                    <div class="link-editar">
+                        <a href="<%= mostrarProducto.id %>/edit">Editar</a>
+                    </div>
+                    <form action="/products/<%= mostrarProducto.id %>/delete?_method=delete" method="post" class="link-editar">
+                        <button type="submit">Delete</button>
+                    </form>
+                </div> 
+            <% } %> 
     </div> 
 <% } %> 

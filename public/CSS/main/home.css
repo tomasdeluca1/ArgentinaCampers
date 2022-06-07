@@ -7,132 +7,209 @@
 
 /*Header*/
 
-header nav{
+header{
     color: #BDA48A;
     background-color: #FFEED2;
-    font-size: 14px;
-    font-weight: bolder;
+    padding: 20px 20px;
+}
+
+.link-list{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    padding: 20px 20px;
-    border: solid 1px #BEA088;
-}
 
-.logoAC{
-    width: 10%;
-    display: none;
-}
-
-.navegadorLinks{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.links-header{
-    transition: all 200ms;
-}
-
-.links-header:hover{
-    color: #BDA48A;
 }
 
 .links-header-nav{
-    font-size: 0.7rem;
-    display: none;
+    font-size: 14px;
+    font-weight: bolder;
     text-decoration: none;
     color: #BDA48A;
-    padding: 15px;
-
 }
 
 .links-header-nav:hover{
     color: #957F65;
 }
 
+.logoAC{
+    width: 50px
+}
+
 .carro-header{
-    padding: 10px 10px;
+    padding: 12px 10px;
     font-size: 16px;
     background-color: #BDA48A;
-    border-radius: 1rem;
+    border-radius: 1rem;    
 }
 
-.carro-header .links-header{
+
+.fa-cart-shopping{
     color: #FFEED2;
+    transition: all 200ms;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto;
+    font-size: 16px;
 }
 
-.menu{
-    padding: 10px 12px;
-    font-size: 17px;
-    background-color: #BDA48A;
-    border-radius: 1rem;
-}
-
-.menu p{
-    color: #FFEED2;
-}
-
-.menu:hover{
-    background-color:#957F65 ;
-    color: #FFEED2;
-}
-
-.links-header{
-    text-decoration: none;
-    color: #BDA48A;
-}
-
-.links-header:hover{
+.fa-cart-shopping:hover{
     color: #957F65;
-}
-
-
-.usuario{
-    border: 2px solid #BEA088;
-    padding: 5px 5px ;
-    
-    margin-bottom: 4px;
-    border-radius: 1rem;
-    width: 100%;
-    text-align: center;
-}
-
-.usuario h4{
-    font-size: 16px;
-}
-
-.usuario h4 i{
-margin-right: 5px;
-}
-
-.iniciar-sesion{
-    width: 8%;  
 }
 
 .usuario{
     transition: all 200ms;
+    border: 2px solid #BEA088;
+    padding: 5px;
+    margin-bottom: 2%;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .usuario:hover{
-    color: #957F65;
     border-color: #957F65;
 }
 
-
-.usuario div{
-    transform: all 200ms;
-}
-
-.usuario div:hover{
+.usuario:hover .links-header-user{
     color: #957F65;
 }
+
+.links-header-user{
+    transition: all 200ms;
+    font-weight: bolder;
+}
+
+.links-header-user:hover{
+    color: #957F65;
+}
+
+.links-header-user i{
+    margin-right: 5px;
+}
+
+
+
+/* Esto es lo que va a aparecer en caso de que este iniciada la sesion */
+
+/* Submenu */
+.sub-menu-vertical{
+    list-style: none;
+    position: absolute;
+    background-color: white;
+    width: 90%;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 200ms;
+    z-index: 10;
+    margin-top: 7px;
+}
+
+.sub-menu-vertical li a{
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    width: 100%;
+}
+
+.menu-horizontal:hover .sub-menu-vertical{
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Estilos menu y submenu */
+
+
+.foto-y-perfil{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.contenedor-foto-perfil{
+    width: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.foto-de-perfil{
+    width: 100%;
+    height: 28px;
+    border-radius: 50%;
+}
+
+
+.menu-horizontal{
+    list-style: none;
+    position: relative;
+    width: 9.3%;
+    padding: 5px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ajutar-todo{
+    width: 80%;
+}
+
+.link-menu-horizontal{
+    text-decoration: none;
+    color: #BDA48A;
+    font-size: 16px;
+}
+
+.link-menu-horizontal:hover{
+    color: #957F65;
+}
+
+.link-menu-vertical{
+    text-decoration: none;
+    color: #BDA48A;
+    transition: all 150ms;
+}
+
+.link-menu-vertical:hover{
+    background-color: rgba(231, 231, 231, 0.5);
+}
+
+
+.nav-header-username-chevron{
+    border-style: solid;
+    border-width: 0 1.5px 1.5px 0;
+    content: '';
+    display: inline-block;
+    height: 6px;
+    position: relative;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    width: 6px;
+    color: rgba(0,0,0,.3);
+    margin: 16px 0 0 6px;
+    vertical-align: top;
+    bottom: 7px;
+    left: 2px;
+}
+
+
+
+
+
+
 /*Cuerpo*/
-
-
 
 .nav-vehiculos{
     background-color: #957f65;
@@ -252,6 +329,7 @@ hr{
 
 .este-lleva-linea label{
     margin-bottom: 5px;
+    text-align: center;
 }
 
 .fechaYHoraDevolucion{
@@ -303,6 +381,11 @@ hr{
     width: 375px;
     height: 175px;
 }
+
+.casillasHome::placeholder{
+    color:#FFEED2;
+    }
+
 
 .vehiculo p{
     color: #47525E;
@@ -540,6 +623,11 @@ footer{
 }
 
 
+.profile-picture{
+    width: 40px;
+}
+
+
 @media (min-width: 0) and (max-width: 480px){
     *{
         padding: 0;
@@ -553,7 +641,52 @@ footer{
         width: 35%;
     }
 
+    .home{
+        display: none;
+    }
+
+    .products{
+        display: none;
+    }
+
+    .about-us{
+        display: none;
+    }
+
+    .carro-header{
+        padding: 10px;
+    }
+
+    .carrito-header{
+        position: relative;
+        right: 0.8px;
+    }
+
+    .menu{
+        padding: 10px 12px;
+        font-size: 16px;
+        background-color: #BDA48A;
+        border-radius: 1rem;
+    }
+
+    .burger-menu{
+        color: #ffeed2;
+        transition: all 200ms;
+    }
+
+    .burger-menu:hover{
+        color: #957f65;
+    }
+
+    .menu-horizontal{
+        display: none;
+    }
+
     /* Body */
+
+    .textoCentrado{
+        display: none;
+    }
 
     .parte-central{
         display: flex;
@@ -574,11 +707,13 @@ footer{
     }
 
     .titulo-uno{
+        color: #47525E;
         text-align: center;
         padding: 0;
     }
 
     .titulo-dos{
+        color: #47525E;
         text-align: center;
         padding: 0;
     }
@@ -591,8 +726,6 @@ footer{
         align-items: center;
     }
 
-    
-
     .texto{
         padding: 0;
     }
@@ -600,9 +733,6 @@ footer{
     .texto div input{
         margin: 0;
     }
-
-
-
     .vehiculo{
         width: 90vw;
     }
@@ -656,10 +786,70 @@ footer{
 
 
 
-@media (min-width: 481px) and (max-width: 768px){
+@media (min-width: 481px) and (max-width: 1015px){
 
+    .link-list{
+        position: relative;
+    }
+    
     .iniciar-sesion{
-        width: 29%;
+        width: 150px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .usuario{
+        width: 90%;
+    }
+
+    .links-header{
+        text-decoration: none;
+        color: #BDA48A;
+        font-size: 14px;
+    }
+
+    .home{
+        display: none;
+    }
+
+    .products{
+        display: none;
+    }
+
+    .about-us{
+        display: none;
+    }
+
+    .carro-header{
+        padding: 10px;
+    }
+
+    .carrito-header{
+        position: relative;
+        right: 0.8px;
+    }
+
+    .menu{
+        padding: 10px 12px;
+        font-size: 16px;
+        background-color: #BDA48A;
+        border-radius: 1rem;
+    }
+
+    .burger-menu{
+        color: #ffeed2;
+        transition: all 200ms;
+    }
+
+    .burger-menu:hover{
+        color: #957f65;
+    }
+
+    .menu-horizontal{
+        display: none;
     }
 
     /* Body */
@@ -765,7 +955,7 @@ footer{
 
 
 
-@media (min-width:769px) and (max-width:1279px) {
+@media (min-width:1016px) and (max-width:1279px) {
     /* Header */
     header nav{
         font-size: 12px;
@@ -799,18 +989,12 @@ footer{
     }
  
     .iniciar-sesion{
-        display: flex;
-        flex-direction: column;
-        width: 10%;
+        width: 140px;
     }
 
-    .usuario{
-        border: 2px solid #BEA088;
-        padding: 2% ;
-        margin-bottom: 2%;
-        border-radius: 1rem;
+    .menu-horizontal{
+        width: 17%;
     }
- 
      
 
  /* Footer */
@@ -880,7 +1064,9 @@ footer{
     .iniciar-sesion{
         display: flex;
         flex-direction: column;
-        width: 10%;
+        justify-content: center;
+        align-items: center;
+        width: 12.8%;
     }
 
     .usuario{
@@ -891,7 +1077,21 @@ footer{
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 86%;
     }
+
+    .menu-horizontal{
+        list-style: none;
+        position: relative;
+        width: 12.8%;
+        padding: 5px 0;
+    }
+
+    .carro-header{
+        position: relative;
+        left: 20px;
+    }
+
 
    
 

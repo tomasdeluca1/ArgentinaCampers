@@ -47,11 +47,11 @@ body{
 .contenedorSN h2{
     font-size: 1.5rem;
     color: #957F65;
-    padding: 15px;
+    padding: 5px;
 }
 .contenedorSN h4{
     font-size: 1rem;
-    padding: 15px;
+    padding: 10px;
     
 }
 
@@ -60,24 +60,61 @@ body{
     flex-direction: column;
     align-items: center;
     margin: 20px;
-border: 2px #957F65 solid;
+    box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.3);
+border: #BDA48A 2px solid;
 border-radius: 2rem;
-width: 70%;
+width: 90%;
 padding: 20px;
 }
 
+.review{
+    height: 300px;
+	width: 95%;
+    border-radius: 1rem;
+	
+	overflow-y: scroll;
+    text-align: center;
+    background-color: #957F65;
+    box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.5);
+}
+
+.review h3{
+color: #FFEED2;
+font-size: 1rem;
+    padding:10px;
+}
+
+.review p{
+    color: #FFEED2;
+}
+
+.separacion{
+display: flex;
+padding: 15px;
+}
+
+.separacionIzq{
+width: 30%;
+border-bottom: #FFEED2 1px dotted;
+}
+
+.separacionDer{
+    width: 70%;
+    text-align: left;
+    padding: 5px 5px 15px 0;
+    border-bottom: #FFEED2 1px dotted;
+    }
+
 .imagenUsuarioReview{
-    width: 3%;
-    border-radius: 2rem;
-    border: #957F65 1px solid;
+    width: 80px;
+    height: 80px;
+    border-radius: 3rem;
 }
 
-.nombreViajero{
-    font-size: 1.5rem;
 
-}
 
 .nuevaResenia{
+    margin-top: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -94,7 +131,7 @@ padding: 20px;
 }
 
 input[type = "radio"]{ display:none;}
-label:hover{color:gold;}
+label:hover,
 label:hover ~ label{color:gold;}
 input[type = "radio"]:checked ~ label{color:gold;}
 

@@ -1,4 +1,32 @@
-[{"id":1,"name":"Francisco","lastName":"Isola","email":"frandelqueran@gmail.com","password":"12345","password2":"12345","avatar":"","phoneNumber":"1136610049"},
-    {"id":2,"name":"","lastName":"","email":"tomi@gmail.com","password":"1234","password2":"1234","avatar":"","phoneNumber":""},
-    {"id":3,"name":"Maxi","lastName":"Mendez","email":"maximendez@gmail.com","password":"hola123","password2":"hola123","avatar":"","phoneNumber":""},
-    {"id":4,"name":"Lionel","lastName":"Messi","email":"lionelmessi@gmail.com","password":"Messi12","password2":"Messi12","avatar":"","phoneNumber":""}]
+[
+ {
+  "id": 1,
+  "firstName": "Fran",
+  "lastName": "Isola",
+  "email": "frandelqueran@gmail.com",
+  "password": "$2a$10$Gxz2sr6RHdn4NW6jTU66WuuZoPr0ocYFywDJCQ4VDpbfe6eWXjtMu",
+  "phoneNumber": "",
+  "avatar": "avatarDefault.png",
+  "typeOfUser": 1
+ },
+ {
+  "id": 2,
+  "firstName": "Tomi",
+  "lastName": "De luca",
+  "email": "tomi@gmail.com",
+  "password": "$2a$10$SxsNW4UmBvEGehTweH7okOFm3oHFD8uucpkbJZ.ENyyEr5rVBzmI6",
+  "phoneNumber": "",
+  "avatar": "imgUser-1654203068270.png",
+  "typeOfUser": 2
+ },
+ {
+  "id": 3,
+  "firstName": "Agus",
+  "lastName": "Giraldez",
+  "email": "agusgiraldez@gmail.com",
+  "password": "$2a$10$NDbQuJ5nL4HUhsGLUvJwoeCW360VT0LiRqmGpjbrnImkpP5lsRYJe",
+  "phoneNumber": "",
+  "avatar": "imgUser-1654208089101.jpg",
+  "typeOfUser": 2
+ }
+]

@@ -1,12 +1,10 @@
-const express = require('express')
-const path = require ('path')
 const fs = require('fs')
-const req = require("express/lib/request")
-const { Console } = require("console")
-const { use } = require('express/lib/application')
+const { validationResult } = require ('express-validator')
+const bcrypt = require ('bcryptjs')
+
+const User = require ('../models/users');
 
 
-const json = __dirname + '/../database/usersDetalle.json';
 
 const controller = {
     login: function(req, res){
@@ -16,84 +14,82 @@ const controller = {
         res.render('./users/register')
     },
     registration: function(req, res){
-        let userId = fs.readFileSync(json, {encoding: 'utf-8'});
-        let userIdParse = JSON.parse(userId)
-        let id = 0;
-        if (userIdParse.length > 0){
-            id = userIdParse.length + 1;
-        }
-        
-    
-        // Guardar la info
-
-        let archivoUsers = fs.readFileSync(json, {encoding: 'utf-8'});
-        if(archivoUsers == ""){
-            users = []
-        } else {
-            users = JSON.parse(archivoUsers)
-        }
-
-        let mailInLowerCase = req.body.email.toLowerCase();
-        function email (email = mailInLowerCase){
-            var acumulador = 0;
-            for (let user of users){
-                if(user.email == email){
-                    return acumulador = acumulador + 1;
-                }
+        let errors = validationResult(req);
+        function image(){
+            let imagen = 'avatarDefault.png'
+            if (req.file) {
+                return req.file.filename;
+            } else {
+                return imagen;
             }
-            return acumulador;
-        };
+        }
+        if(errors.isEmpty()){
+            // let userData = {
+            //     name: req.body.firstName,
+            //     lastName: req.body.lastName,
+            //     email: req.body.email.toLowerCase(),
+            //     password: bcrypt.hashSync(req.body.password, 10),
+            //     avatar: image(),
+            //     phoneNumber: req.body.phoneNumber,
+            // }
 
-        
-        if (email() == 0 && req.body.password === req.body.password2){
-            var user = {
-                id,
-                name: req.body.firstName,
-                lastName: req.body.lastName,
+            let typeOfUser = User.creatingTypeOFUser(req.body.email)
+
+            let userData = {
+                ...req.body,
                 email: req.body.email.toLowerCase(),
-                password: req.body.password,
-                password2: req.body.password2,
-                avatar: req.body.avatar,
-                phoneNumber: req.body.phoneNumber,
+                password: bcrypt.hashSync(req.body.password, 10),
+                password2: '',
+                avatar: image(),
+                typeOfUser: typeOfUser,
             }
-            users.push(user);
-            usersJSON = JSON.stringify(users);
-            fs.writeFileSync(json, usersJSON);
-            res.redirect('/home')
+            delete userData.password2;
 
-        }else if (email() > 0){
-            res.send('puto, pone bien las cosas')
+            let userCreated = User.create(userData);
+            res.redirect('login')
+        } else {
+            res.render('users/register', {errors: errors.mapped(), oldData: req.body})
+        }
+    }, 
+    loginProcess: function(req, res){
+        let errors = validationResult(req)
+
+        if(errors.isEmpty()){
+            let email = req.body.email.toLowerCase()
+            let userToLogin = User.findByField('email', email)
+            let password = req.body.password;
+
+
+            if(userToLogin){
+                let verifyingPassword = bcrypt.compareSync(password, userToLogin.password)
+                if(verifyingPassword){
+                    delete userToLogin.password
+                    req.session.userLogged = userToLogin;
+
+                    if(req.body.rememberUser){
+                        res.cookie('userEmail', email, { maxAge: (1000 * 60) * 2 })
+                    }
+
+                    return res.redirect('home');
+                }
+                return res.render('users/login', {errors: {password:{msg: 'La contraseña es invalida'}}})} 
+        } else {
+            res.render('users/login', {errors: errors.mapped(), oldData: req.body})
         }
     },
-    loggearse: function (req, res){
-        let users = require ('../database/usersDetalle.json')
-        let acumulador = 0;
-
-        function login (){
-            for (const user of users) {
-                if(req.body.email.toLowerCase() == user.email && req.body.password == user.password){
-                    acumulador = acumulador + 1;
-                }
-            }
-            return acumulador
-        } 
-        console.log(login());
-        if(login() > 0){
-            res.redirect('/home')
-        } else if (login() == 0){
-            res.send('Puto')
-        }
+    profile: function(req, res){
+        res.render('./users/userProfile', {
+            user: req.session.userLogged
+        })
+    },
+    logout: function(req, res){
+        res.clearCookie('userEmail');
+        req.session.destroy();
+        return res.redirect('home');
     }
 }
 
 
 
-
-
-
-
-
-
-
-
 module.exports = controller;
+

@@ -26,10 +26,37 @@
         </div>
         <form class="formulario-login" action="login" method="post">
             <div class="input-label-form">
-                <input type="email" name="email" id="email" placeholder="Ingrese su email">
+                <input 
+                type="email" 
+                name="email" 
+                id="email" 
+                placeholder="Ingrese su email"
+                class="input-login <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                value="<%= locals.oldData && oldData.email && !errors.email ? oldData.email : null%>"
+                >  
+                <% if (locals.errors && errors.email) { %>
+                    <div class="errors">
+                        <p><%= errors.email.msg %> </p>
+                    </div>
+                <% } %> 
             </div>
             <div class="input-label-form">
-                <input type="password" name="password" id="password" placeholder="Contraseña">
+                <input 
+                type="password" 
+                name="password" 
+                id="password" 
+                placeholder="Contraseña"
+                class="input-login <%= locals.errors && errors.password && errors.email == undefined ? 'is-invalid' : null %>"
+                >
+                <% if (locals.errors && errors.password && errors.email == undefined) { %>
+                    <div class="errors">
+                        <p><%= errors.password.msg %> </p>
+                    </div>
+                <% } %>
+            </div>
+            <div class="input-label-form remember-user-div">
+                <input type="checkbox" name="rememberUser" id="remember-user">
+                <label for="remember-user" class="remember-user">Recordar mi usuario</label>
             </div>
             <div class="input-label-form button-iniciar-sesion">
                 <button>Iniciar sesion</button>

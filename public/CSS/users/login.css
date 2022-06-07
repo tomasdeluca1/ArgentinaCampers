@@ -51,7 +51,7 @@
 }
 
 
-.input-label-form input{
+.input-login{
     width: 100%;
     padding: 5px;
     border: #BDA48A 2px solid;
@@ -129,6 +129,35 @@
 .link-registrarse a:visited{
     color: #957f65;
 }
+
+.errors{
+    margin-top: 15px;
+}
+
+.errors p{
+    color: red;
+}
+
+.is-invalid{
+    border: 1px solid red;
+}
+
+.remember-user-div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.remember-user{
+    padding-left: 5px;
+}
+
+.remember-user:hover{
+    cursor: pointer;
+}
+
 
 @media (min-width: 0) and (max-width: 480px){
     .body{

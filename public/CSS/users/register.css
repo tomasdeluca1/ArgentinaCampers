@@ -112,6 +112,20 @@
     background-color: white;
 }
 
+.errors{
+    margin-top: 15px;
+}
+
+.errors p{
+    color: red;
+}
+
+.is-invalid{
+    border: 1px solid red;
+}
+
+
+
 @media (min-width: 0) and (max-width: 480px){
     .formulario-register{
         width: 85%;

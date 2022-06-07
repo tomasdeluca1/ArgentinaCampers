@@ -1,12 +1,17 @@
 const express = require ('express');
-const path = require('path')
 const router = express.Router();
-const usersController = require ('../controllers/usersController')
-const multer = require ('multer')
+const path = require('path');
+const usersController = require ('../controllers/usersController');
+const multer = require ('multer');
+const registerValidations = require ('../middlewares/userValidations');
+const loginValidations = require ('../middlewares/userLoginValidations');
+const guestMiddleware = require('../middlewares/guestMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
+
 
 const storage = multer.diskStorage({
     destination: function(req, file, cb){
-        let folder = './public/images/avatares';
+        let folder = './public/images/avatarPerfil';
         cb(null, folder);
     },
     filename: function(req, file, cb){
@@ -18,11 +23,25 @@ const storage = multer.diskStorage({
 const uploadFile = multer({storage: storage});
 
 
+//Vistas del registro 
+router.get('/register', guestMiddleware, usersController.register)
 
-router.get('/register', usersController.register)
-router.post('/register', usersController.registration)
-router.get('/login', usersController.login)
-router.post('/login', usersController.loggearse)
+// Proceso del registro
+router.post('/register', uploadFile.single('avatar'), registerValidations, usersController.registration)
+
+//Vistas del login
+router.get('/login', guestMiddleware, usersController.login)
+
+//Proceso del login
+router.post('/login', loginValidations, usersController.loginProcess)
+
+// Vistas del perfil de usuario
+router.get('/profile', authMiddleware, usersController.profile)
+
+//Logout
+router.get('/logout', usersController.logout)
+
+
 
 
 
