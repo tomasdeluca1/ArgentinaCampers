@@ -26,14 +26,14 @@ app.use(session({
 app.use(cookies());
 
 app.use(userLoggedMiddleware);
-app.use(adminPermissions)
+app.use(adminPermissions);
 
 
 
 //Rutas
-const main = require ('./routes/main')
-const productCart = require ('./routes/productCart')
-const products= require ('./routes/products')
+const main = require ('./routes/main');
+const productCart = require ('./routes/productCart');
+const products= require ('./routes/products');
 const users = require ('./routes/users');
 const aboutUs= require('./routes/aboutUs');
 const req = require('express/lib/request');
@@ -47,6 +47,6 @@ app.use('/', aboutUs)
 
 
 //Inicializacion del servidor
-app.listen(5000, ()=>{
+app.listen(3000, ()=>{
     console.log("Server 5000 running");
 });

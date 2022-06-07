@@ -1,0 +1,128 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffeed2;
+    padding: 50px;
+}
+
+.mis-datos{
+    width: 40%;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.mis-datos-editar{
+    width: 40%;
+    text-align: left;
+    margin: 20px 0;
+}
+
+.container-name-email-image-user{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 40%;
+    background-color: #ffffff;
+    padding: 25px 0 25px 40px;
+    border-radius: 10px;
+    border: .125rem solid #957f65;
+}
+
+.name-email-user{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 20px;
+    align-self: stretch;
+}
+.name{
+    margin-bottom: 5px;
+}
+
+.email{
+    margin-top: 5px;
+}
+
+.foto-de-perfil-user{
+    border-radius: 50%;
+    border: .125rem solid #957f65;
+    padding: 4px;
+    background-color: #ffffff;
+}
+
+.foto-de-perfil-user-div{
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.foto-de-perfil-info{
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+}
+
+
+.container-edicion-de-datos{
+    width: 40%;
+    background-color: #ffffff;
+    margin: 30px 0;  
+    border-radius: 10px;
+    padding: 25px 40px 25px 40px;
+    border: .125rem solid #957f65;
+}
+
+
+.edicion-de-datos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+}
+
+.gestion-de-datos{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 20px;
+    align-self: stretch;
+    width: auto;
+}
+
+.editar-mis-datos{
+    margin-bottom: 5px;
+}
+
+.gestionar-mis-datos{
+    margin-top: 5px;
+}
+
+.flechita{
+    flex-grow: 1;
+    text-align: right;
+}
+
+.linea-gris{
+    width: 100%;
+    margin: 15px 0;
+    border-top: 1px solid grey;
+    opacity: 0.2;
+}

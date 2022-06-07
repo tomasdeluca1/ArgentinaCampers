@@ -41,7 +41,7 @@ header{
     padding: 12px 10px;
     font-size: 16px;
     background-color: #BDA48A;
-    border-radius: 1rem;    
+    border-radius: 1rem;   
 }
 
 
@@ -280,11 +280,13 @@ header{
 .titulo-uno{
     text-align: left;
     padding: 10px 0 5px 20px;
+    color: #47525E;
 }
 
 .titulo-dos{
     text-align: left;
     padding: 5px 0 5px 20px;
+    color: #47525E;
 }
 
 hr{
@@ -381,11 +383,6 @@ hr{
     width: 375px;
     height: 175px;
 }
-
-.casillasHome::placeholder{
-    color:#FFEED2;
-    }
-
 
 .vehiculo p{
     color: #47525E;
@@ -707,13 +704,11 @@ footer{
     }
 
     .titulo-uno{
-        color: #47525E;
         text-align: center;
         padding: 0;
     }
 
     .titulo-dos{
-        color: #47525E;
         text-align: center;
         padding: 0;
     }
@@ -1089,7 +1084,7 @@ footer{
 
     .carro-header{
         position: relative;
-        left: 20px;
+        left: 20px; 
     }
 
 
