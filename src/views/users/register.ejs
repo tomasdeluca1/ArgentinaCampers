@@ -27,6 +27,9 @@
                 placeholder="Argentina" 
                 class="input-register <%= locals.errors && errors.firstName ? 'is-invalid' : null %>"
                 value="<%=locals.oldData && oldData.firstName ? oldData.firstName : null%>"
+                minlength="2"
+                maxlength="100"
+                required
                 >
                 <% if (locals.errors && errors.firstName) { %>
                     <div class="errors">
@@ -42,10 +45,31 @@
                 placeholder="Campers" 
                 class="input-register <%= locals.errors && errors.lastName ? 'is-invalid' : null %>"
                 value="<%=locals.oldData && oldData.lastName ? oldData.lastName : null%>"
+                minlength="2"
+                maxlength="100"
+                required
                 >
                 <% if (locals.errors && errors.lastName) { %>
                     <div class="errors">
                         <p><%= errors.lastName.msg %> </p>
+                    </div>
+                <% } %> 
+            </div>
+            <div class="input-label-form">
+                <label for="userName" class="label-register">Nombre de usuario</label>
+                <input 
+                type="text" 
+                name="userName" 
+                placeholder="Nombre de usuario" 
+                class="input-register <%= locals.errors && errors.userName ? 'is-invalid' : null %>"
+                value="<%=locals.oldData && oldData.userName ? oldData.userName : null%>"
+                minlength="4"
+                maxlength="15"
+                required
+                >
+                <% if (locals.errors && errors.userName) { %>
+                    <div class="errors">
+                        <p><%= errors.userName.msg %> </p>
                     </div>
                 <% } %> 
             </div>
@@ -57,6 +81,8 @@
                 placeholder="argentinacampers@gmail.com" 
                 class="input-register <%= locals.errors && errors.email ? 'is-invalid' : null %>"
                 value="<%=locals.oldData && oldData.email ? oldData.email : null%>"
+                maxlength="100"
+                required
                 >
                 <% if (locals.errors && errors.email) { %>
                     <div class="errors">
@@ -71,6 +97,9 @@
                 name="password" 
                 placeholder="Contraseña" 
                 class="input-register <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+                minlength="6"
+                maxlength="200"
+                required
                 >
                 <% if (locals.errors && errors.password) { %>
                     <div class="errors">
@@ -85,6 +114,9 @@
                 name="password2" 
                 placeholder="Confirme su contraseña" 
                 class="input-register <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+                minlength="6"
+                maxlength="200"
+                required
                 >
             </div>
             <div class="input-label-form">
@@ -93,7 +125,13 @@
             </div>
             <div class="input-label-form">
                 <label for="phoneNumber" class="label-register numero-de-telefono-label">Número de teléfono (Agregar código de área)</label>
-                <input type="tel" name="phoneNumber" placeholder="11-5418-7697" class="input-register numero-de-telefono-input">
+                <input 
+                type="tel" 
+                name="phoneNumber" 
+                placeholder="11-5418-7697" 
+                class="input-register numero-de-telefono-input"
+                maxlength="11"
+                >
             </div>
             <div class="input-label-form link-para-iniciar-sesion">
                 <a href="login">Ya tienes una cuenta? Inicia sesion aqui</a>

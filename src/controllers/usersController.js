@@ -86,6 +86,31 @@ const controller = {
         res.clearCookie('userEmail');
         req.session.destroy();
         return res.redirect('home');
+    },
+    allUsers: function(req, res){
+        let allUsers = User.findAll();
+        res.render('./users/allUsers', { users: allUsers })
+    },
+    search: function(req, res){
+        let loQueBuscoElAdmin = req.query.searchingUsers.toLowerCase().trim().replace('-', ' ').replace('_', ' ').replace('.', ' ');
+
+        
+
+        let getAllUsers = User.findAll();
+
+        let coincidences = [];
+
+        for (let i = 0; i < getAllUsers.length; i++) {
+            if(getAllUsers[i].firstName.toLowerCase().includes(loQueBuscoElAdmin) || getAllUsers[i].lastName.toLowerCase().includes(loQueBuscoElAdmin) || getAllUsers[i].userName.toLowerCase().includes(loQueBuscoElAdmin) || (getAllUsers[i].firstName + ' ' + getAllUsers[i].lastName).toLowerCase().includes(loQueBuscoElAdmin)){
+                coincidences.push(getAllUsers[i])
+            }
+        }
+
+        if(!loQueBuscoElAdmin){
+            coincidences = [];
+        }
+
+        res.render('users/userResults', { usersResults : coincidences })
     }
 }
 
