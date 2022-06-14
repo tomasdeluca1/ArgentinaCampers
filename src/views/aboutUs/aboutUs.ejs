@@ -33,7 +33,7 @@
             <img src="/images/imagenesVariadas/aboutUs2.png" alt="2da parte del banner" class="bannerConjunto">
             <img src="/images/imagenesVariadas/aboutUs3.png" alt="3era parte del banner" class="bannerConjunto">
           </div>
-        <div class="contenedorSN"> 
+        <div class="aboutUs"> 
         <div class="contenedorText" >
             <h2>Sobre nosotros</h2>
             <h4> 
@@ -46,63 +46,119 @@
         </div>
     
 <!-- Agregar testimonios de clientes de Argentina Campers -->
-<div class="nuestrosViajeros">
-    <div class="review">
-        <h3 style="border-bottom: #FFEED2 2px solid;">Reseñas de nuestros viajeros</h3>
-        <div class="separacion">
-            <div  class="separacionIzq">
-                <img src="/images/imagenesVariadas/aboutUs2.png" class="imagenUsuarioReview"> 
-            <h3 class="nombreViajero">Tomás Deluca</h3>
-        </div>
-        <div class="separacionDer">
-            <h3>Una aventura por el norte</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos soluta rerum ab incidunt ipsa doloribus perspiciatis blanditiis dolores placeat quibusdam maiores officiis dolor, aspernatur obcaecati natus. Perferendis numquam reiciendis dolore?</p>
-        </div>
-        </div>
-        <div class="separacion">
-            <div  class="separacionIzq">
-                <img src="/images/imagenesVariadas/aboutUs3.png" class="imagenUsuarioReview"> 
-            <h3 class="nombreViajero">Francisco Isola</h3>
-        </div>
-        <div class="separacionDer">
-            <h3>Experiencia inolvidable</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos soluta rerum ab incidunt ipsa doloribus perspiciatis blanditiis dolores placeat quibusdam maiores officiis dolor, aspernatur obcaecati natus. Perferendis numquam reiciendis dolore?</p>
-        </div>
-        </div>
-        <div class="separacion">
-            <div  class="separacionIzq">
-                <img src="/images/imagenesVariadas/aboutUs4.png" class="imagenUsuarioReview"> 
-            <h3 class="nombreViajero">Agustín giraldez</h3>
-        </div>
-        <div class="separacionDer">
-            <h3>Un mundo nuevo descubierto</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos soluta rerum ab incidunt ipsa doloribus perspiciatis blanditiis dolores placeat quibusdam maiores officiis dolor, aspernatur obcaecati natus. Perferendis numquam reiciendis dolore?</p>
-        </div>
-        </div>
+
+    <h3 class="viajerosContentos">Experiencias de nuestros clientes</h3>
+   <div class="reviews-row">
+    <div class="cuadradoReview">
+       <h5>Gran experiencia</h5>
+        <div class="estrellasReview">★★★★</div>
+        <h3>Una aventura por el norte</h3>
+        <p>Decidimos irnos con mi novia y una pareja amiga a realizar la ruta de los vinos y decidimos realizarla con la Toyota Hiace, cammpervan con capacidad de 4 personas. La atención de Martín y Horacio fue realmente excelente, no tuvimos mayores inconvenientes, pero los que tuvimos nos los pudieron resolver con rapidez.</p>
+        <h4 class="viajero">Tomás Deluca</h4>
     </div>
+    <div class="cuadradoReview">
+        <h5>Buena experiencia</h5>
+         <div class="estrellasReview">★★★</div>
+         <h3>Experiencia inolvidable</h3>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos soluta rerum ab incidunt ipsa doloribus perspiciatis blanditiis dolores placeat quibusdam maiores officiis dolor, aspernatur obcaecati natus. Perferendis numquam reiciendis dolore?</p>
+         <h4 class="viajero">Francisco Isola</h4>
+     </div>
+     <div class="cuadradoReview">
+        <h5>Experiencia única</h5>
+         <div class="estrellasReview">★★★★★</div>
+         <h3>Un mundo nuevo descubierto</h3>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos soluta rerum ab incidunt ipsa doloribus perspiciatis blanditiis dolores placeat quibusdam maiores officiis dolor, aspernatur obcaecati natus. Perferendis numquam reiciendis dolore?</p>
+         <h4 class="viajero">Agustín giraldez</h4>
+     </div>
+    
+   </div>
+
+<!-- Testimonios version antigua -->
+<script src="https://use.fontawesome.com/a6f0361695.js"></script>
+
+<h2 id="fh2">¡Compartí tu experiencia con la comunidad!</h2>
+
+
+<form id="feedback" action="aboutUs" method="post">
+    <div class="pinfo">Información personal</div>
+  
+    <div class="form-group">
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-user"></i></span>
+      <input  name="viajero" placeholder="Juan Díaz" class="form-control"  type="text">
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+        <input name="email" type="email" class="form-control" placeholder="juandiaz@hotmail.com">
+         </div>
+      </div>
+    </div>
+    <div class="pinfo">Destino</div>
+    <div class="form-group">
+        <div class="col-md-4 inputGroupContainer">
+        <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-globe"></i></span>
+        <input  name="destino" placeholder="Bariloche, Río Negro" class="form-control"  type="text">
+          </div>
+        </div>
+      </div>
+ 
+  
+ <p class="clasificacion">
+    <label for="radio5">★</label><input id="radio5" type="radio" name="estrellas" value="5"><!--
+  --><label for="radio4">★</label><input id="radio4" type="radio" name="estrellas" value="4"><!--
+  --><label for="radio3">★</label><input id="radio3" type="radio" name="estrellas" value="3"><!--
+  --><label for="radio2">★</label><input id="radio2" type="radio" name="estrellas" value="2"><!--
+  --><label for="radio1">★</label><input id="radio1" type="radio" name="estrellas" value="1"><!--
+  -->
+</p>
+<div class="form-group">
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon">★</i></span>
+   <select class="form-control" name="rate">
+      <option value="1">No recomendable</option>
+      <option value="2">Aceptable</option>
+      <option value="3">Buena experiencia</option>
+      <option value="4">Gran experiencia</option>
+      <option value="5">Experiencia única</option>
+    </select>
+    </div>
+  </div>
+</div>
+<div class="pinfo" style="text-align: center;">Título de la aventura</div>
+ <div class="form-group">
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+    <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+    <input class="form-control" type="text" name="adventureTitle" max="30">
+   
+      </div>
+    </div>
+  </div>
+  <div class="pinfo" style="text-align: center;">Descripción</div>
+<div class="form-group">
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+  <textarea class="form-control" name="adventureDescription" rows="4"></textarea>
+ 
+    </div>
+  </div>
+</div>
+
+ <button type="submit" class="btn btn-primary">Enviar</button>
+
+
+</form>
 
 <!--// include("../testimonios") -->
-<div class="nuevaResenia">
-    <div style="display: flex;flex-direction: row;"></div>
-<h2>¡Compartí tu experiencia!</h2>
-    <form action="resenia" method="post" enctype="multipart/form-data">
-
-        <label for="tituloViaje">Titulá tu viaje</label>
-        <input type="text" name="tituloViaje" placeholder="Aventuras por doquier" class="tituloViaje">
-
-        <p class="clasificacion">
-            <label for="radio5">★</label><input id="radio5" type="radio" name="estrellas" value="5"><!--
-          --><label for="radio4">★</label><input id="radio4" type="radio" name="estrellas" value="4"><!--
-          --><label for="radio3">★</label><input id="radio3" type="radio" name="estrellas" value="3"><!--
-          --><label for="radio2">★</label><input id="radio2" type="radio" name="estrellas" value="2"><!--
-          --><label for="radio1C">★</label><input id="radio1" type="radio" name="estrellas" value="1"><!--
-          -->
-        </p>
-         <div>
-            <input type="text-area" class="">
-         </div>
-      </form>
-    </div>
 </div>
 
 
