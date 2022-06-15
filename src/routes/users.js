@@ -7,6 +7,8 @@ const registerValidations = require ('../middlewares/userValidations');
 const loginValidations = require ('../middlewares/userLoginValidations');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
+const adminPermissions = require('../middlewares/adminPermissions')
+const myProfileMiddleware = require('../middlewares/myProfileMiddleware')
 
 
 const storage = multer.diskStorage({
@@ -23,6 +25,7 @@ const storage = multer.diskStorage({
 const uploadFile = multer({storage: storage});
 
 
+
 //Vistas del registro 
 router.get('/register', guestMiddleware, usersController.register)
 
@@ -36,13 +39,22 @@ router.get('/login', guestMiddleware, usersController.login)
 router.post('/login', loginValidations, usersController.loginProcess)
 
 // Vistas del perfil de usuario
-router.get('/profile', authMiddleware, usersController.profile)
+router.get('/profile/:id', authMiddleware, myProfileMiddleware, usersController.profile)
+
+// //Vista editar perfil usuario
+// router.get('/profile/:id/edit', authMiddleware, usersController.editProfileData)
+
+// //Proceso editar perfil usuario
+// router.put('/profile/:id/edit', usersController.processeditProfileData)
 
 //Logout
 router.get('/logout', usersController.logout)
 
+//Todos los usuarios
+router.get('/all-users', adminPermissions, usersController.allUsers)
 
-
+//Buscar usuarios por nombre
+router.get('/search', adminPermissions,  usersController.search)
 
 
 
