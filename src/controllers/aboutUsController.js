@@ -4,11 +4,12 @@ const multer = require('multer')
 const { validationResult } = require ('express-validator')
 
 
+
 const json = __dirname + '/../database/reviewsDetalle.json'
 
 const controller = {
     index: function(req, res){
-        res.render('aboutUs/aboutUs');
+        res.render('aboutUs/aboutUs', {reviews : todasLasReviews});
     },
     
     create: function (req ,res, next){

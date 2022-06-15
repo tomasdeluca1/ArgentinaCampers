@@ -49,28 +49,7 @@
 
     <h3 class="viajerosContentos">Experiencias de nuestros clientes</h3>
    <div class="reviews-row">
-    <div class="cuadradoReview">
-       <h5>Gran experiencia</h5>
-        <div class="estrellasReview">★★★★</div>
-        <h3>Una aventura por el norte</h3>
-        <p>Decidimos irnos con mi novia y una pareja amiga a realizar la ruta de los vinos y decidimos realizarla con la Toyota Hiace, cammpervan con capacidad de 4 personas. La atención de Martín y Horacio fue realmente excelente, no tuvimos mayores inconvenientes, pero los que tuvimos nos los pudieron resolver con rapidez.</p>
-        <h4 class="viajero">Tomás Deluca</h4>
-    </div>
-    <div class="cuadradoReview">
-        <h5>Buena experiencia</h5>
-         <div class="estrellasReview">★★★</div>
-         <h3>Experiencia inolvidable</h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos soluta rerum ab incidunt ipsa doloribus perspiciatis blanditiis dolores placeat quibusdam maiores officiis dolor, aspernatur obcaecati natus. Perferendis numquam reiciendis dolore?</p>
-         <h4 class="viajero">Francisco Isola</h4>
-     </div>
-     <div class="cuadradoReview">
-        <h5>Experiencia única</h5>
-         <div class="estrellasReview">★★★★★</div>
-         <h3>Un mundo nuevo descubierto</h3>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos soluta rerum ab incidunt ipsa doloribus perspiciatis blanditiis dolores placeat quibusdam maiores officiis dolor, aspernatur obcaecati natus. Perferendis numquam reiciendis dolore?</p>
-         <h4 class="viajero">Agustín giraldez</h4>
-     </div>
-    
+    <%- include('./partials/reviews') %> 
    </div>
 
 <!-- Testimonios version antigua -->
@@ -80,7 +59,7 @@
 
 
 <form id="feedback" action="aboutUs" method="post">
-    <div class="pinfo">Información personal</div>
+    <div class="pinfo">Nombre o apodo</div>
   
     <div class="form-group">
       <div class="col-md-4 inputGroupContainer">
@@ -91,14 +70,6 @@
       </div>
     </div>
     
-    <div class="form-group">
-      <div class="col-md-4 inputGroupContainer">
-      <div class="input-group">
-      <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-        <input name="email" type="email" class="form-control" placeholder="juandiaz@hotmail.com">
-         </div>
-      </div>
-    </div>
     <div class="pinfo">Destino</div>
     <div class="form-group">
         <div class="col-md-4 inputGroupContainer">
@@ -111,11 +82,11 @@
  
   
  <p class="clasificacion">
-    <label for="radio5">★</label><input id="radio5" type="radio" name="estrellas" value="5"><!--
-  --><label for="radio4">★</label><input id="radio4" type="radio" name="estrellas" value="4"><!--
-  --><label for="radio3">★</label><input id="radio3" type="radio" name="estrellas" value="3"><!--
-  --><label for="radio2">★</label><input id="radio2" type="radio" name="estrellas" value="2"><!--
-  --><label for="radio1">★</label><input id="radio1" type="radio" name="estrellas" value="1"><!--
+    <label for="radio5">★</label><input id="radio5" type="radio" name="estrellas" value="★★★★★"><!--
+  --><label for="radio4">★</label><input id="radio4" type="radio" name="estrellas" value="★★★★"><!--
+  --><label for="radio3">★</label><input id="radio3" type="radio" name="estrellas" value="★★★"><!--
+  --><label for="radio2">★</label><input id="radio2" type="radio" name="estrellas" value="★★"><!--
+  --><label for="radio1">★</label><input id="radio1" type="radio" name="estrellas" value="★"><!--
   -->
 </p>
 <div class="form-group">
@@ -123,11 +94,12 @@
   <div class="input-group">
   <span class="input-group-addon">★</i></span>
    <select class="form-control" name="rate">
-      <option value="1">No recomendable</option>
-      <option value="2">Aceptable</option>
-      <option value="3">Buena experiencia</option>
-      <option value="4">Gran experiencia</option>
-      <option value="5">Experiencia única</option>
+      <option disabled selected value> Calificá tu viaje </option>
+      <option value="No recomendable">No recomendable</option>
+      <option value="Aceptable">Aceptable</option>
+      <option value="Buena experiencia">Buena experiencia</option>
+      <option value="Gran experiencia">Gran experiencia</option>
+      <option value="Experiencia única">Experiencia única</option>
     </select>
     </div>
   </div>
