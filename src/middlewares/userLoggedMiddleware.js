@@ -15,7 +15,7 @@ function userLoggedMiddleware(req, res, next){
         //Con esto los datos se transforman en datos locales y no datos que vienen de la web.
         res.locals.userLogged = req.session.userLogged;
     };
-
+    
     next();
 }
 

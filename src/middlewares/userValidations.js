@@ -43,38 +43,9 @@ const userValidations = [
         .isEmail().withMessage('Tienes que ser un correo electronico valido').bail()
         .custom((value, { req }) => {
 
-            // let entryEmail = req.body.email.toLowerCase();
+            let entryEmail = req.body.email.toLowerCase();
 
-            
-
-            // function hola(){
-            //     db.Users.findAll({
-            //         where: {
-            //             email: value
-            //         }
-            //     })
-            //     .then(function(users){
-            //         let boolean = true;
-            //         for (let i = 0; i < users.length; i++) {
-            //             if(users[i].email == entryEmail){
-            //                 boolean = false
-            //                 }             
-            //             }
-            //             return boolean;
-            //         })
-            //     .then(function(boolean){
-            //         if (boolean == false) {
-            //             throw new Error 
-            //         } else {
-            //             return true
-            //             }
-            //         })
-            //     .catch(function(errors){
-            //         if(errors){
-            //             return false
-            //             }
-            //         })
-            //     }
+      
    
             for(let i = 0; i < usuarios.length; i++){
                 if(entryEmail == usuarios[i].email){
@@ -88,9 +59,42 @@ const userValidations = [
         .isLength({ min : 4 }).withMessage('Tu nombre de usuario tiene que ser mayor de 4 caracteres').bail()
         .custom((value, { req }) => {
 
+                          
+            let entryUserName = req.body.userName;
+            const all = User.findAll()
+            function nombresDeUsuario(){
+                let nombreDeUsuario = []
+                let userNameLowerCase;
+                for (let i = 0; i < all.length; i++) {
+                    userNameLowerCase = all[i].userName;
+                    nombreDeUsuario.push(userNameLowerCase.toLowerCase());
+                }
+                return nombreDeUsuario;
+            }
+
+            function verificarNombreDeUsuario (usersNames, entryUserName){
+                let entryUserNameLowerCase = entryUserName.toLowerCase()
+                for (let i = 0; i < usersNames.length; i++) {
+                    if(usersNames[i] === entryUserNameLowerCase){
+                        throw new Error ('Este nombre de usuario ya existe')
+                    }   
+                }
+            }
+            verificarNombreDeUsuario(nombresDeUsuario(), entryUserName)
+
+            return true
+    })
+];
+
+   
+
+           
             
 
-            // db.Users.findOne({
+module.exports = userValidations;
+
+
+ // db.Users.findOne({
             //     where: {
             //         userName
             //     }
@@ -128,34 +132,10 @@ const userValidations = [
             // .catch(function(errors){
             //     return errors
             // })
-            
-            let entryUserName = req.body.userName;
-            const all = User.findAll()
-            function nombresDeUsuario(){
-                let nombreDeUsuario = []
-                let userNameLowerCase;
-                for (let i = 0; i < all.length; i++) {
-                    userNameLowerCase = all[i].userName;
-                    nombreDeUsuario.push(userNameLowerCase.toLowerCase());
-                }
-                return nombreDeUsuario;
-            }
 
-            function verificarNombreDeUsuario (usersNames, entryUserName){
-                let entryUserNameLowerCase = entryUserName.toLowerCase()
-                for (let i = 0; i < usersNames.length; i++) {
-                    if(usersNames[i] === entryUserNameLowerCase){
-                        throw new Error ('Este nombre de usuario ya existe')
-                    }   
-                }
-            }
-            verificarNombreDeUsuario(nombresDeUsuario(), entryUserName)
 
-            return true
-    })
-];
 
-    // .custom(async value => {
+             // .custom(async value => {
     //     let userEmail = await User.findOne({
     //         where: { 'email': value }
     //     })
@@ -168,8 +148,3 @@ const userValidations = [
     //       }
     // })
     // .withMessage("El email ya se encuentra registrado.")
-
-           
-            
-
-module.exports = userValidations;

@@ -92,7 +92,7 @@ const controller = {
         res.render('./users/allUsers', { users: allUsers })
     },
     search: function(req, res){
-        let loQueBuscoElAdmin = req.query.searchingUsers.toLowerCase().trim().replace('-', ' ').replace('_', ' ').replace('.', ' ');
+        let loQueBuscoElAdmin = req.query.searchingUsers.toLowerCase().trim().replaceAll('-', '').replaceAll('_', '').replaceAll('.', '').replaceAll(' ', '');
 
         
 
@@ -101,7 +101,7 @@ const controller = {
         let coincidences = [];
 
         for (let i = 0; i < getAllUsers.length; i++) {
-            if(getAllUsers[i].firstName.toLowerCase().includes(loQueBuscoElAdmin) || getAllUsers[i].lastName.toLowerCase().includes(loQueBuscoElAdmin) || getAllUsers[i].userName.toLowerCase().includes(loQueBuscoElAdmin) || (getAllUsers[i].firstName + ' ' + getAllUsers[i].lastName).toLowerCase().includes(loQueBuscoElAdmin)){
+            if(getAllUsers[i].firstName.toLowerCase().trim().replaceAll('-', '').replaceAll('_', '').replaceAll('.', '').replaceAll(' ', '').includes(loQueBuscoElAdmin) || getAllUsers[i].lastName.toLowerCase().trim().replaceAll('-', '').replaceAll('_', '').replaceAll('.', '').replaceAll(' ', '').includes(loQueBuscoElAdmin) || getAllUsers[i].userName.toLowerCase().trim().replaceAll('-', '').replaceAll('_', '').replaceAll('.', '').replaceAll(' ', '').includes(loQueBuscoElAdmin) || (getAllUsers[i].firstName + ' ' + getAllUsers[i].lastName).toLowerCase().trim().replaceAll('-', '').replaceAll('_', '').replaceAll('.', '').replaceAll(' ', '').includes(loQueBuscoElAdmin)){
                 coincidences.push(getAllUsers[i])
             }
         }
