@@ -174,15 +174,13 @@ const controller = {
         };
 
         archivoProductos = productos.filter(numero => numero.id != id);
-        console.log(archivoProductos)
 
         productosJSON = JSON.stringify(archivoProductos, null, ' ');
         fs.writeFileSync(json, productosJSON);
         res.redirect('/products');
     },
+
 }
-
-
 
 
 module.exports = controller;

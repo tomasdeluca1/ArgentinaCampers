@@ -51,6 +51,7 @@
     border-radius: 1.5rem;
     margin: 5px 0;
     padding: 10px;
+    background-color: white;
 }
 
 .elegir-avatar-label{
@@ -66,12 +67,14 @@
 
 .numero-de-telefono-label{
     align-self: center;
+    margin: 5px 0;
 }
 
 .numero-de-telefono-input{
     text-align: center;
     width: 60%;
-    margin-bottom: 0;
+    margin: 5px 0;
+    background-color: white;
 }
 
 .link-para-iniciar-sesion{
@@ -113,7 +116,7 @@
 }
 
 .errors{
-    margin-top: 15px;
+    margin-top: 6px;
 }
 
 .errors p{
@@ -122,6 +125,13 @@
 
 .is-invalid{
     border: 1px solid red;
+}
+
+.linea{
+    width: 90%;
+    margin: 15px 0;
+    border-top: 1px solid grey;
+    opacity: 0.2;
 }
 
 

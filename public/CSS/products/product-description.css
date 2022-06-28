@@ -160,6 +160,7 @@ margin-top: 10px;
     color: #FFEED2;
     font-size: 16px;
     transition: all 350ms;
+    width: 100%;
 }
 
 .link-editar:hover button{

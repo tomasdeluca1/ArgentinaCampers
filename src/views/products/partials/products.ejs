@@ -1,21 +1,21 @@
-<% for (let info of infoProductos) { %> 
+<% for (let productoInfo of productos) { %> 
     <article class="descProductos">
         <div class="componentes-del-producto">
-            <h4><%= info.marca + " " + info.modelo %> </h4>
+            <h4><%= productoInfo.marca + " " + productoInfo.modelo %> </h4>
         </div>
         <div class="componentes-del-producto">
-            <img src="../images/imagenesproductos/<%= info.img %>" alt="<%= info.marca + info.modelo %>" class="productoImg">
+            <img src="../images/imagenesproductos/<%= productoInfo.img %>" alt="<%= productoInfo.marca + productoInfo.modelo %>" class="productoImg">
         </div>
         <div class="componentes-del-producto">
-            <p><%= info.detalle %></p>
+            <p><%= productoInfo.descripcion %></p>
         </div>
         <div class="opcionesProducto <%= !locals.admin ? 'centrar-div' : null %>">
             <div class="masDetalles">
-                <a href="products/<%= info.id %>">Más Detalles</a>
+                <a href="products/<%= productoInfo.id %>">Más Detalles</a>
             </div>
             <% if (locals.admin) { %>
                 <div class="editarProducto">
-                    <a href="products/<%= info.id %>/edit"><i class="fa-solid fa-pencil"></i></a>
+                    <a href="products/<%= productoInfo.id %>/edit"><i class="fa-solid fa-pencil"></i></a>
                 </div>
             <% } %> 
         </div>

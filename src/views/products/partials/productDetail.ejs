@@ -1,14 +1,14 @@
-<% if (mostrarProducto) { %>
+<% if (producto) { %>
     <div class="todo-el-producto">
         <div class="imagen-descripcion">
-            <img src="../images/imagenesproductos/<%= mostrarProducto.img %>" alt="<%= mostrarProducto.marca + " " + mostrarProducto.modelo %>">
+            <img src="../images/imagenesproductos/<%= producto.img %>" alt="<%= producto.marca + " " + producto.modelo %>">
         </div>
         <div class="parte-de-la-derecha">
             <div class="titulo">
-                <h2><%= mostrarProducto.marca + " " + mostrarProducto.modelo %></h2>
+                <h2><%= producto.marca + " " + producto.modelo %></h2>
             </div>
             <div class="descripcion-del-producto">
-                <p><%= mostrarProducto.detalle %></p>
+                <p><%= producto.descripcion %></p>
             </div>
             <form action="" method="post">
                 <div class="div-seleccion-de-tiempo">
@@ -27,10 +27,10 @@
             <% if(locals.admin) { %> 
                 <div class="buttons-admin">
                     <div class="link-editar">
-                        <a href="<%= mostrarProducto.id %>/edit">Editar</a>
+                        <a href="<%= producto.id %>/edit">Editar</a>
                     </div>
-                    <form action="/products/<%= mostrarProducto.id %>/delete?_method=delete" method="post" class="link-editar">
-                        <button type="submit">Delete</button>
+                    <form action="<%= producto.id %>/delete?_method=put" method="post" class="link-editar">
+                        <button type="submit">Eliminar producto</button>
                     </form>
                 </div> 
             <% } %> 

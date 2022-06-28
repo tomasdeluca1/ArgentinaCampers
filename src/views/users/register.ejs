@@ -91,6 +91,23 @@
                 <% } %> 
             </div>
             <div class="input-label-form">
+                <label for="emailRespaldo" class="label-register">Correo electrónico de respaldo</label>
+                <input 
+                type="email" 
+                name="emailRespaldo" 
+                placeholder="argentinacampers@gmail.com" 
+                class="input-register <%= locals.errors && errors.emailRespaldo ? 'is-invalid' : null %>"
+                value="<%=locals.oldData && oldData.emailRespaldo ? oldData.emailRespaldo : null%>"
+                maxlength="100"
+                required
+                >
+                <% if (locals.errors && errors.emailRespaldo) { %>
+                    <div class="errors">
+                        <p><%= errors.emailRespaldo.msg %> </p>
+                    </div>
+                <% } %> 
+            </div>
+            <div class="input-label-form">
                 <label for="password" class="label-register">Contraseña</label>
                 <input 
                 type="password" 
@@ -119,20 +136,222 @@
                 required
                 >
             </div>
+
             <div class="input-label-form">
                 <label for="avatar" class="label-register elegir-avatar-label">Elija su imagen de perfil (Opcional)</label>
-                <input type="file" name="avatar" placeholder="Inserte su imágen" accept=".png, .jpg, .jpeg" id="avatar" class="input-register elegir-avatar-input">
+                <input 
+                type="file" 
+                name="avatar" 
+                placeholder="Inserte su imágen" 
+                accept=".png, .jpg, .jpeg" 
+                id="avatar" 
+                class="input-register elegir-avatar-input"
+                style='display: none'   
+                >
             </div>
+            <div class="linea"></div>
+
             <div class="input-label-form">
-                <label for="phoneNumber" class="label-register numero-de-telefono-label">Número de teléfono (Agregar código de área)</label>
+                <label for="birthday" class="label-register numero-de-telefono-label">Pone tu fecha de nacimiento</label>
+                <input   
+                type="date" 
+                name="birthday"
+                class="input-register numero-de-telefono-input <%= locals.errors && errors.birthday ? 'is-invalid' : null %>"
+                value="<%=locals.oldData && oldData.birthday ? oldData.birthday : null%>"
+                required
+                >
+                <% if (locals.errors && errors.birthday) { %>
+                    <div class="errors">
+                        <p><%= errors.birthday.msg %> </p>
+                    </div>
+                <% } %>
+            </div>
+
+            <div class="input-label-form">
+                <label for="dni" class="label-register numero-de-telefono-label">Pone tu dni</label>
+                <input   
+                type="number" 
+                name="dni" 
+                placeholder="45 234 567" 
+                class="input-register numero-de-telefono-input <%= locals.errors && errors.dni ? 'is-invalid' : null %>"
+                value="<%=locals.oldData && oldData.dni ? oldData.dni : null%>"
+                required
+                >
+                <% if (locals.errors && errors.dni) { %>
+                    <div class="errors">
+                        <p><%= errors.dni.msg %> </p>
+                    </div>
+                <% } %> 
+            </div>
+
+            <div class="input-label-form">
+                <label for="genero-register" class="label-register numero-de-telefono-label">Elige tu genero</label>
+                <select name="genero_id" class="input-register numero-de-telefono-input <%= locals.errors && errors.genero_id ? 'is-invalid' : null %>" id="genero-register">
+                    <option disabled selected value>Tu genero</option>
+                    <option value="1">Hombre</option>
+                    <option value="2">Mujer</option>
+                    <option value="3">Otros</option>
+                </select>
+                <% if (locals.errors && errors.genero_id) { %>
+                    <div class="errors">
+                        <p><%= errors.genero_id.msg %> </p>
+                    </div>
+                <% } %> 
+            </div>
+            
+
+            <div class="input-label-form">
+                <label for="phoneNumber" class="label-register numero-de-telefono-label">Número de teléfono (Agregar código de área, sin espacios ni guiones)</label>
                 <input 
                 type="tel" 
                 name="phoneNumber" 
-                placeholder="11-5418-7697" 
-                class="input-register numero-de-telefono-input"
-                maxlength="11"
+                placeholder="54 9 11-5418-7697" 
+                class="input-register numero-de-telefono-input <%= locals.errors && errors.phoneNumber ? 'is-invalid' : null %>"
+                value="<%=locals.oldData && oldData.phoneNumber ? oldData.phoneNumber : null%>"
+                minlength="13"
+                maxlength="13"
+                min="0"
+                required
                 >
+                <% if (locals.errors && errors.phoneNumber) { %>
+                    <div class="errors">
+                        <p><%= errors.phoneNumber.msg %> </p>
+                    </div>
+                <% } %> 
             </div>
+            <div class="input-label-form">
+                <label for="phoneNumberRespaldo" class="label-register">Número de teléfono de respaldo (Agregar código de área, sin espacios ni guiones)</label>
+                <input 
+                type="tel" 
+                name="phoneNumberRespaldo" 
+                placeholder="54 9 11-5418-7697" 
+                class="input-register numero-de-telefono-input <%= locals.errors && errors.phoneNumberRespaldo ? 'is-invalid' : null %>"
+                value="<%=locals.oldData && oldData.phoneNumber ? oldData.phoneNumberRespaldo : null%>"
+                minlength="13"
+                maxlength="13"
+                min="0"
+                required
+                >
+                <% if (locals.errors && errors.phoneNumberRespaldo) { %>
+                    <div class="errors">
+                        <p><%= errors.phoneNumberRespaldo.msg %> </p>
+                    </div>
+                <% } %> 
+            </div>
+            
+            <div class="linea"></div>
+
+            <div class="input-label-form">
+                <% let provincias = ["Buenos Aires", "Buenos Aires Capital", "Catamarca", "Chaco", "Chubut", "Cordoba", "Corrientes", "Entre Rios", "Formosa", "Jujuy", "La Pampa", "La Rioja", "Mendoza", "Misiones", "Neuquen", "Rio Negro", "Salta", "San Juan", "San Luis", "Santa Cruz", "Santa Fe", "Santiago del Estero", "Tierra del Fuego", "Tucuman"]; %> 
+                <label for="provincia" class="label-register">Provincia</label>
+                <select name="provincia" id="provincia" class="input-register <%= locals.errors && errors.provincia ? 'is-invalid' : null %>">
+                    <option disabled selected value>Provincia</option>
+                    <% for (let i = 0; i < provincias.length; i++) { %> 
+                        <option value="<%= i + 1 %>"><%= provincias[i] %></option>
+                    <% } %> 
+                </select>
+                <% if (locals.errors && errors.provincia) { %>
+                    <div class="errors">
+                        <p><%= errors.provincia.msg %> </p>
+                    </div>
+                <% } %>
+            </div>
+
+            <div class="input-label-form">
+                <label for="municipio" class="label-register">Municipio</label>
+                <input 
+                type="text" 
+                name="municipio" 
+                placeholder="La matanza" 
+                class="input-register <%= locals.errors && errors.municipio ? 'is-invalid' : null %>"
+                value="<%=locals.oldData && oldData.municipio ? oldData.municipio : null%>"
+                minlength="2"
+                maxlength="100"
+                required
+                >
+                <% if (locals.errors && errors.municipio) { %>
+                    <div class="errors">
+                        <p><%= errors.municipio.msg %> </p>
+                    </div>
+                <% } %> 
+            </div>
+
+            <div class="input-label-form">
+                <label for="ciudad" class="label-register">Ciudad</label>
+                <input 
+                type="text" 
+                name="ciudad" 
+                placeholder="San justo" 
+                class="input-register <%= locals.errors && errors.ciudad ? 'is-invalid' : null %>"
+                value="<%=locals.oldData && oldData.ciudad ? oldData.ciudad : null%>"
+                minlength="2"
+                maxlength="100"
+                required
+                >
+                <% if (locals.errors && errors.ciudad) { %>
+                    <div class="errors">
+                        <p><%= errors.ciudad.msg %> </p>
+                    </div>
+                <% } %> 
+            </div>
+
+            <div class="input-label-form">
+                <label for="calle" class="label-register">Calle</label>
+                <input 
+                type="text" 
+                name="calle" 
+                placeholder="San martin" 
+                class="input-register <%= locals.errors && errors.calle ? 'is-invalid' : null %>"
+                value="<%=locals.oldData && oldData.calle ? oldData.calle : null%>"
+                minlength="2"
+                maxlength="100"
+                required
+                >
+                <% if (locals.errors && errors.calle) { %>
+                    <div class="errors">
+                        <p><%= errors.calle.msg %> </p>
+                    </div>
+                <% } %> 
+            </div>
+
+            <div class="input-label-form">
+                <label for="numeroVivienda" class="label-register">Numero de vivienda</label>
+                <input 
+                type="number" 
+                name="numeroVivienda" 
+                placeholder="421" 
+                class="input-register <%= locals.errors && errors.numeroVivienda ? 'is-invalid' : null %>"
+                value="<%=locals.oldData && oldData.numeroVivienda ? oldData.numeroVivienda : null%>"
+                min="0"
+                required
+                >
+                <% if (locals.errors && errors.numeroVivienda) { %>
+                    <div class="errors">
+                        <p><%= errors.numeroVivienda.msg %> </p>
+                    </div>
+                <% } %> 
+            </div>
+
+            <div class="input-label-form">
+                <label for="codigoPostal" class="label-register">Codigo Postal</label>
+                <input 
+                type="number" 
+                name="codigoPostal" 
+                placeholder="1778" 
+                class="input-register <%= locals.errors && errors.codigoPostal ? 'is-invalid' : null %>"
+                value="<%=locals.oldData && oldData.codigoPostal ? oldData.codigoPostal : null%>"
+                min="0"
+                required
+                >
+                <% if (locals.errors && errors.codigoPostal) { %>
+                    <div class="errors">
+                        <p><%= errors.codigoPostal.msg %> </p>
+                    </div>
+                <% } %> 
+            </div>
+
+
+
             <div class="input-label-form link-para-iniciar-sesion">
                 <a href="login">Ya tienes una cuenta? Inicia sesion aqui</a>
             </div>

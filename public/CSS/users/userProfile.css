@@ -195,9 +195,14 @@ main{
         margin: 0;
     }
 
+    .email{
+        text-align: center;
+    }
+
     .editar-mis-datos{
         display: block;
         margin-top: 5px;
+        text-align: center;
     }
 
     .gestionar-mis-datos{

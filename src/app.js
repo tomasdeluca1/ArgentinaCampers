@@ -9,6 +9,7 @@ const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
 const adminPermissions = require('./middlewares/adminMiddleware')
 
 
+
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
 
@@ -30,13 +31,23 @@ app.use(adminPermissions);
 
 
 
+
+
+
+
+
 //Rutas
 const main = require ('./routes/main');
 const productCart = require ('./routes/productCart');
 const products= require ('./routes/products');
 const users = require ('./routes/users');
 const aboutUs= require('./routes/aboutUs');
-const req = require('express/lib/request');
+
+
+const usersApi = require ('./routes/apis/usersApi');
+// const productsApi = require ('./routes/productsApi')
+
+
 
 
 app.use('/', main)
@@ -44,9 +55,12 @@ app.use('/', productCart)
 app.use('/products', products)
 app.use('/', users)
 app.use('/', aboutUs)
+app.use('/api', usersApi)
+// app.use('/api', productsApi)
 
 
 //Inicializacion del servidor
-app.listen(5000, ()=>{
-    console.log("Server 5000 running");
+app.listen(3000, ()=> {
+    console.log("Server 3000 running");
 });
+

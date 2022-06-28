@@ -7,9 +7,12 @@ const registerValidations = require ('../middlewares/userValidations');
 const loginValidations = require ('../middlewares/userLoginValidations');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
-const adminPermissions = require('../middlewares/adminPermissions')
-const myProfileMiddleware = require('../middlewares/myProfileMiddleware')
-
+const adminPermissions = require('../middlewares/adminPermissions');
+const myProfileMiddleware = require('../middlewares/myProfileMiddleware');
+const editProfileDataValidation = require('../middlewares/editProfileDataValidantion')
+const editProfilePasswordValidation = require('../middlewares/editProfilePasswordValidantion')
+const editProfileDireccionValidation = require('../middlewares/editProfileDireccionValidantion')
+const destroyUserValidation = require('../middlewares/destroyUserValidation')
 
 const storage = multer.diskStorage({
     destination: function(req, file, cb){
@@ -23,7 +26,6 @@ const storage = multer.diskStorage({
 });
 
 const uploadFile = multer({storage: storage});
-
 
 
 //Vistas del registro 
@@ -41,11 +43,30 @@ router.post('/login', loginValidations, usersController.loginProcess)
 // Vistas del perfil de usuario
 router.get('/profile/:id', authMiddleware, myProfileMiddleware, usersController.profile)
 
-// //Vista editar perfil usuario
-// router.get('/profile/:id/edit', authMiddleware, usersController.editProfileData)
+//Vista editar perfil usuario
+router.get('/profile/:id/editData', authMiddleware, usersController.editProfileData)
 
-// //Proceso editar perfil usuario
-// router.put('/profile/:id/edit', usersController.processeditProfileData)
+//Proceso editar perfil usuario
+router.put('/profile/:id/editData', authMiddleware, uploadFile.single('newAvatar'), editProfileDataValidation, usersController.processEditProfileData)
+
+//Vista editar contraseña usuario
+router.get('/profile/:id/editPassword', authMiddleware, usersController.editProfilePassword)
+
+//Proceso editar password usuario
+router.put('/profile/:id/editPassword', authMiddleware, editProfilePasswordValidation, usersController.processEditProfilePassword)
+
+//Vista editar direccion usuario
+router.get('/profile/:id/editDireccion', authMiddleware, usersController.editProfileDireccion)
+
+//Proceso editar direccion usuario
+router.put('/profile/:id/editDireccion', authMiddleware, editProfileDireccionValidation, usersController.processEditProfileDireccion)
+
+//Vista eliminar usuario
+router.get('/profile/:id/destroyUser', authMiddleware, usersController.destroyUser)
+
+//Proceso eliminar usuario
+router.put('/profile/:id/destroyUser', authMiddleware, destroyUserValidation, usersController.processDestroyUser)
+
 
 //Logout
 router.get('/logout', usersController.logout)

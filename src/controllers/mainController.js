@@ -1,9 +1,9 @@
 const todosLosProductos = require("../database/productosDetalle.json")
 
 const controller = {
-    index: function(req, res){
-        res.render('index')
-    }
+     index: function (req, res) {
+          res.render('index')
+     }
 }
 
 

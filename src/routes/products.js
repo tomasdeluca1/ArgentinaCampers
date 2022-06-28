@@ -1,7 +1,7 @@
 const express = require ('express');
 const router = express.Router();
 const path = require('path')
-const productController = require ('../controllers/productsController')
+const productController = require ('../controllers/apis/productsControllerDB')
 const multer = require ('multer')
 const validationsCreateProduct = require('../middlewares/validationsCreateProduct');
 const validationsEditProduct = require('../middlewares/validationsEditProduct');
@@ -26,13 +26,15 @@ const uploadFile = multer({storage: storage});
 
 
 
-router.get('', productController.productDetail)
-router.get('/create', adminPermissions, productController.productCreation)
-router.post('/create', uploadFile.single('imagenDelProducto'), validationsCreateProduct, productController.create)
+router.get('/', productController.productos)
+router.get('/create', adminPermissions, productController.createVistas)
+router.post('/create', adminPermissions, uploadFile.single('img'), validationsCreateProduct, productController.createProduct)
 router.get('/:idProducto', productController.getProductById)
-router.get('/:idProducto/edit', adminPermissions, productController.edit)
-router.put('/:idProducto/edit', uploadFile.single('imagenDelProducto'), validationsEditProduct, productController.edition)
-router.delete('/:idProducto/delete', productController.delete)
+router.get('/:idProducto/edit', adminPermissions, adminPermissions, productController.editVistas)
+router.put('/:idProducto/edit', adminPermissions, uploadFile.single('img'), validationsEditProduct, productController.editProduct)
+router.put('/:idProducto/delete', adminPermissions, productController.delete)
+
+
 
 
 

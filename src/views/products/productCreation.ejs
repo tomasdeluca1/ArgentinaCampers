@@ -17,86 +17,175 @@
 
     <!-- Cuerpo -->
     <section class="cuerpo"> 
-        <form action="create" method="post" enctype="multipart/form-data" class="formulario-de-creacion-de-producto">
-            <div class="formulario-para-el-producto nombre-del-producto-a-crear">
-                <label for="marca-del-producto">Marca del producto</label>
-                <input 
-                type="text" 
-                name="marcaDelProducto" 
-                id="marca-del-producto" 
-                class="inputForms <%= locals.errors && errors.marcaDelProducto ? 'is-invalid' : null %>"
-                value="<%= locals.oldData && oldData.marcaDelProducto ? oldData.marcaDelProducto : null %>"
-                >
-                <% if (locals.errors && errors.marcaDelProducto) { %>
-                    <div class="errors">
-                        <p><%= errors.marcaDelProducto.msg %> </p>
-                    </div>
-                <% } %> 
-            </div>
-            <div class="formulario-para-el-producto nombre-del-producto-a-crear">
-                <label for="modelo-del-producto">Modelo del producto</label>
-                <input 
-                type="text" 
-                name="modeloDelProducto" 
-                id="modelo-del-producto" 
-                class="inputForms <%= locals.errors && errors.modeloDelProducto ? 'is-invalid' : null %>"
-                value="<%= locals.oldData && oldData.modeloDelProducto ? oldData.modeloDelProducto : null %>"
-                >
-                <% if (locals.errors && errors.modeloDelProducto) { %>
-                    <div class="errors">
-                        <p><%= errors.modeloDelProducto.msg %> </p>
-                    </div>
-                <% } %> 
-            </div>
-            <div class="formulario-para-el-producto imagen-del-producto-a-crear">
-                <label for="imagen-del-producto">Inserte la imagen que quiera usar</label>
-                <input 
-                type="file" 
-                name="imagenDelProducto" 
-                id="imagen-del-producto-a-crear" 
-                accept=".jpg, .png"
-                >
-                <% if (locals.errors && errors.imagenDelProducto) { %>
-                    <div class="errors">
-                        <p><%= errors.imagenDelProducto.msg %> </p>
-                    </div>
-                <% } %> 
-            </div>
-            <div class="formulario-para-el-producto descripcion-del-producto-a-crear">
-                <label for="descripcion-del-producto">Descripcion del producto</label>
-                <textarea 
-                name="descripcionDelProducto" 
-                id="descripcion-del-producto" 
-                cols="30" 
-                rows="10"
-                class="text-area <%= locals.errors && errors.descripcionDelProducto ? 'is-invalid' : null %>" 
-                ><%= locals.oldData && oldData.descripcionDelProducto ? oldData.descripcionDelProducto : null %></textarea>
-                <% if (locals.errors && errors.descripcionDelProducto) { %>
-                    <div class="errors">
-                        <p><%= errors.descripcionDelProducto.msg %> </p>
-                    </div>
-                <% } %> 
-            </div>
-            <div class="formulario-para-el-producto nombre-del-producto-a-crear">
-                <label for="capacidad-del-producto">Capacidad del producto</label>
-                <input 
-                type="number" 
-                name="capacidadDelProducto" 
-                id="capacidad-del-producto" 
-                class="inputForms <%= locals.errors && errors.capacidadDelProducto ? 'is-invalid' : null %>"
-                value="<%= locals.oldData && oldData.capacidadDelProducto ? oldData.capacidadDelProducto : null %>"
-                >
-                <% if (locals.errors && errors.capacidadDelProducto) { %>
-                    <div class="errors">
-                        <p><%= errors.capacidadDelProducto.msg %> </p>
-                    </div>
-                <% } %> 
-            </div>
-            <div class="formulario-para-el-producto botones-submit-delete">
-                <button type="submit">Enviar</button>
-                <button type="delete">Borrar todo</button>
-            </div>
-        </form>
+        <div class="formulario-de-creacion-de-producto">
+            <form action="create" method="post" enctype="multipart/form-data" class="formulario">
+                <div class="formulario-para-el-producto nombre-del-producto-a-crear">
+                    <label for="marca-del-producto">Marca del producto</label>
+                    <input 
+                    type="text" 
+                    name="marca" 
+                    id="marca-del-producto" 
+                    class="inputForms <%= locals.errors && errors.marca ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData && oldData.marca ? oldData.marca : null %>"
+                    required
+                    >
+                    <% if (locals.errors && errors.marca) { %>
+                        <div class="errors">
+                            <p><%= errors.marca.msg %> </p>
+                        </div>
+                    <% } %> 
+                </div>
+                <div class="formulario-para-el-producto nombre-del-producto-a-crear">
+                    <label for="modelo-del-producto">Modelo del producto</label>
+                    <input 
+                    type="text" 
+                    name="modelo" 
+                    id="modelo-del-producto" 
+                    class="inputForms <%= locals.errors && errors.modelo ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData && oldData.modelo ? oldData.modelo : null %>"
+                    required
+                    >
+                    <% if (locals.errors && errors.modelo) { %>
+                        <div class="errors">
+                            <p><%= errors.modelo.msg %> </p>
+                        </div>
+                    <% } %> 
+                </div>
+                <div class="formulario-para-el-producto imagen-del-producto-a-crear">
+                    <label for="imagen-del-producto">Inserte la imagen que quiera usar</label>
+                    <input 
+                    type="file" 
+                    name="img" 
+                    id="imagen-del-producto-a-crear" 
+                    accept=".jpg, .png"
+                    >
+                    <% if (locals.errors && errors.img) { %>
+                        <div class="errors">
+                            <p><%= errors.img.msg %> </p>
+                        </div>
+                    <% } %> 
+                </div>
+                <div class="formulario-para-el-producto nombre-del-producto-a-crear">
+                    <% let colores = ['Azul', 'Blanco', 'Negro', 'Gris', 'Beige', 'Azul oscuro'] %> 
+                    <label for="color-del-producto">Color del producto</label>
+                    <select required name="color" id="color-del-producto" class="inputForms <%= locals.errors && errors.color ? 'is-invalid' : null %>">
+                        <option disabled selected value>Color</option>
+                        <% for (let i = 0; i < colores.length; i++) { %> 
+                            <option value="<%= colores[i] %>"><%= colores[i] %></option>
+                        <% } %> 
+                    </select>
+                    <% if (locals.errors && errors.color) { %>
+                        <div class="errors">
+                            <p><%= errors.color.msg %> </p>
+                        </div>
+                    <% } %> 
+                </div>
+                <div class="formulario-para-el-producto descripcion-del-producto-a-crear">
+                    <label for="descripcion-del-producto">Descripcion del producto</label>
+                    <textarea 
+                    required
+                    name="descripcion" 
+                    id="descripcion-del-producto" 
+                    cols="30" 
+                    rows="10"
+                    class="text-area <%= locals.errors && errors.descripcion ? 'is-invalid' : null %>" 
+                    ><%= locals.oldData && oldData.descripcion ? oldData.descripcion : null %></textarea>
+                    <% if (locals.errors && errors.descripcion) { %>
+                        <div class="errors">
+                            <p><%= errors.descripcion.msg %> </p>
+                        </div>
+                    <% } %> 
+                </div>
+                <div class="formulario-para-el-producto nombre-del-producto-a-crear">
+                    <label for="capacidad-del-producto">Capacidad del producto</label>
+                    <input 
+                    required
+                    min="0"
+                    type="number" 
+                    name="capacidad" 
+                    id="capacidad-del-producto" 
+                    class="inputForms <%= locals.errors && errors.capacidad ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData && oldData.capacidad ? oldData.capacidad : null %>"
+                    >
+                    <% if (locals.errors && errors.capacidad) { %>
+                        <div class="errors">
+                            <p><%= errors.capacidad.msg %> </p>
+                        </div>
+                    <% } %> 
+                </div>
+                <div class="formulario-para-el-producto nombre-del-producto-a-crear">
+                    <label for="precio-del-producto">Precio del producto</label>
+                    <input 
+                    required
+                    min="0"
+                    type="number" 
+                    name="precio" 
+                    id="precio-del-producto" 
+                    class="inputForms <%= locals.errors && errors.precio ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData && oldData.precio ? oldData.precio : null %>"
+                    >
+                    <% if (locals.errors && errors.precio) { %>
+                        <div class="errors">
+                            <p><%= errors.precio.msg %> </p>
+                        </div>
+                    <% } %> 
+                </div>
+                <div class="formulario-para-el-producto nombre-del-producto-a-crear">
+                    <label for="ultimo-service-del-producto">Ultimo service del producto</label>
+                    <input 
+                    required
+                    type="date" 
+                    name="ultimoService" 
+                    id="ultimo-service-del-producto" 
+                    class="inputForms <%= locals.errors && errors.ultimoService ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData && oldData.ultimoService ? oldData.ultimoService : null %>"
+                    >
+                    <% if (locals.errors && errors.ultimoService) { %>
+                        <div class="errors">
+                            <p><%= errors.ultimoService.msg %> </p>
+                        </div>
+                    <% } %> 
+                </div>
+                <div class="formulario-para-el-producto nombre-del-producto-a-crear">
+                    <label for="antiguedad-del-producto">Antiguedad del producto</label>
+                    <input 
+                    required
+                    min="200"
+                    type="number" 
+                    name="antiguedad" 
+                    id="antiguedad-del-producto" 
+                    class="inputForms <%= locals.errors && errors.antiguedad ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData && oldData.antiguedad ? oldData.antiguedad : null %>"
+                    >
+                    <% if (locals.errors && errors.antiguedad) { %>
+                        <div class="errors">
+                            <p><%= errors.antiguedad.msg %> </p>
+                        </div>
+                    <% } %> 
+                </div>
+                <div class="formulario-para-el-producto nombre-del-producto-a-crear">
+                    <label for="stock-del-producto">Stock del producto</label>
+                    <input 
+                    required
+                    min="0"
+                    type="number" 
+                    name="stock" 
+                    id="stock-del-producto" 
+                    class="inputForms <%= locals.errors && errors.stock ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData && oldData.stock ? oldData.stock : null %>"
+                    >
+                    <% if (locals.errors && errors.stock) { %>
+                        <div class="errors">
+                            <p><%= errors.stock.msg %> </p>
+                        </div>
+                    <% } %> 
+                </div>
+                <div class="formulario-para-el-producto botones-submit-delete">
+                    <button type="submit">Enviar</button>
+                    <button type="delete">Borrar todo</button>
+                </div>
+            </form>
+        </div>
     </section>
 
 

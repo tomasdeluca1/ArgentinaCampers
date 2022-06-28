@@ -32,7 +32,9 @@
                 id="email" 
                 placeholder="Ingrese su email"
                 class="input-login <%= locals.errors && errors.email ? 'is-invalid' : null %>"
-                value="<%= locals.oldData && oldData.email && !errors.email ? oldData.email : null%>"
+                value="<%= locals.oldData && oldData.email && errors.email == undefined ? oldData.email : null%>"
+                maxlength="100"
+                required
                 >  
                 <% if (locals.errors && errors.email) { %>
                     <div class="errors">
@@ -47,6 +49,9 @@
                 id="password" 
                 placeholder="Contraseña"
                 class="input-login <%= locals.errors && errors.password && errors.email == undefined ? 'is-invalid' : null %>"
+                minlength="6"
+                maxlength="200"
+                required
                 >
                 <% if (locals.errors && errors.password && errors.email == undefined) { %>
                     <div class="errors">
