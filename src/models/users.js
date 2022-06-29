@@ -282,7 +282,20 @@ module.exports = user;
 
 
 
+// db.Users.findByPk(1, {
+//     include: [{association: 'genero'}]
+// })
+// .then(user => {
+//     console.log(user);
+// })
 
 
 
-
+// db.Users.findAll({
+//     include: [
+//         {association: 'genero'},
+//         {association: 'direccion', include: [{association: 'provincia'}]}]
+// })
+// .then(data => {
+//     console.log(data[1].dataValues.direccion.dataValues.id);
+// })

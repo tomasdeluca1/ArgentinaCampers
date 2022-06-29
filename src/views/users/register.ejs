@@ -109,15 +109,19 @@
             </div>
             <div class="input-label-form">
                 <label for="password" class="label-register">Contraseña</label>
-                <input 
-                type="password" 
-                name="password" 
-                placeholder="Contraseña" 
-                class="input-register <%= locals.errors && errors.password ? 'is-invalid' : null %>"
-                minlength="6"
-                maxlength="200"
-                required
-                >
+                <div class="container-password-ojo">
+                    <i class="fa-solid fa-eye ojo"></i>
+                    <input 
+                    type="password" 
+                    id="password"
+                    name="password" 
+                    placeholder="Contraseña" 
+                    class="input-register <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+                    minlength="6"
+                    maxlength="200"
+                    required
+                    >
+                </div>
                 <% if (locals.errors && errors.password) { %>
                     <div class="errors">
                         <p><%= errors.password.msg %> </p>
@@ -126,15 +130,19 @@
             </div>
             <div class="input-label-form">
                 <label for="password2" class="label-register">Confirmar Contraseña</label>
-                <input 
-                type="password" 
-                name="password2" 
-                placeholder="Confirme su contraseña" 
-                class="input-register <%= locals.errors && errors.password ? 'is-invalid' : null %>"
-                minlength="6"
-                maxlength="200"
-                required
-                >
+                <div class="container-password-ojo">
+                    <i class="fa-solid fa-eye ojo ojo2"></i>
+                    <input 
+                    type="password" 
+                    id="password2"
+                    name="password2" 
+                    placeholder="Confirme su contraseña" 
+                    class="input-register <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+                    minlength="6"
+                    maxlength="200"
+                    required
+                    >
+                </div>
             </div>
 
             <div class="input-label-form">
@@ -364,5 +372,7 @@
     <!-- Footer -->
     
     <%- include('../partials/footer') %> 
+
+    <script src="../../../js/showPassword.js"></script>
 </body>
 </html>

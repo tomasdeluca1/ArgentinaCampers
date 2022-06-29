@@ -6,7 +6,31 @@
                 <li class="nav-header-item products"><a href="../products" class="links-header-nav"><h2>Nuestras CamperVans</h2></a></li>
                 <li class="nav-header-item about-us"><a href="../aboutUs" class="links-header-nav"><h2>About us</h2></a></li>
                 <li class="carro-header nav-header-item"><a href="../rental-cart" class="links-header-nav carrito-header"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                <li class="nav-header-item menu"><a href="#"><i class="fa-solid fa-bars burger-menu"></i></a></li>
+                <li class="nav-header-item menu">
+                    <i class="fa-solid fa-bars burger-menu"></i>
+                </li>
+                <div class="background">
+                    <div class="cruz"><i class="fa-solid fa-xmark"></i></div>
+                    <ul class="sub-burger-menu">
+                        <li class="links-burger-menu"><a href="../home" class="links-header-nav-burger-menu"><h2>Home</h2></a></li>
+                        <li class="links-burger-menu"><a href="../products" class="links-header-nav-burger-menu"><h2>Nuestras CamperVans</h2></a></li>
+                        <li class="links-burger-menu"><a href="../aboutUs" class="links-header-nav-burger-menu"><h2>About us</h2></a></li>
+                        <li class="links-burger-menu"><a href="../rental-cart" class="links-header-nav-burger-menu carrito-header"><h2>Carrito</h2></a></li>
+                        <% if (locals.isLogged) { %>
+                            <li class="links-burger-menu"><a href="../profile/<%= locals.userLogged.id %>" class="links-header-nav-burger-menu"><h2>Mi perfil</h2></a></li>
+                                <% if(locals.admin) { %> 
+                                    <li class="links-burger-menu"><a href="../all-users" class="links-header-nav-burger-menu"><h2>Todos los usuarios</h2></a></li>
+                                <% } %> 
+                            <li class="links-burger-menu"><a href="../logout" class="links-header-nav-burger-menu"><h2>Cerrar sesion</h2></a></li>
+                        <% } else { %>
+                            <li class="links-burger-menu"><a href="../login" class="links-header-nav-burger-menu"><h2>Iniciar sesion</h2></a></li>
+                            <li class="links-burger-menu"><a href="../register" class="links-header-nav-burger-menu"><h2>Registrarse</h2></a></li>
+                        <% } %>   
+                    </ul>
+                </div>
+                <!-- <li class="nav-header-item menu">
+                    <i class="fa-solid fa-bars burger-menu"></i>
+                </li> -->
                 <% if(locals.isLogged) { %>
                     <li class="menu-horizontal">
                         <div class="ajutar-todo">
@@ -35,3 +59,4 @@
             </ul>
         </nav>
     </header>
+    <script src="../../js/header.js"></script>

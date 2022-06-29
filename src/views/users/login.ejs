@@ -42,17 +42,20 @@
                     </div>
                 <% } %> 
             </div>
-            <div class="input-label-form">
-                <input 
-                type="password" 
-                name="password" 
-                id="password" 
-                placeholder="Contraseña"
-                class="input-login <%= locals.errors && errors.password && errors.email == undefined ? 'is-invalid' : null %>"
-                minlength="6"
-                maxlength="200"
-                required
-                >
+            <div class="input-label-form input-password">
+                <div class="container-password-ojo">
+                    <i class="fa-solid fa-eye ojo"></i>
+                    <input 
+                    type="password" 
+                    name="password" 
+                    id="password" 
+                    placeholder="Contraseña"
+                    class="input-login <%= locals.errors && errors.password && errors.email == undefined ? 'is-invalid' : null %>"
+                    minlength="6"
+                    maxlength="200"
+                    required
+                    >
+                </div>
                 <% if (locals.errors && errors.password && errors.email == undefined) { %>
                     <div class="errors">
                         <p><%= errors.password.msg %> </p>
@@ -77,5 +80,7 @@
     </main>
     <!--FOOTER-->
     <%- include('../partials/footer') %> 
+
+    <script src="../../../js/showPassword.js"></script>
 </body>
 </html>

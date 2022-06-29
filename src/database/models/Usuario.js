@@ -78,6 +78,6 @@ module.exports = function(sequelize, dataTypes){
         
     }
 
-    return Users
+    return Users;
 }
 
