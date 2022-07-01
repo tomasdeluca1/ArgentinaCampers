@@ -346,9 +346,8 @@ hr{
 .fechaYHoraDevolucion input{
     width: 150px;
     border-radius: 5px;
-    border: 1px solid #957f65;
-    background-color: #957f65;
-    color: #ffeed2;
+    border: 0.5px solid grey;
+    color: #4B4851;
     text-align: center;
 }
 .casillasHome{
@@ -359,12 +358,10 @@ hr{
     width: 100%;
 }
 
-
 .nuestros-vehiculos{
     padding: 0px 0 50px 0;
     color: #000000;
 }
-
 
 .vehiculos{
     display: flex;
