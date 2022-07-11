@@ -57,7 +57,8 @@
                     type="file" 
                     name="img" 
                     id="imagen-del-producto-a-crear" 
-                    accept=".jpg, .png"
+                    accept=".jpg, .png, .PNG, .JPG, .jpeg, .JPEG"
+                    multiple
                     >
                     <% if (locals.errors && errors.img) { %>
                         <div class="errors">
@@ -119,14 +120,14 @@
                     required
                     min="0"
                     type="number" 
-                    name="precio" 
+                    name="precioDia" 
                     id="precio-del-producto" 
-                    class="inputForms <%= locals.errors && errors.precio ? 'is-invalid' : null %>"
-                    value="<%= locals.oldData && oldData.precio ? oldData.precio : null %>"
+                    class="inputForms <%= locals.errors && errors.precioDia ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData && oldData.precioDia ? oldData.precioDia : null %>"
                     >
-                    <% if (locals.errors && errors.precio) { %>
+                    <% if (locals.errors && errors.precioDia) { %>
                         <div class="errors">
-                            <p><%= errors.precio.msg %> </p>
+                            <p><%= errors.precioDia.msg %> </p>
                         </div>
                     <% } %> 
                 </div>

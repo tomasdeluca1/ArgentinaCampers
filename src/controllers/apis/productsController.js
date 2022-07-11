@@ -1,4 +1,4 @@
-const todosLosProductos = require("../database/productosDetalle.json")
+const todosLosProductos = require("../../database/productosDetalle.json")
 const fs = require('fs')
 const multer = require('multer')
 const req = require("express/lib/request")

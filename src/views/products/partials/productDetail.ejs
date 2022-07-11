@@ -1,7 +1,21 @@
 <% if (producto) { %>
     <div class="todo-el-producto">
-        <div class="imagen-descripcion">
-            <img src="../images/imagenesproductos/<%= producto.img %>" alt="<%= producto.marca + " " + producto.modelo %>">
+        <div class="carrousel-imagen">
+            <% if (producto.imagenes != '') { %>
+
+                <div class="imagenes transform">
+                    <% for (let i = 0; i < producto.imagenes.length; i++) { %>
+                        <img src="../images/imagenesproductos/<%= producto.imagenes[i].img %>" alt="<%= producto.marca + " " + producto.modelo %>" class="imagen">             
+                    <% } %> 
+                </div>
+                <ul class="flechas">
+                    <i class="fa-solid fa-caret-left" id="flecha-atras"></i>
+                    <i class="fa-solid fa-caret-right" id="flecha-adelante"></i>
+                </ul>
+
+            <% } else { %> 
+                    <div>No hay fotos por el momento</div>
+            <% } %> 
         </div>
         <div class="parte-de-la-derecha">
             <div class="titulo">
@@ -10,18 +24,61 @@
             <div class="descripcion-del-producto">
                 <p><%= producto.descripcion %></p>
             </div>
+            <div class="detalles-del-producto">
+                <p>Esta van es del <strong><%= producto.antiguedad %></strong> y tiene una capacidad para <strong><%= producto.capacidad %></strong> personas</p>
+                <p>El ultimo service que se realizo a la van fue el <strong><%= producto.ultimoService %></strong></p>
+            </div>
+            <div class="stock-del-producto">
+                <p>Actualmente tenemos <%= producto.stock %> vans disponibles</p>
+                <p>El precio que tiene esta van por dia es de $<%= producto.precioDia %></p>
+            </div>
+            <div class="linea"></div>
             <form action="" method="post">
                 <div class="div-seleccion-de-tiempo">
-                    <label for="selector">Elige el tiempo de tus vacaciones!</label>
-                    <select name="seleccion-de-tiempo" id="selector">
-                        <option value="">7 días</option>
-                        <option value="">15 días</option>
-                        <option value="">30 días</option>
-                    </select>
+                    <% const calendario = new Date() %> 
+                    <% const ano = calendario.getFullYear() %>
+                    <% const mes = parseInt(calendario.getMonth() + 1) %> 
+                    <% const dia = calendario.getDate() %>  
+                    <h4 class="h4-cantidad-de-dias">Elige el tiempo de tus vacaciones!</h4>
+                    <div class="calendario-container">
+                        <label for="fechaPartida" class="label-calendario">Elige que dia quieres salir</label>
+                        <input 
+                            type="date" 
+                            name="fechaPartida" 
+                            id="fechaPartida"
+                            class="calendario <%= locals.errors && errors.fechaPartida ? 'is-invalid' : null %>" 
+                            
+                        >
+                        <% if (locals.errors && errors.fechaPartida) { %>
+                            <div class="errors">
+                                <p><%= errors.fechaPartida.msg %> </p>
+                            </div>
+                        <% } %>  
+                    </div>
+                    <div class="calendario-container">
+                        <label for="fechaLlegada" class="label-calendario">Elige el dia que vas a volver</label>
+                        <input 
+                            type="date" 
+                            name="fechaLlegada" 
+                            id="fechaLlegada"
+                            class="calendario <%= locals.errors && errors.fechaLlegada ? 'is-invalid' : null %>" 
+                            
+                        >
+                        <% if (locals.errors && errors.fechaLlegada) { %>
+                            <div class="errors">
+                                <p><%= errors.fechaLlegada.msg %> </p>
+                            </div>
+                        <% } %>  
+                    </div>
                 </div>
-                <div class="button-selector">
-                    <button type="submit">Comprar ahora</button>
-                    <button type="submit">Agregar al carrito</button>
+                <div class="dias-de-vacaciones" style="display: none;">
+                    <p></p>
+                </div>
+                <div class="precio-total" style="display: none;">
+                    <p></p>
+                </div>
+                <div class="button-calendario">
+                    <button type="submit" class="button">Agregar al carrito</button>
                 </div>
             </form>
             <% if(locals.admin) { %> 
@@ -35,4 +92,6 @@
                 </div> 
             <% } %> 
     </div> 
+    <p style="display: none;" class="precio"><%= producto.precioDia %> </p>
 <% } %> 
+<script src="../../../js/descripcionProducto.js"></script>

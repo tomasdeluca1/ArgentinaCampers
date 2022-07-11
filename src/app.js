@@ -60,7 +60,7 @@ app.use('/api', usersApi)
 
 
 //Inicializacion del servidor
-app.listen(3000, ()=> {
-    console.log("Server 3000 running");
+app.listen(5000, ()=> {
+    console.log("Server 5000 running");
 });
 

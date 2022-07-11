@@ -1,43 +1,44 @@
-
-const { check } = require ('express-validator');
-const path = require ('path');
+const { check } = require('express-validator');
+const path = require('path');
 const db = require('../database/models');
-const usuarios = require ('../database/usersDetalle.json')
-const User = require('../models/users')
-
+const usuarios = require('../database/usersDetalle.json');
+const User = require('../models/users');
 
 const validations = [
-    check('email')
-        .notEmpty().withMessage('Este campo es obligatorio').bail()
-        .isEmail().withMessage('Tienes que poner tu email correctamente').bail()
-        .custom(async (value, { req }) => {
-            // let email = req.body.email.toLowerCase();
-            // let findingEmail = User.findByField('email', email)
-            // if(findingEmail == undefined){
-            //     throw new Error ('Este email no existe')
-            // }
-            // return true
-            let findingEmail = await db.Users.findOne({
-                where: {
-                    estadoCuenta: 1,
-                    email: value.toLowerCase()
-                }
-            })
-        
-            if(findingEmail === null){
-                throw new Error ('Este email no existe')
-            }
-        
-            return true;
+	check('email')
+		.notEmpty()
+		.withMessage('Este campo es obligatorio')
+		.bail()
+		.isEmail()
+		.withMessage('Tienes que poner tu email correctamente')
+		.bail()
+		.custom(async (value, { req }) => {
+			// let email = req.body.email.toLowerCase();
+			// let findingEmail = User.findByField('email', email)
+			// if(findingEmail == undefined){
+			//     throw new Error ('Este email no existe')
+			// }
+			// return true
+			let findingEmail = await db.Users.findOne({
+				where: {
+					estadoCuenta: 1,
+					email: value.toLowerCase(),
+				},
+			});
 
-        }),
-    check('password')
-        .notEmpty().withMessage('Este campo es obligatorio').bail()
-]
+			if (findingEmail === null) {
+				throw new Error('Este email no existe');
+			}
+
+			return true;
+		}),
+	check('password')
+		.notEmpty()
+		.withMessage('Este campo es obligatorio')
+		.bail(),
+];
 
 module.exports = validations;
-
-
 
 // async function messi (value){
 //     let findingEmail = await db.Users.findOne({
@@ -72,7 +73,6 @@ module.exports = validations;
 
 // messi('FRANDELQUERAN@GMAIL.COm')
 
-
 // let findingEmail = await db.Users.findOne({
 //                 where: {
 //                     email: email
@@ -86,5 +86,3 @@ module.exports = validations;
 //                     return Promise.reject()
 //                 }
 //             }
-
-

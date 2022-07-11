@@ -1,128 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <%- include('../partials/head') %>
-    <link rel="stylesheet" href="../../../CSS/main/home.css">
-    <link rel="stylesheet" href="../../../CSS/users/editProfile.css">
+	<head>
+		<%- include('../partials/head') %>
+		<link rel="stylesheet" href="../../../CSS/main/home.css" />
+		<link rel="stylesheet" href="../../../CSS/users/editProfile.css" />
 
-    <title>Editar perfil</title>
-</head>
-<body>
-    <!-- Header -->
-    
-    <%- include('../partials/header2') %> 
+		<title>Editar perfil</title>
+	</head>
+	<body>
+		<!-- Header -->
 
-    <!-- Todo el cuerpo -->
+		<%- include('../partials/header2') %>
 
-    <section class="nav-vehiculos">
-        <article>
-            <h3><a href="../../home">Home</a> / <a href="">Edicion de mis datos</a></h3>
-        </article>
-    </section>
+		<!-- Todo el cuerpo -->
 
-    <!-- Cuerpo -->
-    <main class="body">
-        <div class="container-all">
-            <div class="container-titulo">
-                <h2>Editar mis datos</h2>
-            </div>
-            <div class="container-form">  
-                <form action="editData?_method=put" method="post" enctype="multipart/form-data">
+		<section class="nav-vehiculos">
+			<article>
+				<h3>
+					<a href="../../home">Home</a> /
+					<a href="">Edicion de mis datos</a>
+				</h3>
+			</article>
+		</section>
 
-                    <div class="user-data new-avatar-container">
-                        <div class="container-all-divs-foto">
-                            <label for="new-avatar" class="label">
-                                <div class="container-foto-de-perfil">
-                                    <div class="div-foto-de-perfil">
-                                        <img src="../../../images/avatarPerfil/<%= userData.avatar %> " alt="" class="foto-de-perfil-edit">
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
-                        <div class="container-all-divs-labels">
-                            <h3 class="h3-user-name"><%= userData.userName %></h3>
-                            <label for="new-avatar" class="label label-user-name-foto">Cambiar foto de perfil</label>
-                            <input 
-                            type="file" 
-                            name="newAvatar" 
-                            id="new-avatar" 
-                            style='display: none' 
-                            class="input-edit"
-                            accept=".jpg, .png, .PNG, .JPG, .JPEG, .jpeg" 
-                            >
-                            <% if (locals.errors && errors.newAvatar) { %>
-                                <div class="errors">
-                                    <p><%= errors.newAvatar.msg %> </p>
-                                </div>
-                            <% } %>
-                        </div>
-                    </div>
+		<!-- Cuerpo -->
+		<main class="body">
+			<div class="container-all">
+				<div class="container-titulo">
+					<h2>Editar mis datos</h2>
+				</div>
+				<div class="container-form">
+					<form
+						action="editData?_method=put"
+						method="post"
+						enctype="multipart/form-data"
+					>
+						<div class="user-data new-avatar-container">
+							<div class="container-all-divs-foto">
+								<label for="new-avatar" class="label">
+									<div class="container-foto-de-perfil">
+										<div class="div-foto-de-perfil">
+											<img
+												src="../../../images/avatarPerfil/<%= userData.avatar %> "
+												alt=""
+												class="foto-de-perfil-edit"
+											/>
+										</div>
+									</div>
+								</label>
+							</div>
+							<div class="container-all-divs-labels">
+								<h3 class="h3-user-name">
+									<%= userData.userName %>
+								</h3>
+								<label
+									for="new-avatar"
+									class="label label-user-name-foto"
+									>Cambiar foto de perfil</label
+								>
+								<input
+									type="file"
+									name="newAvatar"
+									id="new-avatar"
+									style="display: none"
+									class="input-edit"
+									accept=".jpg, .png, .PNG, .JPG, .JPEG, .jpeg"
+								/>
+								<% if (locals.errors && errors.newAvatar) { %>
+								<div class="errors">
+									<p><%= errors.newAvatar.msg %></p>
+								</div>
+								<% } %>
+							</div>
+						</div>
 
-                    <div class="user-data registros">
-                        <label for="new-user-name" class="label label-registros">Nombre de usuario</label>
-                        <input 
-                        type="text" 
-                        name="newUserName" 
-                        id="new-user-name" 
-                        minlength="4"
-                        maxlength="15"
-                        value="<%= userData.userName %>" 
-                        class="input-edit <%= locals.errors && errors.newUserName ? 'is-invalid' : null %>"
-                        >
-                        <% if (locals.errors && errors.newUserName) { %>
-                            <div class="errors">
-                                <p><%= errors.newUserName.msg %> </p>
-                            </div>
-                        <% } %> 
-                    </div>
-                    <div class="user-data registros">
-                        <label class="label label-registros" for="new-email">Correo electronico</label>
-                        <input 
-                        type="text" 
-                        name="newEmail" 
-                        id="new-email" 
-                        class="input-edit <%= locals.errors && errors.newEmail ? 'is-invalid' : null %>" 
-                        maxlength="100"
-                        value="<%= userData.email %>"
-                        >
-                        <% if (locals.errors && errors.newEmail) { %>
-                            <div class="errors">
-                                <p><%= errors.newEmail.msg %> </p>
-                            </div>
-                        <% } %> 
-                    </div>
-                    
-                    <div class="user-data registros">
-                        <label class="label label-registros" for="new-phone-number">Numero telefonico</label>
-                        <input
-                        minlength="13"
-                        maxlength="13"
-                        min="0"
-                        type="tel" 
-                        name="newPhoneNumber" 
-                        id="new-phone-number" 
-                        class="input-edit  <%= locals.errors && errors.newPhoneNumber ? 'is-invalid' : null %>" 
-                        value="<%= userData && !userData.phoneNumber ?  '-' : userData.phoneNumber %>"
-                        >
-                        <% if (locals.errors && errors.newPhoneNumber) { %>
-                            <div class="errors">
-                                <p><%= errors.newPhoneNumber.msg %> </p>
-                            </div>
-                        <% } %> 
-                    </div>
-                    <div class="button-div">
-                        <button class="button">Enviar cambios</button>
-                    </div>
-                    
-                </form>
-            </div>
-        </div>
-    </main>
+						<div class="user-data registros">
+							<label
+								for="new-user-name"
+								class="label label-registros"
+								>Nombre de usuario</label
+							>
+							<input
+								type="text"
+								name="newUserName"
+								id="new-user-name"
+								minlength="4"
+								maxlength="15"
+								value="<%= userData.userName %>"
+								class="input-edit <%= locals.errors && errors.newUserName ? 'is-invalid' : null %>"
+							/>
+							<% if (locals.errors && errors.newUserName) { %>
+							<div class="errors">
+								<p><%= errors.newUserName.msg %></p>
+							</div>
+							<% } %>
+						</div>
+						<div class="user-data registros">
+							<label class="label label-registros" for="new-email"
+								>Correo electronico</label
+							>
+							<input
+								type="text"
+								name="newEmail"
+								id="new-email"
+								class="input-edit <%= locals.errors && errors.newEmail ? 'is-invalid' : null %>"
+								maxlength="100"
+								value="<%= userData.email %>"
+							/>
+							<% if (locals.errors && errors.newEmail) { %>
+							<div class="errors">
+								<p><%= errors.newEmail.msg %></p>
+							</div>
+							<% } %>
+						</div>
 
-    <!-- Footer --> 
-    <%- include('../partials/footer') %>
+						<div class="user-data registros">
+							<label
+								class="label label-registros"
+								for="new-phone-number"
+								>Numero telefonico</label
+							>
+							<input
+								minlength="13"
+								maxlength="13"
+								min="0"
+								type="tel"
+								name="newPhoneNumber"
+								id="new-phone-number"
+								class="input-edit <%= locals.errors && errors.newPhoneNumber ? 'is-invalid' : null %>"
+								value="<%= userData && !userData.phoneNumber ?  '-' : userData.phoneNumber %>"
+							/>
+							<% if (locals.errors && errors.newPhoneNumber) { %>
+							<div class="errors">
+								<p><%= errors.newPhoneNumber.msg %></p>
+							</div>
+							<% } %>
+						</div>
+						<div class="button-div">
+							<button class="button">Enviar cambios</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</main>
 
-    <script src="../../../../js/header.js"></script>
-</body>
+		<!-- Footer -->
+		<%- include('../partials/footer') %>
+
+		<script src="../../../../js/header.js"></script>
+	</body>
 </html>
-

@@ -4,8 +4,18 @@
             <h4><%= productoInfo.marca + " " + productoInfo.modelo %> </h4>
         </div>
         <div class="componentes-del-producto">
-            <img src="../images/imagenesproductos/<%= productoInfo.img %>" alt="<%= productoInfo.marca + productoInfo.modelo %>" class="productoImg">
-        </div>
+            <% let imgs = [] %> 
+            <% for (let img of imagenes) { %>
+                <% if (img.producto_id == productoInfo.id) { %> 
+                    <% imgs.push(img.img) %> 
+                <% } %> 
+            <% } %> 
+            <img 
+            src="../images/imagenesproductos/<%= imgs[0] %>" 
+            alt="<%= productoInfo.marca + productoInfo.modelo %>" 
+            class="productoImg">
+
+        </div>       
         <div class="componentes-del-producto">
             <p><%= productoInfo.descripcion %></p>
         </div>

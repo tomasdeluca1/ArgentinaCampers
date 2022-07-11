@@ -10,71 +10,66 @@ const Op = db.Sequelize.Op;
 const fs = require('fs');
 const path = require('path');
 
-
 const user = {
-    fileName: __dirname + '/../database/usersDetalle.json',
+	fileName: __dirname + '/../database/usersDetalle.json',
 
-    getData: function(){
-        return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'));
-    },
+	getData: function () {
+		return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'));
+	},
 
-    generateId: function(){
-        let allUsers = this.findAll();
-        let lastUser = allUsers.pop();
-        if(lastUser){
-            return lastUser.id + 1;
-        }
-        return 1
-    },
+	generateId: function () {
+		let allUsers = this.findAll();
+		let lastUser = allUsers.pop();
+		if (lastUser) {
+			return lastUser.id + 1;
+		}
+		return 1;
+	},
 
-    findAll: function(){
-        return this.getData();
-    },
+	findAll: function () {
+		return this.getData();
+	},
 
-    findByPk: function(id){
-        let allUsers = this.findAll();
-        let userFound = allUsers.find(oneUser => oneUser.id === id);
-        return userFound
-    },
+	findByPk: function (id) {
+		let allUsers = this.findAll();
+		let userFound = allUsers.find((oneUser) => oneUser.id === id);
+		return userFound;
+	},
 
-    findByField: function(field, text){
-        let allUsers = this.findAll();
-        let userFound = allUsers.find(oneUser => oneUser[field] === text);
-        return userFound;
-    },
+	findByField: function (field, text) {
+		let allUsers = this.findAll();
+		let userFound = allUsers.find((oneUser) => oneUser[field] === text);
+		return userFound;
+	},
 
-    create: function(userData){
-        
-        db.Users.create({
-            ...userData
-        })
-        .then(function(data){
-            return data
-        })
+	create: function (userData) {
+		db.Users.create({
+			...userData,
+		}).then(function (data) {
+			return data;
+		});
+	},
 
-    },
+	delete: function (id) {
+		let allUsers = this.findAll();
+		let finalUsers = allUsers.filter((oneUser) => oneUser.id !== id);
+		fs.writeFileSync(this.fileName, JSON.stringify(finalUsers, null, ' '));
+		return true;
+	},
 
-    delete: function(id){
-        let allUsers = this.findAll();
-        let finalUsers = allUsers.filter(oneUser => oneUser.id !== id);
-        fs.writeFileSync(this.fileName, JSON.stringify(finalUsers, null, ' '))
-        return true
-    },
+	creatingTypeOFUser: function (email) {
+		let admins = ['frandelqueran@gmail.com'];
+		let emailLowerCase = email.toLowerCase();
 
-    creatingTypeOFUser: function(email){
-        let admins = ['frandelqueran@gmail.com']
-        let emailLowerCase = email.toLowerCase()
-
-        if(emailLowerCase.includes(admins)){
-            return 1
-        } else {
-            return 2
-        }
-    },
-}
+		if (emailLowerCase.includes(admins)) {
+			return 1;
+		} else {
+			return 2;
+		}
+	},
+};
 
 module.exports = user;
-
 
 // db.Users.findAll()
 // .then(function(data){
@@ -91,7 +86,6 @@ module.exports = user;
 //     avatar: 'imgUser-1653065309102.png'
 // })
 
-
 // db.Users.update({
 //     firstName: 'everadadsd',
 //     lastName: 'casi',
@@ -101,7 +95,6 @@ module.exports = user;
 //         id: 19,
 //     }
 // })
-
 
 // let userToLogin = db.Users.findOne({
 //         where: {
@@ -122,7 +115,6 @@ module.exports = user;
 // .then(function(data){
 //     console.table(data);
 // })
-
 
 // let loQueBuscoElAdmin = 'a'
 // let coincidences;
@@ -148,13 +140,8 @@ module.exports = user;
 // console.log(coincidences);
 
 // for (let i = 0; i < coincidences.length; i++) {
-//     console.log(coincidences[i].firstName)            
-// }       
-
-       
-
-
-
+//     console.log(coincidences[i].firstName)
+// }
 
 // db.Direccion.findAll({
 //     include: [{association: 'provincia'}]
@@ -172,8 +159,6 @@ module.exports = user;
 //     console.log(data[0].dataValues.genero.dataValues);
 // })
 
-
-
 // db.Users.findAll({
 //     include: [
 //         {association: 'genero'},
@@ -182,7 +167,6 @@ module.exports = user;
 // .then(data => {
 //     console.log(data[1].dataValues.direccion.dataValues.id);
 // })
-
 
 // async function id (){
 //     let direcciones = await db.Direccion.findAll()
@@ -197,7 +181,6 @@ module.exports = user;
 // id().then(data => {
 //     return console.log( data)
 // });
-
 
 // db.Users.create({
 //     firstName: 'Francisco',
@@ -225,8 +208,6 @@ module.exports = user;
 //     {association: 'direccion'}]
 // })
 
-
-
 // async function hola (){
 //     let idDireccion = await db.Users.findByPk(1)
 //     db.Direccion.update({
@@ -238,7 +219,6 @@ module.exports = user;
 // }
 // hola()
 
-
 // db.Users.findAll({
 //     include: [
 //         {association: 'comentarios'}
@@ -248,7 +228,6 @@ module.exports = user;
 //     console.log(data.dataValues);
 // })
 
-
 // db.Comentarios.findAll({
 //     include: [{association: 'usuarios'}]
 // })
@@ -256,18 +235,12 @@ module.exports = user;
 //     return data[0].dataValues.usuarios.userName;
 // })
 
-
 // db.Users.findByPk(1, {
 //     include: [{association: 'genero'}]
 // })
 // .then(data => {
 //     console.log(data.dataValues.genero.dataValues);
 // })
-
-
-
-
-
 
 // db.Productos.findByPk(1, {
 //     where: {
@@ -279,17 +252,12 @@ module.exports = user;
 //     console.log(producto.dataValues);
 // })
 
-
-
-
 // db.Users.findByPk(1, {
 //     include: [{association: 'genero'}]
 // })
 // .then(user => {
 //     console.log(user);
 // })
-
-
 
 // db.Users.findAll({
 //     include: [
@@ -298,4 +266,55 @@ module.exports = user;
 // })
 // .then(data => {
 //     console.log(data[1].dataValues.direccion.dataValues.id);
+// })
+
+// db.ProductosImagenes.findAll()
+// .then(imgs => {
+//     console.log(imgs);
+// })
+
+// function img (imgs) {
+//     for (let i = 0; i < imgs.length; i++) {
+//         return imgs[i]
+//     }
+// }
+
+// db.ProductosImagenes.create({
+//     producto_id: 1,
+//     img: img(imgs)
+// })
+
+// db.ProductosImagenes.findAll()
+// .then(img => {
+//     img.forEach(img => {
+//         console.log(img.dataValues.img);
+//     });
+// })
+
+// db.Productos.findByPk(1,{
+//     include: [{association: 'estado'}, {association: 'imagenes'}]
+// }, {
+//     where: {
+//         estado_id: 1,
+//         estadoProducto: 1
+//     }
+// })
+// .then(data =>{
+//     console.log(data);
+// })
+
+// const imgs = [ 'imgProducto-1656516059745.png', 'imgProducto-1656516059747.png' ]
+
+// for (let i = 0; i < imgs.length; i++) {
+//     db.ProductosImagenes.create({
+//         producto_id: 1,
+//         img: imgs[i]
+//     })
+// }
+
+// db.Productos.findByPk(15, {
+//     include: [{association: 'imagenes'}]
+// })
+// .then(data => {
+//     console.log(data.imagenes == '' ? 'si' : 'no');
 // })

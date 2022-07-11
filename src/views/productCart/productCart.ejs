@@ -18,52 +18,19 @@
         </article>
     </section>
 
+    <div class="titulo">
+        <h1>Carrito</h1>
+    </div>
 
-    <section class="container">
-        <div class="text-carrito">
-            <h1>Carrito</h1>
-        </div>
-        <div class="carrito">
-            <div class="container-vans"> 
-                <form action="productDetail.ejs" method="get" class="van van-parte-seleccionar">
-                    <div class="imagenes">
-                        <!-- Cóom se hace para que la imagen vaya cambiando dependiendo de lo que se elija en el select? -->
-                        <a href=""><img src="./images/imagenesproductos/kangoo.png" alt="Kangoo" class="imagen"></a>
-                    </div>
-                    
-                    <div class="flexCart">
-                        <label class="eleccionCarrito">Elegí la CamperVan que quieras</label>
-                        <select name="camperVan" class="inputCarrito">
-                            <option value="1">Renault Kangoo (2 pax)</option>
-                            <option value="2">Citröen Jumpy (3 pax)</option>
-                            <option value="3">Toyota Hiace (4 pax)</option>
-                        </select>
-                    </div>
-                    <div class="flexCart">
-                        <label>Elegí la CamperVan que quieras</label>
-                        <input type="date" name="date" class="inputCarrito">
-                    </div>
-                </form>
-            </div>
-            <div class="resumen-de-la-compra">
-                <form action="" class="van van-parte-compra">
-                <div class="total">
-                    <p>Total</p>
-                </div>
-                <div class="precio-del-resumen">
-                    <p>$15000</p>
-                </div>
-                <div class="buttons-resumen">
-                    <div class="boton-resumen">
-                        <a href="product-detail"><button>Seguir comprando</button></a>
-                    </div>
-                    <div class="boton-resumen">
-                        <button type="submit">Comprar</button>
-                    </div>
-                </div>
-                </form>
-            </div>
-        </div> 
+    <section class="container-vans-precio">
+
+        <%- include('./partials/containerProductosCarrito')%> 
+
+
+        <%- include('./partials/containerPrecios')%> 
+        
+
+        
 
         <!-- Mensaje Posicion absoluta -->
 
@@ -72,8 +39,15 @@
     </section>
 
 
-
+    <% if(productos != '') { %>
+        <% for (let producto of productos) { %> 
+            <div class="precioTotal" style="display: none;"><%= producto.precioTotal %></div>
+        <% } %> 
+    <% } %> 
+   
     <!-- Footer -->
     <%- include('../partials/footer') %> 
+
+    <script src="../../../js/productCart.js"></script>
 </body>
 </html>

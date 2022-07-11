@@ -56,7 +56,7 @@
                 </div>
                 <div class="formulario-para-el-producto imagen-del-producto-a-crear">
                     <label for="imagen-del-producto">Inserte la imagen que quiera usar</label>
-                    <input type="file" name="img" id="imagen-del-producto-a-crear" accept=".jpg, .png">
+                    <input type="file" name="img" id="imagen-del-producto-a-crear" accept=".jpg, .png, .PNG, .JPG, .jpeg, .JPEG" multiple>
                     <% if (locals.errors && errors.img) { %>
                         <div class="errors">
                             <p><%= errors.img.msg %> </p>
@@ -118,14 +118,14 @@
                     <input 
                     placeholder="Precio del producto"  
                     type="number" 
-                    name="precio" 
+                    name="precioDia" 
                     id="precio-del-producto" 
-                    class="inputForms <%= locals.errors && errors.precio ? 'is-invalid' : null %>"
-                    value="<%= locals.oldData && oldData.precio ? oldData.precio : producto.precioDia %>"
+                    class="inputForms <%= locals.errors && errors.precioDia ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData && oldData.precioDia ? oldData.precioDia : producto.precioDia %>"
                     >
-                    <% if (locals.errors && errors.precio) { %>
+                    <% if (locals.errors && errors.precioDia) { %>
                         <div class="errors">
-                            <p><%= errors.precio.msg %> </p>
+                            <p><%= errors.precioDia.msg %> </p>
                         </div>
                     <% } %> 
                 </div>

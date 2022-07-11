@@ -11,9 +11,9 @@ module.exports = function(sequelize, dataTypes) {
         modelo: {
             type: dataTypes.STRING(45)
         },
-        img: {
-            type: dataTypes.STRING(100)
-        },
+        // img: {
+        //     type: dataTypes.STRING(100)
+        // },
         color: {
             type: dataTypes.STRING(100)
         }, 
@@ -52,10 +52,14 @@ module.exports = function(sequelize, dataTypes) {
             as: 'estado',
             foreignKey: 'estado_id'
         })
-        // Productos.belongsTo(models.Carrito, {
-        //     as: 'carrito',
-        //     foreignKey: 'carrito_id'
-        // })
+        Productos.hasMany(models.ProductosImagenes, {
+            as: 'imagenes',
+            foreignKey: 'producto_id'
+        })
+        Productos.hasMany(models.Carrito, {
+            as: 'carrito',
+            foreignKey: 'productos_id'
+        })
         // Productos.belongsTo(models.DetalleOrden, {
         //     as: 'detalleOrden',
         //     foreignKey: 'detalles_orden_id'

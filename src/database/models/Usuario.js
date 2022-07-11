@@ -67,10 +67,10 @@ module.exports = function(sequelize, dataTypes){
             as: 'comentarios',
             foreignKey: 'id_usuario'
         })
-        // Users.hasOne(models.Carrito, {
-        //     as: 'carrito',
-        //     foreignKey: 'usuarios_id'
-        // })
+        Users.hasMany(models.Carrito, {
+            as: 'carrito',
+            foreignKey: 'usuarios_id'
+        })
         // Users.hasMany(models.DetalleOrden, {
         //     as: 'detalleOrden',
         //     foreignKey: 'usuarios_id'
