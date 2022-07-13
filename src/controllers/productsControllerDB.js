@@ -70,6 +70,7 @@ const controller = {
 		//     });
 		//     return images
 		// }
+		
 	},
 	getProductById: function (req, res) {
 		let id = req.params.idProducto;

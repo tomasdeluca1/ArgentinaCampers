@@ -4,13 +4,6 @@
     box-sizing: border-box;
 }
 
-/* Classes for Javascript on front-end */
-
-.error-en-input{
-    border:firebrick 1px solid;
-}
-
-/* End of classes fot JS on front */
 .body{
     background-color: #ffeed2;
     display: flex;

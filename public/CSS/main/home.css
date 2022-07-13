@@ -358,8 +358,9 @@ hr{
 .fechaYHoraDevolucion input{
     width: 150px;
     border-radius: 5px;
-    border: 0.5px solid grey;
-    color: #4B4851;
+    border: 1px solid #957f65;
+    background-color: #957f65;
+    color: #ffeed2;
     text-align: center;
 }
 .casillasHome{
@@ -370,10 +371,12 @@ hr{
     width: 100%;
 }
 
+
 .nuestros-vehiculos{
     padding: 0px 0 50px 0;
     color: #000000;
 }
+
 
 .vehiculos{
     display: flex;
@@ -696,17 +699,21 @@ footer{
 
 
     .sub-burger-menu{
-        display: none;
         list-style: none;
+        
         width: 50%;
+
         background-color: white;
         z-index: 1;
+
         position: absolute;
+
         top: 93.5px;
         right: -100vw;
+
         border: .125rem solid #957f65;
         border-radius: 10px;
-        overflow-x: hidden;
+
         transition: all ease 600ms;
     }
 
@@ -926,17 +933,21 @@ footer{
 
 
     .sub-burger-menu{
-        display: none;
         list-style: none;
+        
         width: 35%;
+
         background-color: white;
         z-index: 1;
+
         position: absolute;
+
         top: 93.5px;
-        right: 0;
+        right: -100vw;
+
         border: .125rem solid #957f65;
         border-radius: 10px;
-        overflow-x: hidden;
+
         transition: all ease 600ms;
     }
 

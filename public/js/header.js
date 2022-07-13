@@ -12,13 +12,16 @@ window.addEventListener('load', () => {
 	let burgerMenu = document.querySelector('.menu');
 	let menuDesplegable = document.querySelector('.sub-burger-menu');
 
-	burgerMenu.addEventListener('click', () => {
 
-		if ((menuDesplegable.style.display === 'none')) {
-			menuDesplegable.style.display = 'block';
-		} else if (menuDesplegable.style.display !== 'none'){
-			menuDesplegable.style.display = 'none';
-		}
+
+
+	burgerMenu.addEventListener('click', () => {
+		menuDesplegable.classList.toggle('mostrar');
 	});
 
+	if (menuDesplegable.classList.contains('mostrar')) {
+		cruz.addEventListener('click', () => {
+			menuDesplegable.classList.remove('mostrar');
+		});
+	}
 });
