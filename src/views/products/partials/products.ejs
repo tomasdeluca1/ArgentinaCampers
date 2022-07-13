@@ -1,0 +1,33 @@
+<% for (let productoInfo of productos) { %> 
+    <article class="descProductos">
+        <div class="componentes-del-producto">
+            <h4><%= productoInfo.marca + " " + productoInfo.modelo %> </h4>
+        </div>
+        <div class="componentes-del-producto">
+            <% let imgs = [] %> 
+            <% for (let img of imagenes) { %>
+                <% if (img.producto_id == productoInfo.id) { %> 
+                    <% imgs.push(img.img) %> 
+                <% } %> 
+            <% } %> 
+            <img 
+            src="../images/imagenesproductos/<%= imgs[0] %>" 
+            alt="<%= productoInfo.marca + productoInfo.modelo %>" 
+            class="productoImg">
+
+        </div>       
+        <div class="componentes-del-producto">
+            <p><%= productoInfo.descripcion %></p>
+        </div>
+        <div class="opcionesProducto <%= !locals.admin ? 'centrar-div' : null %>">
+            <div class="masDetalles">
+                <a href="products/<%= productoInfo.id %>">Más Detalles</a>
+            </div>
+            <% if (locals.admin) { %>
+                <div class="editarProducto">
+                    <a href="products/<%= productoInfo.id %>/edit"><i class="fa-solid fa-pencil"></i></a>
+                </div>
+            <% } %> 
+        </div>
+    </article>
+<% } %> 

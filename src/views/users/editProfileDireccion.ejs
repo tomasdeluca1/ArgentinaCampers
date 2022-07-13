@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="../../../CSS/main/home.css">
+    <link rel="stylesheet" href="../../../CSS/users/editProfile.css">
+
+    <title>Editar perfil</title>
+</head>
+<body>
+    <!-- Header -->
+    
+    <%- include('../partials/header2') %> 
+
+    <!-- Todo el cuerpo -->
+
+    <section class="nav-vehiculos">
+        <article>
+            <h3><a href="../../home">Home</a> / <a href="">Edicion de mis datos</a></h3>
+        </article>
+    </section>
+
+     <!-- Cuerpo -->
+     <main class="body">
+        <div class="container-all">
+            <div class="container-titulo">
+                <h2>Editar mi contraseña</h2>
+            </div>
+            <div class="container-form">  
+                <form action="editDireccion?_method=put" method="post">
+                    <h3 class="h3-user-name h3-user-password">Cambiar mi direccion</h3>
+                    <div class="user-data registros">
+                        <% let provincias = ["Buenos Aires", "Buenos Aires Capital", "Catamarca", "Chaco", "Chubut", "Cordoba", "Corrientes", "Entre Rios", "Formosa", "Jujuy", "La Pampa", "La Rioja", "Mendoza", "Misiones", "Neuquen", "Rio Negro", "Salta", "San Juan", "San Luis", "Santa Cruz", "Santa Fe", "Santiago del Estero", "Tierra del Fuego", "Tucuman"]; %>
+                        <label for="new-provincia" class="label label-registros">Nueva provincia</label>
+                        <select name="newProvincia" id="new-provincia" required class="input-edit <%= locals.errors && errors.newProvincia ? 'is-invalid' : null %>">
+                            <option disabled selected value><%= userData.provincia.dataValues.provincia %> </option>
+                            <% for (let i = 0; i < provincias.length; i++) { %> 
+                                <option value="<%= i + 1 %>"><%= provincias[i] %></option>
+                            <% } %> 
+                        </select>
+                        <% if (locals.errors && errors.newProvincia) { %>
+                            <div class="errors">
+                                <p><%= errors.newProvincia.msg %></p>
+                            </div>
+                        <% } %> 
+                    </div>
+                    <div class="user-data registros">
+                        <label for="new-municipio" class="label label-registros">Cambia tu municipio</label>
+                        <input 
+                            placeholder="Nuevo municipio"
+                            type="text" 
+                            name="newMunicipio" 
+                            id="new-municipio" 
+                            minlength="2"
+                            maxlength="100"
+                            class="input-edit <%= locals.errors && errors.newMunicipio ? 'is-invalid' : null %>"
+                            value="<%= userData.municipio %>"
+                            required
+                        >
+                        <% if (locals.errors && errors.newMunicipio) { %>
+                            <div class="errors">
+                                <p><%= errors.newMunicipio.msg %> </p>
+                            </div>
+                        <% } %> 
+                    </div>
+                    <div class="user-data registros">
+                        <label for="new-ciudad" class="label label-registros">Cambia tu ciudad</label>
+                        <input 
+                            placeholder="Nueva ciudad"
+                            type="text" 
+                            name="newCiudad" 
+                            id="new-ciudad" 
+                            minlength="2"
+                            maxlength="100"
+                            class="input-edit <%= locals.errors && errors.newCiudad ? 'is-invalid' : null %>"
+                            value="<%= userData.ciudad %>"                            
+                            required
+                        >
+                        <% if (locals.errors && errors.newCiudad) { %>
+                            <div class="errors">
+                                <p><%= errors.newCiudad.msg %> </p>
+                            </div>
+                        <% } %> 
+                    </div>
+                    <div class="user-data registros">
+                        <label for="new-calle" class="label label-registros">Cambia tu calle</label>
+                        <input 
+                            placeholder="Nueva calle"
+                            type="text" 
+                            name="newCalle" 
+                            id="new-calle" 
+                            minlength="2"
+                            maxlength="100"
+                            class="input-edit <%= locals.errors && errors.newCalle ? 'is-invalid' : null %>"
+                            value="<%= userData.calle %>"                            
+                            required
+                        >
+                        <% if (locals.errors && errors.newCalle) { %>
+                            <div class="errors">
+                                <p><%= errors.newCalle.msg %> </p>
+                            </div>
+                        <% } %> 
+                    </div>
+                    <div class="user-data registros">
+                        <label for="new-numero-vivienda" class="label label-registros">Cambia tu numero de vivienda</label>
+                        <input 
+                            placeholder="Nuevo numero de vivienda"
+                            type="number" 
+                            name="newNumeroVivienda" 
+                            id="new-numero-vivienda" 
+                            minlength="2"
+                            maxlength="100"
+                            class="input-edit <%= locals.errors && errors.newNumeroVivienda ? 'is-invalid' : null %>"
+                            value="<%= userData.numeroVivienda %>"                            
+                            required
+                        >
+                        <% if (locals.errors && errors.newNumeroVivienda) { %>
+                            <div class="errors">
+                                <p><%= errors.newNumeroVivienda.msg %> </p>
+                            </div>
+                        <% } %> 
+                    </div>
+                    <div class="user-data registros">
+                        <label for="new-codigo-postal" class="label label-registros">Cambia tu codigo postal</label>
+                        <input 
+                            placeholder="Nuevo codigo postal"
+                            type="number" 
+                            name="newCodigoPostal" 
+                            id="new-codigo-postal" 
+                            minlength="2"
+                            maxlength="100"
+                            class="input-edit <%= locals.errors && errors.newCodigoPostal ? 'is-invalid' : null %>"
+                            value="<%= userData.codigoPostal %>"                            
+                            required
+                        >
+                        <% if (locals.errors && errors.newCodigoPostal) { %>
+                            <div class="errors">
+                                <p><%= errors.newCodigoPostal.msg %> </p>
+                            </div>
+                        <% } %> 
+                    </div>
+                    <div class="button-div">
+                        <button class="button">Enviar cambios</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- Footer --> 
+    <%- include('../partials/footer') %>
+
+    <script src="../../../../js/header.js"></script>
+</body>

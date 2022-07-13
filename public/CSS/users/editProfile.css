@@ -1,0 +1,252 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main{
+    background-color: #ffeed2;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-all{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.container-titulo{
+    margin-bottom: 20px;
+    width: 65%;
+}
+
+
+
+.container-form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: .125rem solid #957f65; 
+    background-color: #ffffff;
+    padding: 25px 40px 25px 40px; 
+    width: 65%;
+}
+
+form{
+    width: 100%;
+}
+
+.user-data{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.label:hover{
+    cursor: pointer;
+}
+
+
+
+
+
+.new-avatar-container{
+    justify-content: flex-start;
+    margin-top: 0;
+}
+
+.container-all-divs-foto{
+    margin-right: 5px;
+}
+
+.container-foto-de-perfil{
+    border-radius: 50%;
+    border: .125rem solid #957f65;
+    padding: 4px;
+    background-color: #ffffff;
+}
+
+.div-foto-de-perfil{
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.foto-de-perfil-edit{
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+}
+
+
+.container-all-divs-labels{
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.h3-user-name{
+    font-size: 30px;
+}
+
+.label-user-name-foto{
+    font-size: 20px;
+}
+
+.registros{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.input-edit{
+    width: 100%;
+    padding: 5px;
+    border: #BDA48A 2px solid;
+    border-radius: 1.5rem;
+    margin: 5px 0;
+    padding: 10px;
+    background-color: white;
+}
+
+.label-registros{
+    margin-bottom: 5px;
+}
+
+
+.button-div{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.button{
+    padding: 10px;
+    background-color: #957f65;
+    border: 1px solid #957f65;
+    border-radius: 1.5rem;
+    color: white;
+    width: 100%;
+    transition: all 100ms;
+}
+
+.button:hover{
+    cursor: pointer;
+    color: #957f65;
+    background-color: white;
+}
+
+
+.errors{
+    margin-top: 6px;
+}
+
+.errors p{
+    color: red;
+}
+
+.is-invalid{
+    border: 1px solid red;
+}
+
+.linea{
+    width: 90%;
+    margin: 15px 0;
+    border-top: 1px solid grey;
+    opacity: 0.2;
+}
+
+.p-destroy-user{
+    margin-top: 10px;
+}
+
+@media (min-width: 0) and (max-width: 480px){
+    .container-all{
+        width: 85%;
+    }
+
+    .container-titulo{
+        width: 100%;
+    }
+
+    .container-form{
+        width: 100%;
+        padding: 20px 25px 10px 25px;
+    }
+
+    .container-all-divs-foto{
+        align-self: center;
+    }    
+}
+
+@media (min-width: 481px) and (max-width: 768px){
+    .container-all{
+        width: 60%;
+    }
+
+    .container-titulo{
+        width: 100%;
+    }
+
+    .container-form{
+        width: 100%;
+        padding: 20px 25px 10px 25px;
+    }
+
+    .container-all-divs-foto{
+        align-self: center;
+    }  
+}
+
+@media (min-width:769px) and (max-width:1279px) {
+    .container-all{
+        width: 40%;
+    }
+
+    .container-titulo{
+        width: 100%;
+    }
+
+    .container-form{
+        width: 100%;
+        padding: 20px 25px 10px 25px;
+    }
+
+    .container-all-divs-foto{
+        align-self: center;
+    } 
+}
+
+/* @media (min-width:1279px) {
+    .container-form{
+        padding: 20px 25px 10px 25px;
+    }
+} */
+
+
+
+
+

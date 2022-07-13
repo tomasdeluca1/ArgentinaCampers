@@ -59,6 +59,8 @@ header{
     color: #957F65;
 }
 
+
+
 .usuario{
     transition: all 200ms;
     border: 2px solid #BEA088;
@@ -92,6 +94,11 @@ header{
 }
 
 
+.menu{
+    display: none;
+}
+
+
 
 /* Esto es lo que va a aparecer en caso de que este iniciada la sesion */
 
@@ -103,7 +110,7 @@ header{
     width: 90%;
     visibility: hidden;
     opacity: 0;
-    transition: all 200ms;
+    /* transition: all 200ms; */
     z-index: 10;
     margin-top: 7px;
 }
@@ -115,13 +122,14 @@ header{
     width: 100%;
 }
 
-.menu-horizontal:hover .sub-menu-vertical{
+.mostrar-menu-vertical{
     visibility: visible;
     opacity: 1;
 }
 
-/* Estilos menu y submenu */
 
+
+/* Estilos menu y submenu */
 
 .foto-y-perfil{
     display: flex;
@@ -159,6 +167,10 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.menu-horizontal:hover{
+    cursor: pointer;
 }
 
 .ajutar-todo{
@@ -648,6 +660,7 @@ footer{
     }
 
     .carro-header{
+        display: none;
         padding: 10px;
     }
 
@@ -656,11 +669,20 @@ footer{
         right: 0.8px;
     }
 
+    .menu-horizontal{
+        display: none;
+    }
+
     .menu{
         padding: 10px 12px;
         font-size: 16px;
         background-color: #BDA48A;
         border-radius: 1rem;
+        display: block;
+    }
+
+    .menu:hover{
+        cursor: pointer;
     }
 
     .burger-menu{
@@ -672,9 +694,68 @@ footer{
         color: #957f65;
     }
 
-    .menu-horizontal{
-        display: none;
+
+    .sub-burger-menu{
+        list-style: none;
+        
+        width: 50%;
+
+        background-color: white;
+        z-index: 1;
+
+        position: absolute;
+
+        top: 93.5px;
+        right: -100vw;
+
+        border: .125rem solid #957f65;
+        border-radius: 10px;
+
+        transition: all ease 600ms;
     }
+
+    
+
+    .cruz{
+        margin: 10px 15px;
+    }
+
+    .cruz i:hover{
+        cursor: pointer;
+    }
+
+    .links-header-nav-burger-menu{
+        font-weight: bolder;
+        text-decoration: none;
+        color: #BDA48A;
+        font-size: 14px;
+
+        display: block;
+        padding: 15px;
+        text-decoration: none;
+        width: 100%;
+
+    }
+
+    .first {
+        border-start-start-radius: 10px;
+        border-start-end-radius: 10px;
+    }
+
+    .last {
+        border-end-start-radius: 10px;
+        border-end-end-radius: 10px;
+    }
+
+    .links-header-nav-burger-menu:hover{
+        background-color: rgba(231, 231, 231, 0.5);
+    }
+
+
+    
+
+    
+
 
     /* Body */
 
@@ -779,10 +860,6 @@ footer{
 
 
 @media (min-width: 481px) and (max-width: 1015px){
-
-    .link-list{
-        position: relative;
-    }
     
     .iniciar-sesion{
         width: 150px;
@@ -791,6 +868,7 @@ footer{
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
+        display: none;
     }
 
     .usuario{
@@ -816,6 +894,7 @@ footer{
     }
 
     .carro-header{
+        display: none;
         padding: 10px;
     }
 
@@ -824,11 +903,20 @@ footer{
         right: 0.8px;
     }
 
+    .menu-horizontal{
+        display: none;
+    }
+
     .menu{
         padding: 10px 12px;
         font-size: 16px;
         background-color: #BDA48A;
         border-radius: 1rem;
+        display: block;
+    }
+
+    .menu:hover{
+        cursor: pointer;
     }
 
     .burger-menu{
@@ -840,8 +928,63 @@ footer{
         color: #957f65;
     }
 
-    .menu-horizontal{
-        display: none;
+
+    .sub-burger-menu{
+        list-style: none;
+        
+        width: 35%;
+
+        background-color: white;
+        z-index: 1;
+
+        position: absolute;
+
+        top: 93.5px;
+        right: -100vw;
+
+        border: .125rem solid #957f65;
+        border-radius: 10px;
+
+        transition: all ease 600ms;
+    }
+
+    
+
+    .cruz{
+        margin: 10px 15px;
+    }
+
+    .cruz i:hover{
+        cursor: pointer;
+    }
+
+    .links-header-nav-burger-menu{
+        font-weight: bolder;
+        text-decoration: none;
+        color: #BDA48A;
+        font-size: 14px;
+
+        display: block;
+        padding: 15px;
+        text-decoration: none;
+        width: 100%;
+
+    }
+
+
+    .first {
+        border-start-start-radius: 10px;
+        border-start-end-radius: 10px;
+    }
+
+    .last {
+        border-end-start-radius: 10px;
+        border-end-end-radius: 10px;
+    }
+
+
+    .links-header-nav-burger-menu:hover{
+        background-color: rgba(231, 231, 231, 0.5);
     }
 
     /* Body */
@@ -953,9 +1096,9 @@ footer{
         font-size: 12px;
     }
 
-    .menu{
+    /* .menu{
         display: none;
-    }
+    } */
  
     .logoAC{
         display: block;
@@ -988,6 +1131,11 @@ footer{
         width: 17%;
     }
      
+
+    .ocultar{
+        display: none;
+    }
+
 
  /* Footer */
 
@@ -1024,9 +1172,6 @@ footer{
         font-size: 14px;
     }
 
-    .menu{
-        display: none;
-    }
  
     .logoAC{
         display: block;
@@ -1085,6 +1230,10 @@ footer{
     }
 
 
+    .ocultar{
+        display: none;
+    }
+
    
 
 
@@ -1111,3 +1260,7 @@ footer{
 
  
  
+.mostrar{
+    right: 0px;
+}
+

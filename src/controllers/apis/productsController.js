@@ -1,4 +1,4 @@
-const todosLosProductos = require("../database/productosDetalle.json")
+const todosLosProductos = require("../../database/productosDetalle.json")
 const fs = require('fs')
 const multer = require('multer')
 const req = require("express/lib/request")
@@ -174,15 +174,13 @@ const controller = {
         };
 
         archivoProductos = productos.filter(numero => numero.id != id);
-        console.log(archivoProductos)
 
         productosJSON = JSON.stringify(archivoProductos, null, ' ');
         fs.writeFileSync(json, productosJSON);
         res.redirect('/products');
     },
+
 }
-
-
 
 
 module.exports = controller;

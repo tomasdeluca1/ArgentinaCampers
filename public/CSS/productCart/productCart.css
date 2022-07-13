@@ -31,125 +31,136 @@ body{
     box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.1);
 }
 
-.text-carrito{
+
+
+.titulo{
     text-align: center;
-    padding-top: 60px;
+    margin: 60px 0 30px;
 }
 
-.text-carrito h1{
-    color: #bea088;
-    width: 100%;
-    text-align: center;
-    text-transform: uppercase;
-    transition: all 350ms;
-}
 
-.text-carrito h1:hover{
-    cursor: pointer;
-    color: #926f34;
-}
 
-.carrito{
+.container-vans-precio{
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
+    justify-content: space-between;
     align-items: flex-start;
-    justify-content: flex-start;
-    width: 100%;
-    margin-bottom: 40px;
 }
+
+
+
+
+
+
 
 .container-vans{
+    width: 50%;
+    height: 40%;
+
+    margin: 30px 30px;
+    padding: 0 50px;
+
+
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    background-color: #FFEED2;
-    box-shadow: 0px 1px 5px 3px rgba(149, 127, 101, 0.9);
-    width: 60%;
-    margin: 60px 0 60px 60px;
-    border-radius: 1rem;
 }
 
 .van{
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: .125rem solid #957f65;
+
+    width: 100%;
+
+    margin: 0 0 10px;
+    padding: 10px;
+
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    padding: 10px;
+
+
+
 }
-.flexCart{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.inputCarrito{
-   width: 100%;
-   margin-top: 5px;
-   padding: 2px;
-   text-align: center;
-   border-radius: 1rem;
-   background-color: #FFEED2;
-   color: black;
-   box-shadow: 0px 1px 5px 3px rgba(149, 127, 101, 0.2);
-   border: 2px solid #957f65;
+
+.div-dato{
+    width: calc(100% / 4);
+    text-align: center;
 }
 
 
-.imagenes{
-    margin: 0 20px;
+
+.imagen-van{
+    width: 150px;
+    height: 90px;
+
+
     padding: 5px;
-    transition: all 300ms;
+
 }
 
-.imagenes:hover{
+.imagen-van:hover{
     cursor: pointer;
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+
+
+
+
+.formulario-eliminar-del-carrito{
+    margin: 0 10px;
+}
+
+
+.button{
+    color: white;
+    background-color: #f74b4b;
+    border: 1px solid #f74b4b;
+
+
+    padding: 5px 10px;
+}
+
+.button:hover{
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+.container-precio{
+    background-color: #ffffff;
     border-radius: 10px;
-}
+    border: .125rem solid #957f65;
 
-.imagen{
-    width: 135px;
-    height: 75px;
-}
-
-.detalles{
-    position: relative;
-    right: 250px;
-}
-
-.precios{
-    font-weight: bold;
-    margin: 0 60px;
-}
-
-.precio{
-    font-family: sans-serif;
-        font-weight: bolder;
-        font-size: 20px;
-}
+    width: 30%;
 
 
-.resumen-de-la-compra{
+    margin: 30px 30px;
+
+
+
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color: #FFEED2;
-    box-shadow: 0px 1px 5px 3px rgba(149, 127, 101, 0.9);
-    width: 30%;
-    margin: 60px 0 60px 60px;
-    border-radius: 1rem;
 }
 
 
-.total{
+.total {
     margin: 20px;
 }
 
-.total p {
+.total p{
     margin-top: 20px;
     font-size: 50px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -157,15 +168,20 @@ body{
     text-transform: uppercase;
 }
 
-.precio-del-resumen p{
+
+.div-precio-total{
+    margin-top: 50px;
+}
+
+.precio-total{
     color: #926f34;
     font-size: 30px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: bolder;
-    margin-top: 50px;
 }
 
-.buttons-resumen{
+
+.div-form-comprar{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -175,306 +191,111 @@ body{
     margin-top: 50px;
 }
 
-.boton-seguir-comprando{
-    text-align: center;
+.form-comprar{
     width: 100%;
-    height: 60px;
-    margin: 10px 0;
-}
-
-
-.boton-seguir-comprando button{
-    border: 1px solid #FFEED2;
-    border-radius: 20px;
-    background-color: #FFEED2;
-    width: 80%;
-    height: 100%;
-    transition: all 350ms;
-}
-
-.boton-seguir-comprando button:hover{
-    cursor: pointer;
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
-}
-
-.boton-resumen{
     text-align: center;
-    width: 100%;
-    height: 60px;
-    margin: 10px 0;
 }
 
-
-.boton-resumen button{
-    border: 2px solid #957f65;
+.button-comprar{
+    padding: 10px;
+    background-color: #957f65;
+    border: 1px solid #957f65;
     border-radius: 1.5rem;
-    background-color: #FFEED2;
-    width: 80%;
-    height: 100%;
-    transition: all 350ms;
+    color: white;
+    width: 50%;
+    transition: all 100ms;
 }
 
-.boton-resumen button:hover{
+.button-comprar:hover{
     cursor: pointer;
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    color: #957f65;
+    background-color: white;
 }
 
 
 
+@media (min-width: 0) and (max-width: 480px){
 
-
-@media (min-width: 0px) and (max-width: 480px){
-
-    .carrito{
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: center;
+    .container-vans-precio{
+        flex-flow: column wrap;
         align-items: center;
     }
 
-   .container-vans{
-        width: 80%;
-        margin: 30px 0;
-    }
-
-   .van{
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-    }
-
-   .detalles{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: static;
-        margin: 10px 0;
-    }
-
-    .resumen-de-la-compra{
-        width: 80%;
-        margin: 30px 0;
-    }
-
-
-
-    .imagenes{
-        margin-bottom: 10px;
-        margin: 0;
-        padding: 0;
-    }
-
-    .flexCart{
-        margin-bottom: 15px;
-        text-align: center;
-        width: 95%;
-    }
-
-    .flexCart label{
-        width: 100%;
-    }
-
-    .flexCart select{
-        width: 100%;
-    }
-
-    
-
-
-
-
-
-
-    .total{
-        margin: 30px 10px;
-    }
-
-    .total p{
-        font-size: 35px;
-        margin: 0;
-    }
-
-    .precio-del-resumen{
-        margin: 30px 10px;
-    }
-
-    .precio-del-resumen p{
-        font-size: 25px;
-        margin: 0;
-    }
-    
-}
-
-@media (min-width: 481px) and (max-width: 768px){
-    .carrito{
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 40px;
-    }
-
-   .container-vans{
-        width: 80%;
-        margin: 30px 0;
-    }
-
-   .van{
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-    }
-
-   .detalles{
-        display: flex;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        justify-content: flex-start;
-        font-size:16px;
-        margin: 10px 0;
-    }
-
-    .resumen-de-la-compra{
-        width: 80%;
-        margin: 30px 0;
-    }
-    .flexCart{
-        margin-bottom: 15px;
-    }
-
-    .imagenes{
-        margin-bottom: 10px;
-    }
-
-}
-
-
-
-@media (min-width:769px) and (max-width:1279px){
-    .carrito{
-        margin: 30px 0;
-        justify-content: space-between;
-       
-    }
 
     .container-vans{
-        width: 60%;
         margin: 0;
-    }
-
-    .resumen-de-la-compra{
-        width: 30%;
-        margin: 0;
+        padding: 0;
+        width: 90%;
     }
 
     .van{
         display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
+        flex-flow: column wrap;
         justify-content: center;
         align-items: center;
     }
 
-    .detalles{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: static;
-        margin: 10px 0;
+    .div-dato{
+        width: 100%;
+        margin: 5px auto;
     }
 
-    .container-vans{
-        margin-left: 20px;
+    .formulario-eliminar-del-carrito{
+        margin-top: 10px;
     }
 
-    .resumen-de-la-compra{
-        margin-right: 20px;
+    .container-precio{
+        width: 90%;
+        margin: 20px 0;
     }
 
-    .imagenes{
-        margin-bottom: 10px;
-    }
-    .flexCart{
-        margin-bottom: 10px;
-    }
-
-
-    .total{
-        text-align: center;
-        margin: 30px 0;
-    }
-
-    .total p{
-        margin: 0;
-    }
-
-    .precio-del-resumen{
-        text-align: center;
-        margin: 50px 0;
-    }
-
-    .precio-del-resumen p{
-        margin: 0;
-    }
+    
 }
 
-
-
-
-@media (min-width: 1280px){
-    .carrito{
-        margin: 40px 0 90px 0px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
+@media (min-width: 481px) and (max-width: 768px){
+    .container-vans-precio{
+        flex-flow: column wrap;
+        align-items: center;
     }
+
 
     .container-vans{
-        width: 60%;
-        margin: 0;
-    }
-
-    .resumen-de-la-compra{
-        width: 30%;
-        margin: 0;
-    }
-
-    .van-parte-seleccionar{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 40px;
-      
-    }
-
-    .van-parte-compra{
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 40px;
-    }
-    .imagenes{
         margin: 0;
         padding: 0;
+        width: 70%;
     }
 
-    .container-vans{
-        margin-left: 20px;
+    .van{
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
     }
 
-    .resumen-de-la-compra{
-        margin-right: 20px;
+    .div-dato{
+        width: 100%;
+        margin: 5px auto;
+    }
+
+    .formulario-eliminar-del-carrito{
+        margin-top: 10px;
+    }
+
+    .container-precio{
+        width: 70%;
+        margin: 20px 0;
     }
 }
 
+@media (min-width:769px) and (max-width:1250px) {
+    .container-vans{
+        margin: 30px 10px;
+        padding: 0;
+        width: 64.5%;
+    }
 
+    .container-precio{
+        margin: 30px 10px;
+        padding: 0;
+    }
+}

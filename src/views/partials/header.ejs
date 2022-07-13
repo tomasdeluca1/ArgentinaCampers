@@ -1,37 +1,61 @@
-<header>
-    <nav class="nav-bar">
-        <ul class="link-list" type="none">
-            <li class="nav-header-item"><img src="../../images/imagenesVariadas/logo.png" alt="Logo Argentina campers" class="logoAC"></li>
-            <li class="nav-header-item home"><a href="../home" class="links-header-nav"><h2>Home</h2></a></li>
-            <li class="nav-header-item products"><a href="../products" class="links-header-nav"><h2>Nuestras CamperVans</h2></a></li>
-            <li class="nav-header-item about-us"><a href="../aboutUs" class="links-header-nav"><h2>About us</h2></a></li>
-            <li class="carro-header nav-header-item"><a href="../rental-cart" class="links-header-nav carrito-header"><i class="fa-solid fa-cart-shopping"></i></a></li>
-            <li class="nav-header-item menu"><a href="#"><i class="fa-solid fa-bars burger-menu"></i></a></li>
-            <% if(locals.isLogged) { %>
-                <li class="menu-horizontal">
-                    <div class="ajutar-todo">
-                        <div class="foto-y-perfil">
-                            <div class="contenedor-foto-perfil">
-                                <img src="../../../images/avatarPerfil/<%= locals.userLogged.avatar %> " alt="Foto de perfil" class="foto-de-perfil">
+    <header>
+        <nav class="nav-bar">
+            <ul class="link-list" type="none">
+                <li class="nav-header-item"><img src="../../images/imagenesVariadas/logo.png" alt="Logo Argentina campers" class="logoAC"></li>
+                <li class="nav-header-item home"><a href="../home" class="links-header-nav"><h2>Home</h2></a></li>
+                <li class="nav-header-item products"><a href="../products" class="links-header-nav"><h2>Nuestras CamperVans</h2></a></li>
+                <li class="nav-header-item about-us"><a href="../aboutUs" class="links-header-nav"><h2>About us</h2></a></li>
+                <li class="carro-header nav-header-item"><a href="../rental-cart" class="links-header-nav carrito-header"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <!-- <li class="nav-header-item menu">
+                    <i class="fa-solid fa-bars burger-menu"></i>
+                </li> -->
+                <% if(locals.isLogged) { %>
+                    <li class="menu-horizontal">
+                        <div class="ajutar-todo">
+                            <div class="foto-y-perfil">
+                                <div class="contenedor-foto-perfil">
+                                    <img src="../../../images/avatarPerfil/<%= locals.userLogged.avatar %> " alt="Foto de perfil" class="foto-de-perfil">
+                                </div>
+                                <a href="#" class="link-menu-horizontal"><%= locals.userLogged.userName %></a>
+                                <a href="#"><div class="nav-header-username-chevron"></div></a>
                             </div>
-                            <a href="#" class="link-menu-horizontal"><%= locals.userLogged.userName %></a>
-                            <a href="#"><div class="nav-header-username-chevron"></div></a>
+                            <ul class="sub-menu-vertical">
+                                <li><a href="../profile/<%= locals.userLogged.id %>" class="link-menu-vertical mi-perfil">Mi perfil</a></li>
+                                <% if(locals.admin) { %> 
+                                    <li><a href="../all-users" class="link-menu-vertical all-users">Todos los usuarios</a></li>
+                                <% } %> 
+                                <li><a href="../logout" class="link-menu-vertical cerrar-sesion">Cerrar sesion</a></li>
+                            </ul>
                         </div>
-                        <ul class="sub-menu-vertical">
-                            <li><a href="../profile/<%= locals.userLogged.id %>" class="link-menu-vertical mi-perfil">Mi perfil</a></li>
-                            <% if(locals.admin) { %> 
-                                <li><a href="../all-users" class="link-menu-vertical all-users">Todos los usuarios</a></li>
-                            <% } %> 
-                            <li><a href="../logout" class="link-menu-vertical cerrar-sesion">Cerrar sesion</a></li>
-                        </ul>
-                    </div>
+                    </li>
+                <% } else { %> 
+                    <ul class="iniciar-sesion">
+                        <li class="usuario"><a href="../login" class="links-header links-header-user"><i class="fa-solid fa-right-to-bracket"></i>Iniciar sesion</a></li>
+                        <li class="usuario"><a href="../register" class="links-header links-header-user"><i class="fa-solid fa-address-card"></i>Registrarse</a></li>
+                    </ul>
+                <% } %> 
+                <li class="nav-header-item menu">
+                    <i class="fa-solid fa-bars burger-menu"></i>
+                    <ul class="sub-burger-menu" >
+                        <!-- <li class="cruz"><i class="fa-solid fa-xmark"></i></li> -->
+                        <li class="links-burger-menu"><a href="../home" class="links-header-nav-burger-menu first"><h2>Home</h2></a></li>
+                        <li class="links-burger-menu"><a href="../products" class="links-header-nav-burger-menu"><h2>Nuestras CamperVans</h2></a></li>
+                        <li class="links-burger-menu"><a href="../aboutUs" class="links-header-nav-burger-menu"><h2>About us</h2></a></li>
+                        <li class="links-burger-menu"><a href="../rental-cart" class="links-header-nav-burger-menu carrito-header"><h2>Carrito</h2></a></li>
+                        <% if (locals.isLogged) { %>
+                            <li class="links-burger-menu"><a href="../profile/<%= locals.userLogged.id %>" class="links-header-nav-burger-menu"><h2>Mi perfil</h2></a></li>
+                                <% if(locals.admin) { %> 
+                                    <li class="links-burger-menu"><a href="../all-users" class="links-header-nav-burger-menu"><h2>Todos los usuarios</h2></a></li>
+                                <% } %> 
+                            <li class="links-burger-menu"><a href="../logout" class="links-header-nav-burger-menu last"><h2>Cerrar sesion</h2></a></li>
+                        <% } else { %>
+                            <li class="links-burger-menu"><a href="../login" class="links-header-nav-burger-menu"><h2>Iniciar sesion</h2></a></li>
+                            <li class="links-burger-menu"><a href="../register" class="links-header-nav-burger-menu last"><h2>Registrarse</h2></a></li>
+                        <% } %> 
+                    </ul>
                 </li>
-            <% } else { %> 
-                <ul class="iniciar-sesion">
-                    <li class="usuario"><a href="../login" class="links-header links-header-user"><i class="fa-solid fa-right-to-bracket"></i>Iniciar sesion</a></li>
-                    <li class="usuario"><a href="../register" class="links-header links-header-user"><i class="fa-solid fa-address-card"></i>Registrarse</a></li>
-                </ul>
-            <% } %> 
-        </ul>
-    </nav>
-</header>
+            </ul>
+        </nav> 
+    </header>
+    <script src="../../js/header.js"></script>
+    

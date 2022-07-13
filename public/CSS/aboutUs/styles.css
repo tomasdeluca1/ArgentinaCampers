@@ -11,12 +11,10 @@ body{
 .
 .
 .
-*/
+*/@media (min-width: 0px) {
+
 .txtSobreNosotros{
-
   text-align: left
-
-
 }
 .bannerAboutUs{
   width: 100%;
@@ -95,69 +93,104 @@ label:hover ~ label{color:gold;}
 input[type = "radio"]:checked ~ label{color:gold;}
 
 
-@media (min-width: 750px) {
-  .reviews-row{
-      display: flex;
-      /* flex-direction: row;
-      flex-wrap: wrap; */
-      overflow-y: hidden;
-      transform: translateZ(0);
-      margin: 0 auto;
-position: relative;  box-sizing: border-box;
-}
-  .cuadradoReview{
-    position: relative;
-      text-align: center;
-      width: 300px;
-      height: 400px;
-      padding: 15px;
-      margin:20px;
-      box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.4);
-      font-size: 1rem;
-      background-color: #BDA48A;
-      color: #957F65;
-  }
-.estrellasReview{
-  color: gold;
+
+
+#reviews-carrusel{
+  display: flex;
+  /* flex-direction: row; */
+  overflow-x: scroll;
+  transform: translateZ(0);
+  margin: 0 auto;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 90% ;
+  height: 400px;
+position: relative;  
 }
 
+.cuadradoReview{
+  height: 100%;
+  position: relative;
+    text-align: center;
+  width: 100%;
+    padding: 15px;
+    margin:10px;
+    box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.4);
+    background-color: #BDA48A;
+    color: #957F65;
+}
 .viajerosContentos{
- 
-  font-size: 2rem;
-  margin: 50px 0px 20px 0;
+
+font-size: 2rem;
+margin: 50px 0px 20px 0;
 }
 
-  .cuadradoReview h3,p{
-      color: #FFEED2;
-      text-align: left;
-      padding: 5px;
-      font-size: 1.2rem;
-  }
-
-  
-  .cuadradoReview h4{
-      font-size: 1.4rem;
-      color: #FFEED2;
-      padding: 5px;
-      position: absolute;
-      bottom: 15px;
-     right: 20px;
-  }
-
-  .cuadradoReview h5{
-      color: #FFEED2;
-  }
+.review-txt{
+    color: #FFEED2;
+    text-align: left;
+    padding: 5px;
+    font-size: 16px;
 }
 
-.cuadradoReview h6{
-font-size: 0.8rem;
+
+.viajero{
+    font-size: 18px;
+    color: #FFEED2;
+    padding: 5px;
+   text-align: right;
+}
+
+.review-calification{
+    color: #FFEED2;
+}
+
+
+.review-destino{
+font-size: 14px;
 color: #BDA48A;
 margin: 10px 0px 5px 0px;
 padding: 5px;
 background-color: #FFEED2;
 border-radius: 0.5rem;
 }
-
+.estrellasReview{
+  color: gold;
+}
+}
+@media (min-width: 330px) {
+ 
+  #reviews-carrusel{
+    height: 330px;
+  }
+  .cuadradoReview{
+    height: 320px;
+  }
+}
+@media (min-width: 550px) {
+ 
+  #reviews-carrusel{
+    height: 300px;
+  }
+  .cuadradoReview{
+    height: 280px;
+  }
+}
+@media (min-width: 700px) {
+  #reviews-carrusel{
+    height: 290px;
+  }
+  .cuadradoReview{
+    height: 270px;
+  }
+  .review-txt{
+    font-size: 18px;
+}
+.viajero{
+    font-size: 20px;
+    padding: 5px;
+}
+}
 /* REVIEW FORM */
 #feedback {
   max-width: 60%;
@@ -174,6 +207,7 @@ border-radius: 0.5rem;
   #feedback{
     max-width: 90%;
   }
+ 
 }
 
 @media (max-width: 500px) {
@@ -492,3 +526,18 @@ fieldset[disabled] a.btn {
   background-image: none;
   border-color: #01549b;
 }
+
+
+.errors{
+  margin-top: 6px;
+}
+
+.errors p{
+  color: red;
+}
+
+.is-invalid{
+  border-radius: 0.25rem;
+  border: 1px solid red;
+}
+

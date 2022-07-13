@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+/* Classes for Javascript on front-end */
+
+.error-en-input{
+    border:firebrick 1px solid;
+}
+
+/* End of classes fot JS on front */
 .body{
     background-color: #ffeed2;
     display: flex;
@@ -156,6 +163,24 @@
 
 .remember-user:hover{
     cursor: pointer;
+}
+
+.input-password{
+    position: relative;
+}
+
+.container-password-ojo{
+    width: 100%;
+    position: relative;
+}
+
+
+.ojo{
+    position: absolute; 
+    right: 10px;
+    color: rgba(174, 169, 169, 0.8);
+    cursor: pointer;
+    top: 17.5px;
 }
 
 

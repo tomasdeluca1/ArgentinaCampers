@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('../partials/head') %>
+		<link rel="stylesheet" href="../../../CSS/main/home.css" />
+		<link rel="stylesheet" href="../../../CSS/users/editProfile.css" />
+
+		<title>Editar perfil</title>
+	</head>
+	<body>
+		<!-- Header -->
+		<%- include('../partials/header2') %>
+		<!-- Todo el cuerpo -->
+
+		<section class="nav-vehiculos">
+			<article>
+				<h3>
+					<a href="../../home">Home</a> /
+					<a href="">Borrado de usuario</a>
+				</h3>
+			</article>
+		</section>
+
+		<!-- Cuerpo -->
+		<main class="body">
+			<div class="container-all">
+				<div class="container-titulo">
+					<h2>Eliminar cuenta</h2>
+				</div>
+				<div class="container-form">
+					<form action="destroyUser?_method=put" method="post">
+						<h3 class="h3-user-name h3-user-password">
+							Eliminar mi usuario
+						</h3>
+						<p class="p-destroy-user">
+							Para poder eliminar tu usuario tienes que poner tu
+							contraseña actual y confirmarla.
+						</p>
+						<div class="user-data registros">
+							<label for="password" class="label label-registros"
+								>Pone tu contraseña</label
+							>
+							<input
+								placeholder="Contraseña"
+								type="password"
+								name="password"
+								id="password"
+								minlength="6"
+								maxlength="200"
+								class="input-edit <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+								required
+							/>
+							<% if (locals.errors && errors.password) { %>
+							<div class="errors">
+								<p><%= errors.password.msg %></p>
+							</div>
+							<% } %>
+						</div>
+						<div class="user-data registros">
+							<label for="password2" class="label label-registros"
+								>Confirma tu contraseña</label
+							>
+							<input
+								placeholder="Confirmar contraseña"
+								type="password"
+								name="password2"
+								id="password2"
+								minlength="6"
+								maxlength="200"
+								class="input-edit <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+								required
+							/>
+						</div>
+						<div class="button-div">
+							<button class="button">Enviar cambios</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</main>
+
+		<!-- Footer -->
+		<%- include('../partials/footer') %>
+
+		<script src="../../../../js/header.js"></script>
+	</body>
+</html>
