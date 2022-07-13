@@ -12,16 +12,13 @@ window.addEventListener('load', () => {
 	let burgerMenu = document.querySelector('.menu');
 	let menuDesplegable = document.querySelector('.sub-burger-menu');
 
-	let cruz = document.querySelector('.cruz i');
-	let body = document.querySelector('body');
-
 	burgerMenu.addEventListener('click', () => {
-		menuDesplegable.classList.toggle('mostrar');
+
+		if ((menuDesplegable.style.display === 'none')) {
+			menuDesplegable.style.display = 'block';
+		} else if (menuDesplegable.style.display !== 'none'){
+			menuDesplegable.style.display = 'none';
+		}
 	});
 
-	if (menuDesplegable.classList.contains('mostrar')) {
-		cruz.addEventListener('click', () => {
-			menuDesplegable.classList.remove('mostrar');
-		});
-	}
 });

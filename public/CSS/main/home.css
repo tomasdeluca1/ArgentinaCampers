@@ -696,21 +696,17 @@ footer{
 
 
     .sub-burger-menu{
+        display: none;
         list-style: none;
-        
         width: 50%;
-
         background-color: white;
         z-index: 1;
-
         position: absolute;
-
         top: 93.5px;
         right: -100vw;
-
         border: .125rem solid #957f65;
         border-radius: 10px;
-
+        overflow-x: hidden;
         transition: all ease 600ms;
     }
 
@@ -930,21 +926,17 @@ footer{
 
 
     .sub-burger-menu{
+        display: none;
         list-style: none;
-        
         width: 35%;
-
         background-color: white;
         z-index: 1;
-
         position: absolute;
-
         top: 93.5px;
-        right: -100vw;
-
+        right: 0;
         border: .125rem solid #957f65;
         border-radius: 10px;
-
+        overflow-x: hidden;
         transition: all ease 600ms;
     }
 
