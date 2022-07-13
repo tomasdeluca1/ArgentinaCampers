@@ -1,0 +1,5 @@
+Admin email: frandelqueran@gmail.com;
+Contraseña: hola123;
+
+Usuario comun: tomi@gmail.com;
+Contraseña: hola123;
