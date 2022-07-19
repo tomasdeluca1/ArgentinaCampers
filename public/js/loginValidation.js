@@ -35,7 +35,7 @@ window.addEventListener('load', () => {
 		    errorEmail.style.display = 'none';
 		}
 	});
-	password.addEventListener('change', (e) => {
+	password.addEventListener('blur', (e) => {
 		if (password.value === '' || password.value === undefined) {
 			if (errorBackPassword != null) {
 				errorBackPassword.style.display = 'none';
