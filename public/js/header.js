@@ -19,9 +19,9 @@ window.addEventListener('load', () => {
 		menuDesplegable.classList.toggle('mostrar');
 	});
 
-	if (menuDesplegable.classList.contains('mostrar')) {
-		cruz.addEventListener('click', () => {
-			menuDesplegable.classList.remove('mostrar');
-		});
-	}
+	// if (menuDesplegable.classList.contains('mostrar')) {
+	// 	cruz.addEventListener('click', () => {
+	// 		menuDesplegable.classList.remove('mostrar');
+	// 	});
+	// }
 });

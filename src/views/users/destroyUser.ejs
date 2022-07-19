@@ -28,7 +28,7 @@
 					<h2>Eliminar cuenta</h2>
 				</div>
 				<div class="container-form">
-					<form action="destroyUser?_method=put" method="post">
+					<form action="destroyUser?_method=put" method="post" id="form-edit-user-destroy">
 						<h3 class="h3-user-name h3-user-password">
 							Eliminar mi usuario
 						</h3>
@@ -40,48 +40,67 @@
 							<label for="password" class="label label-registros"
 								>Pone tu contraseña</label
 							>
-							<input
-								placeholder="Contraseña"
-								type="password"
-								name="password"
-								id="password"
-								minlength="6"
-								maxlength="200"
-								class="input-edit <%= locals.errors && errors.password ? 'is-invalid' : null %>"
-								required
-							/>
+							<div class="container-password-ojo">
+								<i class="fa-solid fa-eye ojo"></i>
+								<input
+									placeholder="Contraseña"
+									type="password"
+									name="password"
+									id="password"
+									minlength="6"
+									maxlength="200"
+									class="input-edit <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+									required
+								/>
+							</div>
 							<% if (locals.errors && errors.password) { %>
-							<div class="errors">
+							<div class="errors" id="error-back-password">
 								<p><%= errors.password.msg %></p>
 							</div>
 							<% } %>
+							<div class="error-front errors password">
+								<p></p>
+							</div>
 						</div>
 						<div class="user-data registros">
 							<label for="password2" class="label label-registros"
 								>Confirma tu contraseña</label
 							>
-							<input
-								placeholder="Confirmar contraseña"
-								type="password"
-								name="password2"
-								id="password2"
-								minlength="6"
-								maxlength="200"
-								class="input-edit <%= locals.errors && errors.password ? 'is-invalid' : null %>"
-								required
-							/>
+							<div class="container-password-ojo">
+								<i class="fa-solid fa-eye ojo ojo2"></i>
+								<input
+									placeholder="Confirmar contraseña"
+									type="password"
+									name="password2"
+									id="password2"
+									minlength="6"
+									maxlength="200"
+									class="input-edit <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+									required
+								/>
+							</div>
+							<div class="error-front errors confirm-password">
+								<p></p>
+							</div>
 						</div>
 						<div class="button-div">
-							<button class="button">Enviar cambios</button>
+							<button class="button" id="btn">Enviar cambios</button>
 						</div>
 					</form>
 				</div>
 			</div>
 		</main>
 
+		
+
 		<!-- Footer -->
 		<%- include('../partials/footer') %>
 
 		<script src="../../../../js/header.js"></script>
+		<script src="../../../js/showPassword.js"></script>
+		<script src="../../../js/destroyUser.js"></script>
+		<% if(userData) { %>
+			<div class="alert" style="display: none"><%= userData.password %></div> 
+		<% } %> 
 	</body>
 </html>

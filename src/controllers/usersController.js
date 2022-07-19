@@ -167,11 +167,17 @@ const controller = {
 
 			res.redirect('../' + id);
 		} else {
-			res.render('users/editProfileData', {
-				errors: errors.mapped(),
-				oldData: req.body,
-				userData: req.session.userLogged,
-			});
+			let id = req.params.id;
+
+			db.Users.findByPk(id)
+			.then(userData => {
+				res.render('users/editProfileData', {
+					errors: errors.mapped(),
+					oldData: req.body,
+					userData: userData,
+				});
+			})
+
 		}
 	},
 	editProfilePassword: async function (req, res) {
@@ -201,11 +207,16 @@ const controller = {
 
 			res.redirect('../' + id);
 		} else {
-			res.render('users/editProfilePassword', {
-				errors: errors.mapped(),
-				oldData: req.body,
-				userData: req.session.userLogged,
-			});
+			let id = req.params.id;
+
+			db.Users.findByPk(id)
+			.then(userData => {
+				res.render('users/editProfilePassword', {
+					errors: errors.mapped(),
+					oldData: req.body,
+					userData: userData,
+				});
+			})
 		}
 	},
 	editProfileDireccion: async function (req, res) {

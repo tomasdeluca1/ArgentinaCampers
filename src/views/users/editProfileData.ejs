@@ -34,6 +34,7 @@
 						action="editData?_method=put"
 						method="post"
 						enctype="multipart/form-data"
+						id="form-edit-user-data"
 					>
 						<div class="user-data new-avatar-container">
 							<div class="container-all-divs-foto">
@@ -90,10 +91,13 @@
 								class="input-edit <%= locals.errors && errors.newUserName ? 'is-invalid' : null %>"
 							/>
 							<% if (locals.errors && errors.newUserName) { %>
-							<div class="errors">
+							<div class="errors" id="error-back-user-name">
 								<p><%= errors.newUserName.msg %></p>
 							</div>
 							<% } %>
+							<div class="error-front errors user-name">
+								<p></p>
+							</div>
 						</div>
 						<div class="user-data registros">
 							<label class="label label-registros" for="new-email"
@@ -108,10 +112,13 @@
 								value="<%= userData.email %>"
 							/>
 							<% if (locals.errors && errors.newEmail) { %>
-							<div class="errors">
+							<div class="errors" id="error-back-email">
 								<p><%= errors.newEmail.msg %></p>
 							</div>
 							<% } %>
+							<div class="error-front errors email">
+								<p>hola</p>
+							</div>
 						</div>
 
 						<div class="user-data registros">
@@ -131,13 +138,16 @@
 								value="<%= userData && !userData.phoneNumber ?  '-' : userData.phoneNumber %>"
 							/>
 							<% if (locals.errors && errors.newPhoneNumber) { %>
-							<div class="errors">
+							<div class="errors" id="error-back-phone-number">
 								<p><%= errors.newPhoneNumber.msg %></p>
 							</div>
 							<% } %>
+							<div class="error-front errors phone-number">
+								<p></p>
+							</div>
 						</div>
 						<div class="button-div">
-							<button class="button">Enviar cambios</button>
+							<button class="button" id="btn">Enviar cambios</button>
 						</div>
 					</form>
 				</div>
@@ -147,6 +157,8 @@
 		<!-- Footer -->
 		<%- include('../partials/footer') %>
 
+
 		<script src="../../../../js/header.js"></script>
+		<script src="../../../js/editProfileData.js"></script>
 	</body>
 </html>

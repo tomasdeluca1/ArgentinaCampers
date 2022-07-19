@@ -116,6 +116,7 @@ form{
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
+    position: relative;
 }
 
 .input-edit{
@@ -162,9 +163,11 @@ form{
 
 .errors{
     margin-top: 6px;
+    width: 100%;
 }
 
 .errors p{
+    text-align: center;
     color: red;
 }
 
@@ -181,6 +184,33 @@ form{
 
 .p-destroy-user{
     margin-top: 10px;
+}
+
+
+.error-front{
+    display: none;
+    width: 100%;
+}
+
+.error-front p {
+    text-align: center;
+}
+
+
+
+
+.container-password-ojo{
+    width: 100%;
+    position: relative;
+}
+
+
+.ojo{
+    position: absolute; 
+    right: 10px;
+    color: rgba(174, 169, 169, 0.8);
+    cursor: pointer;
+    top: 17.5px;
 }
 
 @media (min-width: 0) and (max-width: 480px){

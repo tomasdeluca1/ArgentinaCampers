@@ -30,7 +30,12 @@
 					en donde quiera.
 				</p>
 			</div>
-			<form class="formulario-login" action="login" method="post">
+			<form
+				class="formulario-login"
+				action="login"
+				method="post"
+				id="form-login"
+			>
 				<div class="input-label-form">
 					<input
 						type="email"
@@ -38,15 +43,18 @@
 						id="email"
 						placeholder="Ingrese su email"
 						class="input-login <%= locals.errors && errors.email ? 'is-invalid' : null %>"
-						value="<%= locals.oldData && oldData.email && errors.email == undefined ? oldData.email : null%>"
+						value="<%= locals.oldData && oldData.email && errors.email == null ? oldData.email : null%>"
 						maxlength="100"
 						required
 					/>
 					<% if (locals.errors && errors.email) { %>
-					<div class="errors">
+					<div class="errors" id="error-back-email">
 						<p><%= errors.email.msg %></p>
 					</div>
 					<% } %>
+					<div class="error-front errors email">
+						<p></p>
+					</div>
 				</div>
 				<div class="input-label-form input-password">
 					<div class="container-password-ojo">
@@ -64,10 +72,13 @@
 					</div>
 					<% if (locals.errors && errors.password && errors.email ==
 					undefined) { %>
-					<div class="errors">
+					<div class="errors" id="error-back-password">
 						<p><%= errors.password.msg %></p>
 					</div>
 					<% } %>
+					<div class="error-front errors password">
+						<p>hola</p>
+					</div>
 				</div>
 				<div class="input-label-form remember-user-div">
 					<input
@@ -80,7 +91,7 @@
 					>
 				</div>
 				<div class="input-label-form button-iniciar-sesion">
-					<button>Iniciar sesion</button>
+					<button id="btn">Iniciar sesion</button>
 				</div>
 				<div class="input-label-form password-forgotten">
 					<a href="">¿Olvidaste tu contraseña?</a>
@@ -97,5 +108,6 @@
 		<%- include('../partials/footer') %>
 
 		<script src="../../../js/showPassword.js"></script>
+		<script src="../../../js/loginValidation.js"></script>
 	</body>
 </html>

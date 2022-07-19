@@ -27,7 +27,7 @@
                 <h2>Editar mi contraseña</h2>
             </div>
             <div class="container-form">  
-                <form action="editDireccion?_method=put" method="post">
+                <form action="editDireccion?_method=put" method="post" id="form-edit-user-direccion">
                     <h3 class="h3-user-name h3-user-password">Cambiar mi direccion</h3>
                     <div class="user-data registros">
                         <% let provincias = ["Buenos Aires", "Buenos Aires Capital", "Catamarca", "Chaco", "Chubut", "Cordoba", "Corrientes", "Entre Rios", "Formosa", "Jujuy", "La Pampa", "La Rioja", "Mendoza", "Misiones", "Neuquen", "Rio Negro", "Salta", "San Juan", "San Luis", "Santa Cruz", "Santa Fe", "Santiago del Estero", "Tierra del Fuego", "Tucuman"]; %>
@@ -39,10 +39,13 @@
                             <% } %> 
                         </select>
                         <% if (locals.errors && errors.newProvincia) { %>
-                            <div class="errors">
+                            <div class="errors" id="error-back-new-provincia">
                                 <p><%= errors.newProvincia.msg %></p>
                             </div>
                         <% } %> 
+                        <div class="error-front errors new-provincia">
+                            <p></p>
+                        </div>
                     </div>
                     <div class="user-data registros">
                         <label for="new-municipio" class="label label-registros">Cambia tu municipio</label>
@@ -58,10 +61,13 @@
                             required
                         >
                         <% if (locals.errors && errors.newMunicipio) { %>
-                            <div class="errors">
+                            <div class="errors" id="error-back-new-municipio">
                                 <p><%= errors.newMunicipio.msg %> </p>
                             </div>
                         <% } %> 
+                        <div class="error-front errors new-municipio">
+                            <p></p>
+                        </div>
                     </div>
                     <div class="user-data registros">
                         <label for="new-ciudad" class="label label-registros">Cambia tu ciudad</label>
@@ -77,10 +83,13 @@
                             required
                         >
                         <% if (locals.errors && errors.newCiudad) { %>
-                            <div class="errors">
+                            <div class="errors" id="error-back-new-ciudad">
                                 <p><%= errors.newCiudad.msg %> </p>
                             </div>
                         <% } %> 
+                        <div class="error-front errors new-ciudad">
+                            <p></p>
+                        </div>
                     </div>
                     <div class="user-data registros">
                         <label for="new-calle" class="label label-registros">Cambia tu calle</label>
@@ -96,10 +105,13 @@
                             required
                         >
                         <% if (locals.errors && errors.newCalle) { %>
-                            <div class="errors">
+                            <div class="errors" id="error-back-new-calle">
                                 <p><%= errors.newCalle.msg %> </p>
                             </div>
                         <% } %> 
+                        <div class="error-front errors new-calle">
+                            <p></p>
+                        </div>
                     </div>
                     <div class="user-data registros">
                         <label for="new-numero-vivienda" class="label label-registros">Cambia tu numero de vivienda</label>
@@ -115,10 +127,13 @@
                             required
                         >
                         <% if (locals.errors && errors.newNumeroVivienda) { %>
-                            <div class="errors">
+                            <div class="errors"  id="error-back-new-numero-vivienda">
                                 <p><%= errors.newNumeroVivienda.msg %> </p>
                             </div>
                         <% } %> 
+                        <div class="error-front errors new-numero-vivienda">
+                            <p></p>
+                        </div>
                     </div>
                     <div class="user-data registros">
                         <label for="new-codigo-postal" class="label label-registros">Cambia tu codigo postal</label>
@@ -134,13 +149,16 @@
                             required
                         >
                         <% if (locals.errors && errors.newCodigoPostal) { %>
-                            <div class="errors">
+                            <div class="errors" id="error-back-new-codigo-postal">
                                 <p><%= errors.newCodigoPostal.msg %> </p>
                             </div>
                         <% } %> 
+                        <div class="error-front errors new-codigo-postal">
+                            <p></p>
+                        </div>
                     </div>
                     <div class="button-div">
-                        <button class="button">Enviar cambios</button>
+                        <button class="button" id="btn">Enviar cambios</button>
                     </div>
                 </form>
             </div>
@@ -152,4 +170,5 @@
     <%- include('../partials/footer') %>
 
     <script src="../../../../js/header.js"></script>
+    <script src="../../../js/editProfileDireccion.js"></script>
 </body>

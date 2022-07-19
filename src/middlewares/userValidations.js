@@ -28,6 +28,8 @@ const userValidations = [
 		.bail()
 		.isLength({ min: 4 })
 		.withMessage('Tu nombre de usuario tiene que ser mayor de 4 caracteres')
+		.isLength({max: 15})
+		.withMessage('Tu nombre de usuario tiene que ser menor de 15 caracteres')
 		.bail()
 		.custom(async (value, { req }) => {
 			let allUserNames = await db.Users.findAll();

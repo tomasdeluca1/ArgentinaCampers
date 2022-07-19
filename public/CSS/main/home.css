@@ -2,8 +2,11 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
     font-family: 'Lato', sans-serif;
+}
+
+body{
+    overflow-x: hidden;
 }
 
 /*Header*/
@@ -643,7 +646,10 @@ footer{
         padding: 0;
         margin: 0;
         box-sizing: border-box;
+    }
 
+    body{
+        overflow-x: hidden;
     }
 
     .iniciar-sesion{
@@ -856,6 +862,9 @@ footer{
     .nuestrasRedes div a i{
         font-size: 30px;
     }
+
+
+
 }
 
 
@@ -865,6 +874,10 @@ footer{
 
 @media (min-width: 481px) and (max-width: 1015px){
     
+    body{
+        overflow-x: hidden;
+    }
+
     .iniciar-sesion{
         width: 150px;
         display: flex;
@@ -935,7 +948,7 @@ footer{
 
     .sub-burger-menu{
         list-style: none;
-        
+
         width: 35%;
 
         background-color: white;
