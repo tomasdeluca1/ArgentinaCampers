@@ -5,6 +5,7 @@ const bcrypt = require('bcryptjs');
 const User = require('../models/users');
 
 const db = require('../database/models/index.js');
+const { log } = require('console');
 
 const Op = db.Sequelize.Op;
 
@@ -169,15 +170,13 @@ const controller = {
 		} else {
 			let id = req.params.id;
 
-			db.Users.findByPk(id)
-			.then(userData => {
+			db.Users.findByPk(id).then((userData) => {
 				res.render('users/editProfileData', {
 					errors: errors.mapped(),
 					oldData: req.body,
 					userData: userData,
 				});
-			})
-
+			});
 		}
 	},
 	editProfilePassword: async function (req, res) {
@@ -209,14 +208,13 @@ const controller = {
 		} else {
 			let id = req.params.id;
 
-			db.Users.findByPk(id)
-			.then(userData => {
+			db.Users.findByPk(id).then((userData) => {
 				res.render('users/editProfilePassword', {
 					errors: errors.mapped(),
 					oldData: req.body,
 					userData: userData,
 				});
-			})
+			});
 		}
 	},
 	editProfileDireccion: async function (req, res) {
@@ -325,14 +323,89 @@ const controller = {
 		return res.redirect('home');
 	},
 	allUsers: function (req, res) {
-		db.Users.findAll({
-			where: {
-				estadoCuenta: 1,
+		db.Users.findAll(
+			{
+				where: {
+					estadoCuenta: 1,
+				},
+				limit: 5,
 			},
-			limit: 5,
-		}).then(function (users) {
+			{
+				include: [
+					{
+						association: 'direccion',
+						include: [{ association: 'provincia' }],
+					},
+				],
+			}
+		).then(function (users) {
 			res.render('./users/allUsers', { users: users });
 		});
+	},
+	getUserById: function (req, res) {
+		const id = req.params.id;
+
+		db.Users.findByPk(id, {
+			include: [
+				{
+					association: 'direccion',
+					include: [{ association: 'provincia' }],
+				},
+				{
+					association: 'genero',
+				},
+			],
+		}).then((user) => {
+			res.render('./users/getUserById', { user: user });
+		});
+	},
+	cambiarTipoDeUsuario: function (req, res) {
+		let errors = validationResult(req);
+
+		if (errors.isEmpty()) {
+			let id = req.params.id;
+
+			let typeOfUser = req.body.selectTipoDeUsuario;
+
+			db.Users.update(
+				{
+					typeOfUser: parseInt(typeOfUser),
+				},
+				{
+					where: {
+						id: id,
+					},
+				}
+			);
+
+			if (req.session.userLogged && req.session.userLogged.typeOfUser == 1) {
+				res.redirect('../all-users');
+			} else {
+				res.redirect('../home');
+			}
+
+
+		} else {
+			let id = req.params.id;
+
+			db.Users.findByPk(id, {
+				include: [
+					{
+						association: 'direccion',
+						include: [{ association: 'provincia' }],
+					},
+					{
+						association: 'genero',
+					},
+				],
+			}).then((user) => {
+				res.render('./users/getUserById', {
+					user: user,
+					errors: errors.mapped(),
+					oldData: req.body,
+				});
+			});
+		}
 	},
 	search: function (req, res) {
 		let loQueBuscoElAdmin = req.query.searchingUsers

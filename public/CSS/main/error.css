@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.cuerpo-error{
+    text-align: center;
+}
+
+
+.container-error{
+    background-color: white;
+    width: 50%;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 60px 0;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 1px rgba(155, 155, 155, 0.2);
+}
+
+
+.icono-error{
+    width: 30%;
+    text-align: center;
+}
+
+.icono{
+    font-size: 100px
+}
+
+
+.container-msg-error{
+    flex-grow: 1;
+}
+
+
+
+.lista-errores{
+    margin-left: 15px;
+    margin-top: 10px;
+} 
+
+
+@media (min-width: 0px) and (max-width: 480px){
+    .container-error{
+        flex-direction: column;
+
+        width: 90%;
+    }
+
+    .icono-error{
+        width: 100%;
+    }
+
+    .msg-error{
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px){
+    .container-error{
+        flex-direction: column;
+
+        width: 90%;
+    }
+
+    .icono-error{
+        width: 100%;
+    }
+
+    .msg-error{
+        margin-top: 10px;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width:1434px){
+    .container-error{
+        width: 70%;
+        flex-wrap: nowrap;
+
+        justify-content: space-evenly;
+    }
+
+    .icono-error{
+        width: auto;
+        margin-right: 20px;
+    }
+
+    .container-msg-error{
+        flex-grow: 0;
+        margin-left: 20px;
+    }
+}
+
+
+
+
+
+    

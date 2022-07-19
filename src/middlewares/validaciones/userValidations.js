@@ -1,12 +1,9 @@
-const bcrypt = require('bcryptjs/dist/bcrypt');
+
 const { check } = require('express-validator');
 const path = require('path');
-const usuarios = require('../database/usersDetalle.json');
-const User = require('../models/users');
 
-const db = require('../database/models/index.js');
-const user = require('../models/users');
-const { promiseImpl } = require('ejs');
+
+const db = require('../../database/models/index.js');
 const Op = db.Sequelize.Op;
 
 const userValidations = [

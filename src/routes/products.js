@@ -3,14 +3,14 @@ const router = express.Router();
 const path = require('path')
 const productController = require ('../controllers/productsControllerDB')
 const multer = require ('multer')
-const validationsCreateProduct = require('../middlewares/validationsCreateProduct');
-const validationsEditProduct = require('../middlewares/validationsEditProduct');
-const adminPermissions = require('../middlewares/adminPermissions');
-const getByIdProductMiddleware = require('../middlewares/getByIdProductMiddleware')
-const authMiddleware = require('../middlewares/authMiddleware');
+const validationsCreateProduct = require('../middlewares/validaciones/validationsCreateProduct');
+const validationsEditProduct = require('../middlewares/validaciones/validationsEditProduct');
+const adminPermissions = require('../middlewares/globalesYruta/adminPermissions');
+const getByIdProductMiddleware = require('../middlewares/globalesYruta/getByIdProductMiddleware')
+const authMiddleware = require('../middlewares/globalesYruta/authMiddleware');
 
 
-const enviarAlCarritoValidation = require('../middlewares/enviarAlCarritoValidation');
+const enviarAlCarritoValidation = require('../middlewares/validaciones/enviarAlCarritoValidation');
 
 
 
@@ -32,8 +32,6 @@ const storage = multer.diskStorage({
 
 
 const uploadFile = multer({storage: storage});
-
-
 
 
 

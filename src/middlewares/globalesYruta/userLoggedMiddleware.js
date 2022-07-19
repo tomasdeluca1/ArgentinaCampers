@@ -1,5 +1,4 @@
-const db = require('../database/models');
-const User = require('../models/users');
+const db = require('../../database/models');
 const bcrypt = require('bcryptjs');
 
 async function userLoggedMiddleware(req, res, next) {

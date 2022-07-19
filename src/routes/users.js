@@ -3,16 +3,17 @@ const router = express.Router();
 const path = require('path');
 const usersController = require ('../controllers/usersController');
 const multer = require ('multer');
-const registerValidations = require ('../middlewares/userValidations');
-const loginValidations = require ('../middlewares/userLoginValidations');
-const guestMiddleware = require('../middlewares/guestMiddleware');
-const authMiddleware = require('../middlewares/authMiddleware');
-const adminPermissions = require('../middlewares/adminPermissions');
-const myProfileMiddleware = require('../middlewares/myProfileMiddleware');
-const editProfileDataValidation = require('../middlewares/editProfileDataValidantion')
-const editProfilePasswordValidation = require('../middlewares/editProfilePasswordValidantion')
-const editProfileDireccionValidation = require('../middlewares/editProfileDireccionValidantion')
-const destroyUserValidation = require('../middlewares/destroyUserValidation')
+const registerValidations = require ('../middlewares/validaciones/userValidations');
+const loginValidations = require ('../middlewares/validaciones/userLoginValidations');
+const guestMiddleware = require('../middlewares/globalesYruta/guestMiddleware');
+const authMiddleware = require('../middlewares/globalesYruta/authMiddleware');
+const adminPermissions = require('../middlewares/globalesYruta/adminPermissions');
+const myProfileMiddleware = require('../middlewares/globalesYruta/myProfileMiddleware');
+const editProfileDataValidation = require('../middlewares/validaciones/editProfileDataValidantion')
+const editProfilePasswordValidation = require('../middlewares/validaciones/editProfilePasswordValidantion')
+const editProfileDireccionValidation = require('../middlewares/validaciones/editProfileDireccionValidantion')
+const destroyUserValidation = require('../middlewares/validaciones/destroyUserValidation')
+const cambiarTipoDeUsuarioValidation = require('../middlewares/validaciones/cambiarTipoDeUsuarioValidation')
 
 const storage = multer.diskStorage({
     destination: function(req, file, cb){
@@ -74,8 +75,21 @@ router.get('/logout', usersController.logout)
 //Todos los usuarios
 router.get('/all-users', adminPermissions, usersController.allUsers)
 
+
+//Usuario por id
+router.get('/user/:id', adminPermissions, usersController.getUserById)
+
+
+//Cambiar tipo de usuario (Admin o cliente normal)
+router.put('/user/:id',  usersController.cambiarTipoDeUsuario)
+
+
+
 //Buscar usuarios por nombre
 router.get('/search', adminPermissions,  usersController.search)
+
+
+// adminPermissions, cambiarTipoDeUsuarioValidation,
 
 
 

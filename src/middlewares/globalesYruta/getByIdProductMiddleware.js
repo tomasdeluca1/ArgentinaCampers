@@ -1,4 +1,4 @@
-const db = require('../database/models');
+const db = require('../../database/models');
 
 async function getByIdProductMiddleware(req, res, next) {
 	let id = req.params.idProducto;
@@ -11,7 +11,7 @@ async function getByIdProductMiddleware(req, res, next) {
 	});
 
 	if (producto === null) {
-		res.render('./error404');
+		return res.redirect('../../../not-found');
 	}
 
 	next();

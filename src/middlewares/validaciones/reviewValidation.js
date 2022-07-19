@@ -1,6 +1,6 @@
 const { check } = require('express-validator');
 const path = require('path');
-const usuarios = require('../database/usersDetalle.json');
+const usuarios = require('../../database/usersDetalle.json');
 
 const reviewValidations = [
 	check('destino')

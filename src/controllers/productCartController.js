@@ -42,6 +42,20 @@ const controller = {
 			res.redirect('rental-cart');
 		}
 	},
+	eliminarCarritoUser: function(req, res) {
+		if(req.session.userLogged) {
+			let id = req.session.userLogged.id
+
+			db.Carrito.destroy({
+				where: {
+					usuarios_id: id
+				}
+			})
+
+
+			res.redirect('rental-cart');
+		}
+	}
 };
 
 // {

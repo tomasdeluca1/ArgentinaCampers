@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('../partials/head') %>
+		<link rel="stylesheet" href="../../../CSS/users/getUserById.css" />
+		<title>Usuario</title>
+	</head>
+	<body>
+		<!--Header-->
+		<%- include('../partials/header') %>
+
+		<section class="nav-vehiculos">
+			<article>
+				<h3>
+					<a href="../home">Home</a> / 
+                    <a href="../all-users">Todos los usuarios</a> /
+					<a href="<%= user.id %>">Usuario</a>
+				</h3>
+			</article>
+		</section>
+
+		<!-- Cuerpo del codigo -->
+
+		<main class="body">
+			<div class="container-all-body">
+				<div class="container-user-data">
+					<div class="container-numero-usuario">
+						<h2>Usuario numero: <%= user.id %></h2>
+						<div class="linea-gris"></div>
+					</div>
+					<div class="container-dato">
+						<p class="tipo-de-dato">Nombre de usuario</p>
+						<p class="respuesta-tipo-de-dato">
+							<%= user.userName %>
+						</p>
+					</div>
+					<div class="linea-gris"></div>
+					<div class="container-dato">
+						<p class="tipo-de-dato">Nombre</p>
+						<p class="respuesta-tipo-de-dato">
+							<%= user.firstName %>
+						</p>
+					</div>
+					<div class="linea-gris"></div>
+					<div class="container-dato">
+						<p class="tipo-de-dato">Apellido</p>
+						<p class="respuesta-tipo-de-dato">
+							<%= user.lastName %>
+						</p>
+					</div>
+					<div class="linea-gris"></div>
+					<div class="container-dato">
+						<p class="tipo-de-dato">Email</p>
+						<p class="respuesta-tipo-de-dato"><%= user.email %></p>
+					</div>
+                    <div class="linea-gris"></div>
+					<div class="container-dato">
+						<p class="tipo-de-dato">Email respaldo</p>
+						<p class="respuesta-tipo-de-dato"><%= user.emailRespaldo %></p>
+					</div>
+					<div class="linea-gris"></div>
+					<div class="container-dato">
+						<p class="tipo-de-dato">Numero de telefono</p>
+						<% if (user && !user.phoneNumber) { %>
+						    <p class="respuesta-tipo-de-dato">-</p>
+						<% } else {%>
+                            <p class="respuesta-tipo-de-dato">
+                                <%= user.phoneNumber %>
+                            </p>
+						<% } %>
+					</div>
+                    <div class="linea-gris"></div>
+                    <div class="container-dato">
+						<p class="tipo-de-dato">Numero de telefono de respaldo</p>
+						<% if (user && !user.phoneNumberRespaldo) { %>
+						    <p class="respuesta-tipo-de-dato">-</p>
+						<% } else {%>
+                            <p class="respuesta-tipo-de-dato">
+                                <%= user.phoneNumberRespaldo %>
+                            </p>
+						<% } %>
+					</div>
+                    <div class="linea-gris"></div>
+					<div class="container-dato">
+						<p class="tipo-de-dato">Documento</p>
+						<p class="respuesta-tipo-de-dato"><%= user.dni %></p>
+					</div>
+                    <div class="linea-gris"></div>
+					<div class="container-dato">
+						<p class="tipo-de-dato">Genero</p>
+						<p class="respuesta-tipo-de-dato"><%= user.genero.genero %></p>
+					</div>
+                    <div class="linea-gris"></div>
+					<div class="container-dato">
+						<p class="tipo-de-dato">Provincia</p>
+						<p class="respuesta-tipo-de-dato"><%= user.direccion.provincia.provincia %></p>
+					</div>
+                    <div class="linea-gris"></div>
+					<div class="container-dato">
+						<p class="tipo-de-dato">Municipio</p>
+						<p class="respuesta-tipo-de-dato"><%= user.direccion.municipio %></p>
+					</div>
+                    <div class="linea-gris"></div>
+					<div class="container-dato">
+						<p class="tipo-de-dato">Ciudad</p>
+						<p class="respuesta-tipo-de-dato"><%= user.direccion.ciudad %></p>
+					</div>
+                    <div class="linea-gris"></div>
+					<div class="container-dato">
+						<p class="tipo-de-dato">Calle</p>
+						<p class="respuesta-tipo-de-dato"><%= user.direccion.calle %></p>
+					</div>
+                    <div class="linea-gris"></div>
+					<div class="container-dato">
+						<p class="tipo-de-dato">Numero de vivienda</p>
+						<p class="respuesta-tipo-de-dato"><%= user.direccion.numeroVivienda %></p>
+					</div>
+                    <div class="linea-gris"></div>
+					<div class="container-dato">
+						<p class="tipo-de-dato">Codigo postal</p>
+						<p class="respuesta-tipo-de-dato"><%= user.direccion.codigoPostal %></p>
+					</div>
+					<div class="linea-gris"></div>
+					<form class="container-dato form" action="/user/<%= user.id %> ?_method=put" method="post" id="form-edit-tipo-de-usuario">
+						<p class="tipo-de-dato">Tipo de usuario</p>
+						<select class="respuesta-tipo-de-dato select-tipo-de-usuario" id="select-tipo-de-usuario" name="selectTipoDeUsuario">
+                            <option value="1" <%= user.typeOfUser == 1 ? 'selected' : null%> >Admin</option>
+                            <option value="2" <%= user.typeOfUser == 2 ? 'selected' : null%> >Cliente normal</option>
+						</select>
+                        <div class="linea-gris"></div>
+                        <div class="button-div">
+                            <button class="button" id="btn">Cambiar tipo de usuario</button>
+                        </div>
+					</form>
+				</div>
+			</div>
+		</main>
+
+		<!--FOOTER-->
+		<%- include('../partials/footer') %>
+
+
+
+		<script src="../../../js/editTipoDeUsuario.js"></script>
+	</body>
+</html>

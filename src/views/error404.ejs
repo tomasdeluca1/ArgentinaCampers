@@ -1,1 +1,41 @@
-error
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('./partials/head') %>
+        <link rel="stylesheet" href="../../CSS/main/error.css">
+		<title>Pagina no encontrada</title>
+	</head>
+	<body>
+        <%- include('./partials/header') %>
+
+		<section class="nav-vehiculos">
+			<article>
+				<h3><a href="home">Home </a> /</h3>
+			</article>
+		</section>
+
+
+        <section class="cuerpo">
+            <div class="container-error">
+                <div class="icono-error">
+                    <i class="fa-solid fa-circle-exclamation icono"></i>               
+                </div>
+                <div class="container-msg-error">
+                    <h3 class="msg-error">
+                        Pagina no encontrada
+                    </h3>
+                    <ul class="lista-errores" type="disc">
+                        <li class="error">Parece ser que la pagina que estas buscando no existe</li>
+                        <li class="error">Asegúrate de que todas las palabras estén escritas correctamente.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Footer -->
+		<%- include('./partials/footer') %>
+
+    </body>
+</html>

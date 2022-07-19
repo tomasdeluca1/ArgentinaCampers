@@ -5,8 +5,8 @@ const session = require('express-session')
 const cookies = require('cookie-parser')
 
 
-const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
-const adminPermissions = require('./middlewares/adminMiddleware')
+const userLoggedMiddleware = require('./middlewares/globalesYruta/userLoggedMiddleware')
+const adminPermissions = require('./middlewares/globalesYruta/adminMiddleware')
 
 
 
@@ -60,7 +60,7 @@ app.use('/api', usersApi)
 
 
 //Inicializacion del servidor
-app.listen(5000, ()=> {
-    console.log("Server 5000 running");
+app.listen(3000, ()=> {
+    console.log("Server 3000 running");
 });
 

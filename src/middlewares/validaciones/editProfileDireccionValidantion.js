@@ -1,8 +1,6 @@
 const { check } = require('express-validator');
-const path = require('path');
-const db = require('../database/models');
-const usuarios = require('../database/usersDetalle.json');
-const User = require('../models/users');
+const db = require('../../database/models');
+
 
 const validations = [
 	check('newProvincia')
