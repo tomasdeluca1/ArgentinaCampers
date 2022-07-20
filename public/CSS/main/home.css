@@ -296,13 +296,13 @@ header{
 .titulo-uno{
     text-align: left;
     padding: 10px 0 5px 20px;
-    color: #47525E;
+    color: #000000;
 }
 
 .titulo-dos{
     text-align: left;
     padding: 5px 0 5px 20px;
-    color: #47525E;
+    color: #000000;
 }
 
 hr{
@@ -360,11 +360,11 @@ hr{
 }
 
 .fechaYHoraDevolucion input{
-    width: 150px;
-    border-radius: 5px;
-    border: 1px solid #957f65;
-    background-color: #957f65;
-    color: #ffeed2;
+    width: 120px;
+    border-radius: 0.5rem;
+    border: 1px solid grey;
+    background-color: white;
+    color: #957f65;
     text-align: center;
 }
 .casillasHome{
@@ -372,7 +372,7 @@ hr{
 }
 
 .texto div input{
-    width: 100%;
+    width: 120px;
 }
 
 
