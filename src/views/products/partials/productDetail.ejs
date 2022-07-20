@@ -33,7 +33,7 @@
                 <p>El precio que tiene esta van por dia es de $<%= producto.precioDia %></p>
             </div>
             <div class="linea"></div>
-            <form action="" method="post">
+            <form action="" method="post" id="form-reservas">
                 <div class="div-seleccion-de-tiempo">
                     <% const calendario = new Date() %> 
                     <% const ano = calendario.getFullYear() %>
@@ -47,8 +47,10 @@
                             name="fechaPartida" 
                             id="fechaPartida"
                             class="calendario <%= locals.errors && errors.fechaPartida ? 'is-invalid' : null %>" 
-                            
-                        >
+                         >
+                         <ul class="ulErrors">
+
+                        </ul>
                         <% if (locals.errors && errors.fechaPartida) { %>
                             <div class="errors">
                                 <p><%= errors.fechaPartida.msg %> </p>
@@ -64,6 +66,9 @@
                             class="calendario <%= locals.errors && errors.fechaLlegada ? 'is-invalid' : null %>" 
                             
                         >
+                         <ul class="ulErrorsLlegada">
+
+                        </ul>
                         <% if (locals.errors && errors.fechaLlegada) { %>
                             <div class="errors">
                                 <p><%= errors.fechaLlegada.msg %> </p>
@@ -71,6 +76,7 @@
                         <% } %>  
                     </div>
                 </div>
+              
                 <div class="dias-de-vacaciones" style="display: none;">
                     <p></p>
                 </div>
