@@ -12,7 +12,8 @@ window.addEventListener('load', () => {
 	const errorPassword = document.querySelector('.password');
 	const msgErrorPassword = document.querySelector('.password p');
 
-	
+	const loggedIn = document.getElementById('remember-user');
+
 	const btn = document.getElementById('btn');
 
 	let errores = {};
@@ -28,11 +29,11 @@ window.addEventListener('load', () => {
 			msgErrorEmail.innerText = errores.email;
 		} else {
 			delete errores.email;
-            if (errorBackEmail != null) {
+			if (errorBackEmail != null) {
 				errorBackEmail.style.display = 'none';
 			}
-            email.classList.remove('is-invalid');
-		    errorEmail.style.display = 'none';
+			email.classList.remove('is-invalid');
+			errorEmail.style.display = 'none';
 		}
 	});
 	password.addEventListener('blur', (e) => {
@@ -53,31 +54,31 @@ window.addEventListener('load', () => {
 			errorPassword.style.display = 'block';
 			msgErrorPassword.innerText = errores.password;
 		} else {
-            if (errorBackPassword != null) {
+			if (errorBackPassword != null) {
 				errorBackPassword.style.display = 'none';
 			}
 			delete errores.password;
-            password.classList.remove('is-invalid');
-		    errorPassword.style.display = 'none';
+			password.classList.remove('is-invalid');
+			errorPassword.style.display = 'none';
 		}
 	});
 
 	btn.addEventListener('click', (e) => {
 		if (email.value == '') {
-            if (errorBackEmail != null) {
+			if (errorBackEmail != null) {
 				errorBackEmail.style.display = 'none';
 			}
 			errores.email = 'No puedes dejar el email en vacio';
-            email.classList.add('is-invalid');
+			email.classList.add('is-invalid');
 			errorEmail.style.display = 'block';
 			msgErrorEmail.innerText = errores.email;
 		}
 		if (password.value == '') {
-            if (errorBackPassword != null) {
+			if (errorBackPassword != null) {
 				errorBackPassword.style.display = 'none';
 			}
 			errores.password = 'Tienes que poner tu contraseña';
-            password.classList.add('is-invalid');
+			password.classList.add('is-invalid');
 			errorPassword.style.display = 'block';
 			msgErrorPassword.innerText = errores.password;
 		}
@@ -86,6 +87,12 @@ window.addEventListener('load', () => {
 			e.preventDefault();
 		} else {
 			form.submit();
+		}
+	});
+
+	form.addEventListener('submit', () => {
+		if (loggedIn.checked) {
+			sessionStorage.setItem('currentLoggedIn', email.value);
 		}
 	});
 });
