@@ -71,8 +71,6 @@ window.addEventListener('load', () => {
 		let ulErrors = document.querySelector('.ulErrors');
 		let fecha3dias = fechaPartida.value[8] + fechaPartida.value[9] - 2;
 
-		console.log(ulErrors, 'aaaaa');
-
 		if (
 			fechaPartida.value > `${new Date().toISOString().split('T')[0]}` &&
 			fecha3dias > new Date().getDate()
@@ -96,8 +94,6 @@ window.addEventListener('load', () => {
 		let fecha3dias = fechaLlegada.value[8] + fechaLlegada.value[9] - 2;
 		let fecha3diasLlegada = fechaPartida.value[8] + fechaPartida.value[9];
 
-		console.log(ulErrorsLlegada, 'aaaaa');
-
 		if (
 			fechaLlegada.value > fechaPartida.value &&
 			fecha3dias > fecha3diasLlegada
@@ -113,7 +109,12 @@ window.addEventListener('load', () => {
 			ulErrorsLlegada.innerHTML = '<li>' + 'Esta fecha ya paso' + '</li>';
 		}
 
-		if (fechaPartida.value && fechaLlegada.value) {
+		let fechasSeleccionadas = fechaPartida.value && fechaLlegada.value;
+		let ulErrors = document.querySelector('.ulErrors');
+		let sinErrores =
+			ulErrorsLlegada.innerHTML == '' && ulErrors.innerHTML == '';
+
+		if (fechasSeleccionadas && sinErrores) {
 			let precioTotal = document.querySelector('.precio-total');
 			let diasDeVacaciones = document.querySelector(
 				'.dias-de-vacaciones'
@@ -143,6 +144,21 @@ window.addEventListener('load', () => {
 		}
 	});
 
+	form.addEventListener('submit', (e) => {
+		let fechasSeleccionadas = fechaPartida.value && fechaLlegada.value;
+		let ulErrors = document.querySelector('.ulErrors');
+		let ulErrorsLlegada = document.querySelector('.ulErrorsLlegada');
+		let sinErrores =
+			ulErrorsLlegada.innerHTML == '' && ulErrors.innerHTML == '';
+
+		if (fechasSeleccionadas && sinErrores) {
+			form.submit();
+			console.log('CRISTIANO RONALDO SUUUUUU');
+		} else {
+			e.preventDefault();
+			console.log('TU MADRE');
+		}
+	});
 	// fechaLlegada.addEventListener('change', () => {
 	// 	let ulErrors2 = document.querySelector('.ulErrors2');
 	// 	let fecha3dias = fechaLlegada.value[8] + fechaLlegada.value[9] - 2;

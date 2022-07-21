@@ -100,7 +100,7 @@ const validations = [
 							throw new Error(
 								'No puedes eliegir volver el mismo dia que te fuiste'
 							);
-						} else if (diff < 0) {
+						} else if (diff < 3) {
 							throw new Error('No puedes viajar al pasado');
 						}
 					}
