@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('../partials/head') %>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet"> 
+    <script src="https://kit.fontawesome.com/d70d29ff66.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../../CSS/main/home.css">
     <link rel="stylesheet" href="../../../CSS/products/productCreation.css">
     <title>Editar producto</title>
@@ -22,7 +28,7 @@
     <!-- Cuerpo -->
     <section class="cuerpo">
         <div class="formulario-de-creacion-de-producto">
-            <form  method="post" action="/products/<%= producto.id %>/edit?_method=put" enctype="multipart/form-data" class="formulario">
+            <form  method="post" action="/products/<%= producto.id %>/edit?_method=put" enctype="multipart/form-data" class="formularioCreateProduct">
                 <div class="formulario-para-el-producto nombre-del-producto-a-crear">
                     <label for="marca-del-producto">Marca del producto</label>
                     <input 
@@ -32,6 +38,9 @@
                     placeholder="Marca del producto"
                     class= "inputForms <%= locals.errors && errors.marca ? 'is-invalid' : null %>" 
                     value="<%= locals.oldData && oldData.marca ? oldData.marca : producto.marca %>">
+                    <ul class="erroresMarca">
+
+                    </ul>
                     <% if (locals.errors && errors.marca) { %>
                         <div class="errors">
                             <p><%= errors.marca.msg %> </p>
@@ -48,6 +57,9 @@
                     class="inputForms <%= locals.errors && errors.modelo ? 'is-invalid' : null %>"  
                     value="<%= locals.oldData && oldData.modelo ? oldData.modelo : producto.modelo %>"
                     >
+                    <ul class="erroresModelo">
+
+                    </ul>
                     <% if (locals.errors && errors.modelo) { %>
                         <div class="errors">
                             <p><%= errors.modelo.msg %> </p>
@@ -90,6 +102,9 @@
                     rows="10"
                     placeholder="Descripcion del producto"   
                     class="text-area <%= locals.errors && errors.descripcion ? 'is-invalid' : null %>"><%= locals.oldData && oldData.descripcion ? oldData.descripcion : producto.descripcion%></textarea>
+                    <ul class="erroresDescripcion">
+
+                    </ul>
                     <% if (locals.errors && errors.descripcion) { %>
                         <div class="errors">
                             <p><%= errors.descripcion.msg %> </p>
@@ -106,6 +121,9 @@
                     class="inputForms <%= locals.errors && errors.capacidad ? 'is-invalid' : null %>" 
                     value="<%= locals.oldData && oldData.capacidad ? oldData.capacidad : producto.capacidad %>"
                     >
+                    <ul class="erroresCapacidad">
+                       
+                    </ul>
                     <% if (locals.errors && errors.capacidad) { %>
                         <div class="errors">
                             <p><%= errors.capacidad.msg %> </p>
@@ -123,6 +141,9 @@
                     class="inputForms <%= locals.errors && errors.precioDia ? 'is-invalid' : null %>"
                     value="<%= locals.oldData && oldData.precioDia ? oldData.precioDia : producto.precioDia %>"
                     >
+                    <ul class="erroresPrecio">
+
+                    </ul>
                     <% if (locals.errors && errors.precioDia) { %>
                         <div class="errors">
                             <p><%= errors.precioDia.msg %> </p>
@@ -138,6 +159,9 @@
                     class="inputForms <%= locals.errors && errors.ultimoService ? 'is-invalid' : null %>"
                     value="<%= locals.oldData && oldData.ultimoService ? oldData.ultimoService :  producto.ultimoService  %>"
                     >
+                    <ul class="erroresService">
+
+                    </ul>
                     <% if (locals.errors && errors.ultimoService) { %>
                         <div class="errors">
                             <p><%= errors.ultimoService.msg %> </p>
@@ -154,6 +178,9 @@
                     class="inputForms <%= locals.errors && errors.antiguedad ? 'is-invalid' : null %>"
                     value="<%= locals.oldData && oldData.antiguedad ? oldData.antiguedad : producto.antiguedad %>"
                     >
+                    <ul class="errorAntiguedad">
+
+                    </ul>
                     <% if (locals.errors && errors.antiguedad) { %>
                         <div class="errors">
                             <p><%= errors.antiguedad.msg %> </p>
@@ -170,6 +197,9 @@
                     class="inputForms <%= locals.errors && errors.stock ? 'is-invalid' : null %>"
                     value="<%= locals.oldData && oldData.stock ? oldData.stock : producto.stock %>"
                     >
+                    <ul class="erroresStock">
+
+                    </ul>
                     <% if (locals.errors && errors.stock) { %>
                         <div class="errors">
                             <p><%= errors.stock.msg %> </p>
@@ -195,5 +225,6 @@
     <%- include('../partials/footer') %>
 
     <script src="../../../../js/header.js"></script>
+    <script src="../../../js/tomas/productEdit.js"></script>
 </body>
 </html>
