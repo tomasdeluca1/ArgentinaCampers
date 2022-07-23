@@ -105,7 +105,15 @@ window.addEventListener('load', () => {
 		) {
 			ulErrorsLlegada.innerHTML =
 				'<li>' + 'Se puede alquilar como mínimo 3 días.' + '</li>';
-		} else {
+		} else if (fechaLlegada.value <= fechaPartida.value) {
+			console.log(1);
+			ulErrorsLlegada.innerHTML =
+				'<li>' +
+				'Debe alquilar a partir del día de salida seleccionado' +
+				'</li>';
+		} else if (
+			fechaLlegada.value <= `${new Date().toISOString().split('T')[0]}`
+		) {
 			ulErrorsLlegada.innerHTML = '<li>' + 'Esta fecha ya paso' + '</li>';
 		}
 
@@ -153,10 +161,8 @@ window.addEventListener('load', () => {
 
 		if (fechasSeleccionadas && sinErrores) {
 			form.submit();
-			console.log('CRISTIANO RONALDO SUUUUUU');
 		} else {
 			e.preventDefault();
-			console.log('TU MADRE');
 		}
 	});
 	// fechaLlegada.addEventListener('change', () => {
