@@ -7,7 +7,14 @@
 
 
 
-
+li{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: red;
+    list-style: none;
+    margin-top: 10px;
+}
 .formulario-de-creacion-de-producto{
     color:#957f65;
     border: 2px solid #957f65;
@@ -18,6 +25,7 @@
     box-shadow: 0px 1px 5px 3px rgba(149, 127, 101, 1);
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .formulario{
@@ -36,16 +44,17 @@
     justify-content: center;
     align-items: center;
     margin: 10px 0;
-    width: 90%;
+    width: 100%;
     text-align: center;
 }
 
 .formulario-para-el-producto label{
-    margin: 15px 0;
+    margin: 10px 0;
+    width: 90%;
 }
 
 .inputForms{
-    width: 80%;
+    width: 95%;
     border: #BDA48A 2px solid;
     border-radius: 1.5rem;
     text-align: center;
@@ -55,9 +64,8 @@
 }
 
 .text-area{
-    border-radius: 1rem;
-    border: 2px solid #957f65;
-    width: 80%;
+    border: 1px solid grey;
+    width: 90%;
     padding: 10px;
 }
 

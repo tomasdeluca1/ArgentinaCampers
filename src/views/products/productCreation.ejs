@@ -18,7 +18,7 @@
     <!-- Cuerpo -->
     <section class="cuerpo"> 
         <div class="formulario-de-creacion-de-producto">
-            <form action="create" method="post" enctype="multipart/form-data" class="formulario">
+            <form action="create" method="post" enctype="multipart/form-data" class="formularioCreateProduct">
                 <div class="formulario-para-el-producto nombre-del-producto-a-crear">
                     <label for="marca-del-producto">Marca del producto</label>
                     <input 
@@ -29,8 +29,11 @@
                     value="<%= locals.oldData && oldData.marca ? oldData.marca : null %>"
                     required
                     >
+                    <ul class="erroresMarca">
+
+                    </ul>
                     <% if (locals.errors && errors.marca) { %>
-                        <div class="errors">
+                        <div class="errors" >
                             <p><%= errors.marca.msg %> </p>
                         </div>
                     <% } %> 
@@ -45,9 +48,12 @@
                     value="<%= locals.oldData && oldData.modelo ? oldData.modelo : null %>"
                     required
                     >
+                    <ul class="erroresModelo">
+
+                    </ul>
                     <% if (locals.errors && errors.modelo) { %>
-                        <div class="errors">
-                            <p><%= errors.modelo.msg %> </p>
+                        <div class="errors" id="#errorModelo">
+                            <p ><%= errors.modelo.msg %> </p>
                         </div>
                     <% } %> 
                 </div>
@@ -70,7 +76,7 @@
                     <% let colores = ['Azul', 'Blanco', 'Negro', 'Gris', 'Beige', 'Azul oscuro'] %> 
                     <label for="color-del-producto">Color del producto</label>
                     <select required name="color" id="color-del-producto" class="inputForms <%= locals.errors && errors.color ? 'is-invalid' : null %>">
-                        <option disabled selected value>Color</option>
+                        <option disabled selected value>Seleccione un color</option>
                         <% for (let i = 0; i < colores.length; i++) { %> 
                             <option value="<%= colores[i] %>"><%= colores[i] %></option>
                         <% } %> 
@@ -91,6 +97,9 @@
                     rows="10"
                     class="text-area <%= locals.errors && errors.descripcion ? 'is-invalid' : null %>" 
                     ><%= locals.oldData && oldData.descripcion ? oldData.descripcion : null %></textarea>
+                    <ul class="erroresDescripcion">
+
+                    </ul>
                     <% if (locals.errors && errors.descripcion) { %>
                         <div class="errors">
                             <p><%= errors.descripcion.msg %> </p>
@@ -98,7 +107,7 @@
                     <% } %> 
                 </div>
                 <div class="formulario-para-el-producto nombre-del-producto-a-crear">
-                    <label for="capacidad-del-producto">Capacidad del producto</label>
+                    <label for="capacidad-del-producto">Capacidad máxima de pasajeros</label>
                     <input 
                     required
                     min="0"
@@ -108,6 +117,9 @@
                     class="inputForms <%= locals.errors && errors.capacidad ? 'is-invalid' : null %>"
                     value="<%= locals.oldData && oldData.capacidad ? oldData.capacidad : null %>"
                     >
+                    <ul class="erroresCapacidad">
+                       
+                    </ul>
                     <% if (locals.errors && errors.capacidad) { %>
                         <div class="errors">
                             <p><%= errors.capacidad.msg %> </p>
@@ -115,7 +127,7 @@
                     <% } %> 
                 </div>
                 <div class="formulario-para-el-producto nombre-del-producto-a-crear">
-                    <label for="precio-del-producto">Precio del producto</label>
+                    <label for="precio-del-producto">Precio del producto por día</label>
                     <input 
                     required
                     min="0"
@@ -125,6 +137,9 @@
                     class="inputForms <%= locals.errors && errors.precioDia ? 'is-invalid' : null %>"
                     value="<%= locals.oldData && oldData.precioDia ? oldData.precioDia : null %>"
                     >
+                    <ul class="erroresPrecio">
+
+                    </ul>
                     <% if (locals.errors && errors.precioDia) { %>
                         <div class="errors">
                             <p><%= errors.precioDia.msg %> </p>
@@ -132,7 +147,7 @@
                     <% } %> 
                 </div>
                 <div class="formulario-para-el-producto nombre-del-producto-a-crear">
-                    <label for="ultimo-service-del-producto">Ultimo service del producto</label>
+                    <label for="ultimo-service-del-producto">Último service del producto</label>
                     <input 
                     required
                     type="date" 
@@ -141,6 +156,9 @@
                     class="inputForms <%= locals.errors && errors.ultimoService ? 'is-invalid' : null %>"
                     value="<%= locals.oldData && oldData.ultimoService ? oldData.ultimoService : null %>"
                     >
+                    <ul class="erroresService">
+
+                    </ul>
                     <% if (locals.errors && errors.ultimoService) { %>
                         <div class="errors">
                             <p><%= errors.ultimoService.msg %> </p>
@@ -158,6 +176,9 @@
                     class="inputForms <%= locals.errors && errors.antiguedad ? 'is-invalid' : null %>"
                     value="<%= locals.oldData && oldData.antiguedad ? oldData.antiguedad : null %>"
                     >
+                    <ul class="errorAntiguedad">
+
+                    </ul>
                     <% if (locals.errors && errors.antiguedad) { %>
                         <div class="errors">
                             <p><%= errors.antiguedad.msg %> </p>
@@ -175,6 +196,9 @@
                     class="inputForms <%= locals.errors && errors.stock ? 'is-invalid' : null %>"
                     value="<%= locals.oldData && oldData.stock ? oldData.stock : null %>"
                     >
+                    <ul class="erroresStock">
+
+                    </ul>
                     <% if (locals.errors && errors.stock) { %>
                         <div class="errors">
                             <p><%= errors.stock.msg %> </p>
