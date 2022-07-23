@@ -92,7 +92,8 @@ window.addEventListener('load', () => {
 
 	form.addEventListener('submit', () => {
 		if (loggedIn.checked) {
-			sessionStorage.setItem('currentLoggedIn', email.value);
+			localStorage.setItem('currentLoggedIn', email.value);
+			return 'currentLoggedIn';
 		}
 	});
 });
