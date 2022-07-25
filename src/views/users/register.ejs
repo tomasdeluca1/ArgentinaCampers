@@ -18,14 +18,17 @@
 			</article>
 		</section>
 		<main class="body">
+			<!--FORMULARIO DE REGISTRO-->
 			<form
 				action="register"
 				method="post"
 				class="formulario-register"
 				enctype="multipart/form-data"
+				id="formulario-regis"
 			>
 				<div class="input-label-form">
 					<label for="firstName" class="label-register">Nombre</label>
+					<!--input firstName-->
 					<input
 						id="firstName"
 						type="text"
@@ -37,17 +40,25 @@
 						maxlength="100"
 						required
 					/>
+					<!--ERROR FRONT-->
+					<div class="errors errores-firstName">
+						<p></p>
+					</div>
+
+
 					<% if (locals.errors && errors.firstName) { %>
 					<div class="errors">
 						<p><%= errors.firstName.msg %></p>
 					</div>
 					<% } %>
 				</div>
+				<!--Input apellido-->
 				<div class="input-label-form">
 					<label for="lastName" class="label-register"
 						>Apellido</label
 					>
 					<input
+						id="lastName"
 						type="text"
 						name="lastName"
 						placeholder="Campers"
@@ -57,17 +68,25 @@
 						maxlength="100"
 						required
 					/>
+					<!--ERRORES DE FRONT-->
+					<div class="errors error-lastName">
+						<p></p>
+					</div>
+
 					<% if (locals.errors && errors.lastName) { %>
 					<div class="errors">
 						<p><%= errors.lastName.msg %></p>
 					</div>
 					<% } %>
 				</div>
+
+				<!--UserName input-->
 				<div class="input-label-form">
 					<label for="userName" class="label-register"
 						>Nombre de usuario</label
 					>
 					<input
+						id="userName"
 						type="text"
 						name="userName"
 						placeholder="Nombre de usuario"
@@ -77,17 +96,26 @@
 						maxlength="15"
 						required
 					/>
+					<!--Error front-->
+					<div class="errors errores-userName">
+						<p></p>
+					</div>
+
 					<% if (locals.errors && errors.userName) { %>
 					<div class="errors">
 						<p><%= errors.userName.msg %></p>
 					</div>
 					<% } %>
 				</div>
+
+				<!--INPUT DE EMAIL-->
 				<div class="input-label-form">
 					<label for="email" class="label-register"
 						>Correo electrónico</label
 					>
 					<input
+					
+						id="email-front"
 						type="email"
 						name="email"
 						placeholder="argentinacampers@gmail.com"
@@ -429,6 +457,7 @@
 		<!-- Footer -->
 
 		<%- include('../partials/footer') %>
+		<script src="../../../js/register/register.js"></script>
 
 		<script src="../../../js/showPassword.js"></script>
 	</body>

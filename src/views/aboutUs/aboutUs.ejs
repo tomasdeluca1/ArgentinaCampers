@@ -66,17 +66,30 @@
 
             <h2 id="fh2">¡Compartí tu experiencia con la comunidad!</h2>
 
+            <!--FORM DEJA TU COMENTARIO-->
 
             <form id="feedback" action="aboutUs" method="post">
 
                 <div class="pinfo">Destino</div>
                 <div class="form-group">
                     <div class="col-md-4 inputGroupContainer">
-                        <div class="input-group">
+                            
+                            <!--ERROR DE FRONT-->
+                            <div class="errors destino-errores">
+								<p class="errorDestinoFront"></p>
+							</div>
+                            
+                            <div class="input-group" >
+                            
+                            <!--icono de destino-->
                             <span class="input-group-addon  <%= locals.errors && errors.destino ? 'is-invalid' : null %>">
                                 <i class="fa fa-globe"></i>
                             </span>
-                            <input name="destino" placeholder="Bariloche, Río Negro" class="form-control  <%= locals.errors && errors.destino ? 'is-invalid' : null %>" type="text">
+
+                            <!--Input de destino-->
+                            <input name="destino" id="probandoId" placeholder="Bariloche, Río Negro"  class="form-control  <%= locals.errors && errors.destino ? 'is-invalid' : null %>" type="text">
+                        
+                            
                         </div>
                     </div>
                     <% if (locals.errors && errors.destino) { %>
@@ -97,20 +110,29 @@
                 </p> -->
                 <div class="form-group">
                     <div class="col-md-4 inputGroupContainer">
-                        <div class="input-group">
-                            <span class="input-group-addon <%= locals.errors && errors.experiencia ? 'is-invalid' : null %>">★</i>
-                        </span>
-                        <select name="experiencia" class="form-control  <%= locals.errors && errors.experiencia ? 'is-invalid' : null %>">
-                            <option disabled selected value>
-                                Calificá tu viaje
-                            </option>
-                            <option value="5">Experiencia única</option>
-                            <option value="4">Gran experiencia</option>
-                            <option value="3">Buena experiencia</option>
-                            <option value="2">Aceptable</option>
-                            <option value="1">No recomendable</option>
-                        </select>
-                    </div>
+                            
+                            <!--Texto de error de front-->
+                            <div class=" errors calificacion-errores">
+                                <p></p>
+                            </div>
+                            
+                            <!--Icono de calificacion-->
+                            <div class="input-group" >
+                                <span class="input-group-addon <%= locals.errors && errors.experiencia ? 'is-invalid' : null %>">★</i>
+                            </span>
+
+                            <!--Select de calificacion-->
+                            <select name="experiencia" id="calificacionFront" class="form-control  <%= locals.errors && errors.experiencia ? 'is-invalid' : null %>">
+                                <option disabled selected value>
+                                    Calificá tu viaje
+                                </option>
+                                <option value="5">Experiencia única</option>
+                                <option value="4">Gran experiencia</option>
+                                <option value="3">Buena experiencia</option>
+                                <option value="2">Aceptable</option>
+                                <option value="1">No recomendable</option>
+                            </select>
+                        </div>
                 </div>
                 <% if (locals.errors && errors.experiencia) { %>
                     <div class="errors">
@@ -124,11 +146,21 @@
 
             <div class="form-group">
                 <div class="col-md-4 inputGroupContainer">
-                    <div class="input-group">
+                   
+                   <!--Texto de error de front-->
+                    <div class=" errors titulo-errores">
+                            <p></p>
+                    </div>
+                        
+                    <div class="input-group" >
+                    
+                        <!--icono de titulo-->
                         <span class="input-group-addon <%= locals.errors && errors.titulo ? 'is-invalid' : null %>">
                             <i class="fa fa-pencil"></i>
                         </span>
-                        <input class="form-control <%= locals.errors && errors.titulo ? 'is-invalid' : null %>" type="text" name="titulo" max="30">
+
+                       <!--Input de titulo-->
+                        <input  id="tituloFront" class="form-control <%= locals.errors && errors.titulo ? 'is-invalid' : null %>" type="text" name="titulo" max="30">
                     </div>
                 </div>
                 <% if (locals.errors && errors.titulo) { %>
@@ -143,11 +175,22 @@
             <div class="pinfo" style="text-align: center;">Descripción</div>
             <div class="form-group">
                 <div class="col-md-4 inputGroupContainer">
-                    <div class="input-group">
+                    
+                    <!--errores Front-->
+                    <div class="errors descripcion-errores">
+                            <p></p>
+                    </div>
+
+                    
+                    <div class="input-group" >
+                        
+                        <!--Icono de descripcion-->
                         <span class="input-group-addon <%= locals.errors && errors.descripcion? 'is-invalid' : null %>">
                             <i class="fa fa-pencil"></i>
                         </span>
-                        <textarea class="form-control <%= locals.errors && errors.descripcion? 'is-invalid' : null %>" name="descripcion" rows="4"></textarea>
+
+                        <!--Input de descripcion-->
+                        <textarea id="descripcionFront" class="form-control <%= locals.errors && errors.descripcion? 'is-invalid' : null %>" name="descripcion" rows="4"></textarea>
                     </div>
                 </div>
                 <% if (locals.errors && errors.descripcion) { %>
@@ -160,5 +203,14 @@
 
             <button type="submit" class="btn btn-primary">Enviar</button>
         </div>
-    </body>
-</html></div></form><!--// include("../testimonios") --></div><!--FOOTER--><%- include("../partials/footer") %></body></html>
+      </div>
+    </form>
+    <!--// include("../testimonios") -->
+    </div><!--FOOTER--><%- include("../partials/footer") %>
+   
+    <!--SRIPTS-->
+    <script src="../../../js/aboutUs/create.js"></script>
+
+    
+   </body>
+</html>

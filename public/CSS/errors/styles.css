@@ -1,0 +1,11 @@
+.errors{
+    margin-top: 6px;
+  }
+  
+  .errors p{
+    color: red;
+  }
+  .is-invalid{
+    border-radius: 0.25rem;
+    border: 1px solid red;
+  }
